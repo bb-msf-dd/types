@@ -20,7 +20,7 @@ MIN_VERSION="3.0"
 version_gte "$VERSION" "$MIN_VERSION" || { echo >&2 "error: protoc version must be >= $MIN_VERSION (your $PROTOC is $VERSION)"; exit 1; }
 
 
-hash protoc-gen-go 2>/dev/null || go get -u github.com/golang/protobuf/protoc-gen-go
+hash protoc-gen-go 2>/dev/null || go install github.com/golang/protobuf/protoc-gen-go@latest
 hash protoc-gen-go 2>/dev/null || { echo >&2 'error: Make sure $GOPATH/bin is in your $PATH'; exit 1; }
 
 
