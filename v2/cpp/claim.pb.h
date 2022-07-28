@@ -1287,6 +1287,24 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::pb::Source* release_thumbnail();
   void set_allocated_thumbnail(::pb::Source* thumbnail);
 
+  // .pb.DownloadableFile downloadable_file = 14;
+  bool has_downloadable_file() const;
+  void clear_downloadable_file();
+  static const int kDownloadableFileFieldNumber = 14;
+  const ::pb::DownloadableFile& downloadable_file() const;
+  ::pb::DownloadableFile* mutable_downloadable_file();
+  ::pb::DownloadableFile* release_downloadable_file();
+  void set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file);
+
+  // .pb.GuncadFile guncad_file = 15;
+  bool has_guncad_file() const;
+  void clear_guncad_file();
+  static const int kGuncadFileFieldNumber = 15;
+  const ::pb::GuncadFile& guncad_file() const;
+  ::pb::GuncadFile* mutable_guncad_file();
+  ::pb::GuncadFile* release_guncad_file();
+  void set_allocated_guncad_file(::pb::GuncadFile* guncad_file);
+
   // .pb.Stream stream = 1;
   bool has_stream() const;
   void clear_stream();
@@ -1342,6 +1360,8 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::internal::ArenaStringPtr title_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::pb::Source* thumbnail_;
+  ::pb::DownloadableFile* downloadable_file_;
+  ::pb::GuncadFile* guncad_file_;
   union TypeUnion {
     TypeUnion() {}
     ::pb::Stream* stream_;
@@ -1376,8 +1396,6 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
     kVideo = 11,
     kAudio = 12,
     kSoftware = 13,
-    kDownloadableFile = 14,
-    kGuncadFile = 15,
     TYPE_NOT_SET = 0,
   };
 
@@ -1535,24 +1553,6 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::pb::Software* release_software();
   void set_allocated_software(::pb::Software* software);
 
-  // .pb.DownloadableFile downloadable_file = 14;
-  bool has_downloadable_file() const;
-  void clear_downloadable_file();
-  static const int kDownloadableFileFieldNumber = 14;
-  const ::pb::DownloadableFile& downloadable_file() const;
-  ::pb::DownloadableFile* mutable_downloadable_file();
-  ::pb::DownloadableFile* release_downloadable_file();
-  void set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file);
-
-  // .pb.GuncadFile guncad_file = 15;
-  bool has_guncad_file() const;
-  void clear_guncad_file();
-  static const int kGuncadFileFieldNumber = 15;
-  const ::pb::GuncadFile& guncad_file() const;
-  ::pb::GuncadFile* mutable_guncad_file();
-  ::pb::GuncadFile* release_guncad_file();
-  void set_allocated_guncad_file(::pb::GuncadFile* guncad_file);
-
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:pb.Stream)
  private:
@@ -1560,8 +1560,6 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   void set_has_video();
   void set_has_audio();
   void set_has_software();
-  void set_has_downloadable_file();
-  void set_has_guncad_file();
 
   inline bool has_type() const;
   void clear_type();
@@ -1580,8 +1578,6 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
     ::pb::Video* video_;
     ::pb::Audio* audio_;
     ::pb::Software* software_;
-    ::pb::DownloadableFile* downloadable_file_;
-    ::pb::GuncadFile* guncad_file_;
   } type_;
   mutable int _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -5623,6 +5619,84 @@ Claim::locations() const {
   return locations_;
 }
 
+// .pb.DownloadableFile downloadable_file = 14;
+inline bool Claim::has_downloadable_file() const {
+  return this != internal_default_instance() && downloadable_file_ != NULL;
+}
+inline void Claim::clear_downloadable_file() {
+  if (GetArenaNoVirtual() == NULL && downloadable_file_ != NULL) delete downloadable_file_;
+  downloadable_file_ = NULL;
+}
+inline const ::pb::DownloadableFile& Claim::downloadable_file() const {
+  // @@protoc_insertion_point(field_get:pb.Claim.downloadable_file)
+  return downloadable_file_ != NULL ? *downloadable_file_
+                         : *::pb::DownloadableFile::internal_default_instance();
+}
+inline ::pb::DownloadableFile* Claim::mutable_downloadable_file() {
+  
+  if (downloadable_file_ == NULL) {
+    downloadable_file_ = new ::pb::DownloadableFile;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.Claim.downloadable_file)
+  return downloadable_file_;
+}
+inline ::pb::DownloadableFile* Claim::release_downloadable_file() {
+  // @@protoc_insertion_point(field_release:pb.Claim.downloadable_file)
+  
+  ::pb::DownloadableFile* temp = downloadable_file_;
+  downloadable_file_ = NULL;
+  return temp;
+}
+inline void Claim::set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file) {
+  delete downloadable_file_;
+  downloadable_file_ = downloadable_file;
+  if (downloadable_file) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.Claim.downloadable_file)
+}
+
+// .pb.GuncadFile guncad_file = 15;
+inline bool Claim::has_guncad_file() const {
+  return this != internal_default_instance() && guncad_file_ != NULL;
+}
+inline void Claim::clear_guncad_file() {
+  if (GetArenaNoVirtual() == NULL && guncad_file_ != NULL) delete guncad_file_;
+  guncad_file_ = NULL;
+}
+inline const ::pb::GuncadFile& Claim::guncad_file() const {
+  // @@protoc_insertion_point(field_get:pb.Claim.guncad_file)
+  return guncad_file_ != NULL ? *guncad_file_
+                         : *::pb::GuncadFile::internal_default_instance();
+}
+inline ::pb::GuncadFile* Claim::mutable_guncad_file() {
+  
+  if (guncad_file_ == NULL) {
+    guncad_file_ = new ::pb::GuncadFile;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.Claim.guncad_file)
+  return guncad_file_;
+}
+inline ::pb::GuncadFile* Claim::release_guncad_file() {
+  // @@protoc_insertion_point(field_release:pb.Claim.guncad_file)
+  
+  ::pb::GuncadFile* temp = guncad_file_;
+  guncad_file_ = NULL;
+  return temp;
+}
+inline void Claim::set_allocated_guncad_file(::pb::GuncadFile* guncad_file) {
+  delete guncad_file_;
+  guncad_file_ = guncad_file;
+  if (guncad_file) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.Claim.guncad_file)
+}
+
 inline bool Claim::has_type() const {
   return type_case() != TYPE_NOT_SET;
 }
@@ -6074,102 +6148,6 @@ inline void Stream::set_allocated_software(::pb::Software* software) {
     type_.software_ = software;
   }
   // @@protoc_insertion_point(field_set_allocated:pb.Stream.software)
-}
-
-// .pb.DownloadableFile downloadable_file = 14;
-inline bool Stream::has_downloadable_file() const {
-  return type_case() == kDownloadableFile;
-}
-inline void Stream::set_has_downloadable_file() {
-  _oneof_case_[0] = kDownloadableFile;
-}
-inline void Stream::clear_downloadable_file() {
-  if (has_downloadable_file()) {
-    delete type_.downloadable_file_;
-    clear_has_type();
-  }
-}
-inline  const ::pb::DownloadableFile& Stream::downloadable_file() const {
-  // @@protoc_insertion_point(field_get:pb.Stream.downloadable_file)
-  return has_downloadable_file()
-      ? *type_.downloadable_file_
-      : ::pb::DownloadableFile::default_instance();
-}
-inline ::pb::DownloadableFile* Stream::mutable_downloadable_file() {
-  if (!has_downloadable_file()) {
-    clear_type();
-    set_has_downloadable_file();
-    type_.downloadable_file_ = new ::pb::DownloadableFile;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.Stream.downloadable_file)
-  return type_.downloadable_file_;
-}
-inline ::pb::DownloadableFile* Stream::release_downloadable_file() {
-  // @@protoc_insertion_point(field_release:pb.Stream.downloadable_file)
-  if (has_downloadable_file()) {
-    clear_has_type();
-    ::pb::DownloadableFile* temp = type_.downloadable_file_;
-    type_.downloadable_file_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
-}
-inline void Stream::set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file) {
-  clear_type();
-  if (downloadable_file) {
-    set_has_downloadable_file();
-    type_.downloadable_file_ = downloadable_file;
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.Stream.downloadable_file)
-}
-
-// .pb.GuncadFile guncad_file = 15;
-inline bool Stream::has_guncad_file() const {
-  return type_case() == kGuncadFile;
-}
-inline void Stream::set_has_guncad_file() {
-  _oneof_case_[0] = kGuncadFile;
-}
-inline void Stream::clear_guncad_file() {
-  if (has_guncad_file()) {
-    delete type_.guncad_file_;
-    clear_has_type();
-  }
-}
-inline  const ::pb::GuncadFile& Stream::guncad_file() const {
-  // @@protoc_insertion_point(field_get:pb.Stream.guncad_file)
-  return has_guncad_file()
-      ? *type_.guncad_file_
-      : ::pb::GuncadFile::default_instance();
-}
-inline ::pb::GuncadFile* Stream::mutable_guncad_file() {
-  if (!has_guncad_file()) {
-    clear_type();
-    set_has_guncad_file();
-    type_.guncad_file_ = new ::pb::GuncadFile;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.Stream.guncad_file)
-  return type_.guncad_file_;
-}
-inline ::pb::GuncadFile* Stream::release_guncad_file() {
-  // @@protoc_insertion_point(field_release:pb.Stream.guncad_file)
-  if (has_guncad_file()) {
-    clear_has_type();
-    ::pb::GuncadFile* temp = type_.guncad_file_;
-    type_.guncad_file_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
-}
-inline void Stream::set_allocated_guncad_file(::pb::GuncadFile* guncad_file) {
-  clear_type();
-  if (guncad_file) {
-    set_has_guncad_file();
-    type_.guncad_file_ = guncad_file;
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.Stream.guncad_file)
 }
 
 inline bool Stream::has_type() const {

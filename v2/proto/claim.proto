@@ -16,6 +16,8 @@ message Claim {
     repeated string tags = 11;
     repeated Language languages = 12;
     repeated Location locations = 13;
+    DownloadableFile downloadable_file = 14;
+    GuncadFile guncad_file = 15;
 }
 
 message Stream {
@@ -30,8 +32,6 @@ message Stream {
         Video video = 11;
         Audio audio = 12;
         Software software = 13;
-        DownloadableFile downloadable_file = 14;
-        GuncadFile guncad_file = 15;
     }
 }
 
