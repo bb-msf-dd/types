@@ -46,15 +46,12 @@ extern ClaimListDefaultTypeInternal _ClaimList_default_instance_;
 class ClaimReference;
 class ClaimReferenceDefaultTypeInternal;
 extern ClaimReferenceDefaultTypeInternal _ClaimReference_default_instance_;
-class DownloadableFile;
-class DownloadableFileDefaultTypeInternal;
-extern DownloadableFileDefaultTypeInternal _DownloadableFile_default_instance_;
 class Fee;
 class FeeDefaultTypeInternal;
 extern FeeDefaultTypeInternal _Fee_default_instance_;
-class GuncadFile;
-class GuncadFileDefaultTypeInternal;
-extern GuncadFileDefaultTypeInternal _GuncadFile_default_instance_;
+class Guncad;
+class GuncadDefaultTypeInternal;
+extern GuncadDefaultTypeInternal _Guncad_default_instance_;
 class Image;
 class ImageDefaultTypeInternal;
 extern ImageDefaultTypeInternal _Image_default_instance_;
@@ -1287,24 +1284,6 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::pb::Source* release_thumbnail();
   void set_allocated_thumbnail(::pb::Source* thumbnail);
 
-  // .pb.DownloadableFile downloadable_file = 14;
-  bool has_downloadable_file() const;
-  void clear_downloadable_file();
-  static const int kDownloadableFileFieldNumber = 14;
-  const ::pb::DownloadableFile& downloadable_file() const;
-  ::pb::DownloadableFile* mutable_downloadable_file();
-  ::pb::DownloadableFile* release_downloadable_file();
-  void set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file);
-
-  // .pb.GuncadFile guncad_file = 15;
-  bool has_guncad_file() const;
-  void clear_guncad_file();
-  static const int kGuncadFileFieldNumber = 15;
-  const ::pb::GuncadFile& guncad_file() const;
-  ::pb::GuncadFile* mutable_guncad_file();
-  ::pb::GuncadFile* release_guncad_file();
-  void set_allocated_guncad_file(::pb::GuncadFile* guncad_file);
-
   // .pb.Stream stream = 1;
   bool has_stream() const;
   void clear_stream();
@@ -1360,8 +1339,6 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::internal::ArenaStringPtr title_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::pb::Source* thumbnail_;
-  ::pb::DownloadableFile* downloadable_file_;
-  ::pb::GuncadFile* guncad_file_;
   union TypeUnion {
     TypeUnion() {}
     ::pb::Stream* stream_;
@@ -1396,6 +1373,7 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
     kVideo = 11,
     kAudio = 12,
     kSoftware = 13,
+    kGuncad = 14,
     TYPE_NOT_SET = 0,
   };
 
@@ -1553,6 +1531,15 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::pb::Software* release_software();
   void set_allocated_software(::pb::Software* software);
 
+  // .pb.Guncad guncad = 14;
+  bool has_guncad() const;
+  void clear_guncad();
+  static const int kGuncadFieldNumber = 14;
+  const ::pb::Guncad& guncad() const;
+  ::pb::Guncad* mutable_guncad();
+  ::pb::Guncad* release_guncad();
+  void set_allocated_guncad(::pb::Guncad* guncad);
+
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:pb.Stream)
  private:
@@ -1560,6 +1547,7 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   void set_has_video();
   void set_has_audio();
   void set_has_software();
+  void set_has_guncad();
 
   inline bool has_type() const;
   void clear_type();
@@ -1578,6 +1566,7 @@ class Stream : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
     ::pb::Video* video_;
     ::pb::Audio* audio_;
     ::pb::Software* software_;
+    ::pb::Guncad* guncad_;
   } type_;
   mutable int _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -2528,37 +2517,37 @@ class Audio : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 };
 // -------------------------------------------------------------------
 
-class DownloadableFile : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.DownloadableFile) */ {
+class Guncad : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.Guncad) */ {
  public:
-  DownloadableFile();
-  virtual ~DownloadableFile();
+  Guncad();
+  virtual ~Guncad();
 
-  DownloadableFile(const DownloadableFile& from);
+  Guncad(const Guncad& from);
 
-  inline DownloadableFile& operator=(const DownloadableFile& from) {
+  inline Guncad& operator=(const Guncad& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const DownloadableFile& default_instance();
+  static const Guncad& default_instance();
 
-  static inline const DownloadableFile* internal_default_instance() {
-    return reinterpret_cast<const DownloadableFile*>(
-               &_DownloadableFile_default_instance_);
+  static inline const Guncad* internal_default_instance() {
+    return reinterpret_cast<const Guncad*>(
+               &_Guncad_default_instance_);
   }
 
-  void Swap(DownloadableFile* other);
+  void Swap(Guncad* other);
 
   // implements Message ----------------------------------------------
 
-  inline DownloadableFile* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline Guncad* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  DownloadableFile* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  Guncad* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const DownloadableFile& from);
-  void MergeFrom(const DownloadableFile& from);
+  void CopyFrom(const Guncad& from);
+  void MergeFrom(const Guncad& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -2579,7 +2568,7 @@ class DownloadableFile : public ::google::protobuf::Message /* @@protoc_insertio
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(DownloadableFile* other);
+  void InternalSwap(Guncad* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -2594,181 +2583,6 @@ class DownloadableFile : public ::google::protobuf::Message /* @@protoc_insertio
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
-
-  // repeated string artifact_type = 1;
-  int artifact_type_size() const;
-  void clear_artifact_type();
-  static const int kArtifactTypeFieldNumber = 1;
-  const ::std::string& artifact_type(int index) const;
-  ::std::string* mutable_artifact_type(int index);
-  void set_artifact_type(int index, const ::std::string& value);
-  void set_artifact_type(int index, const char* value);
-  void set_artifact_type(int index, const char* value, size_t size);
-  ::std::string* add_artifact_type();
-  void add_artifact_type(const ::std::string& value);
-  void add_artifact_type(const char* value);
-  void add_artifact_type(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& artifact_type() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_artifact_type();
-
-  // repeated string artifact_language = 2;
-  int artifact_language_size() const;
-  void clear_artifact_language();
-  static const int kArtifactLanguageFieldNumber = 2;
-  const ::std::string& artifact_language(int index) const;
-  ::std::string* mutable_artifact_language(int index);
-  void set_artifact_language(int index, const ::std::string& value);
-  void set_artifact_language(int index, const char* value);
-  void set_artifact_language(int index, const char* value, size_t size);
-  ::std::string* add_artifact_language();
-  void add_artifact_language(const ::std::string& value);
-  void add_artifact_language(const char* value);
-  void add_artifact_language(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& artifact_language() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_artifact_language();
-
-  // repeated string release_country = 3;
-  int release_country_size() const;
-  void clear_release_country();
-  static const int kReleaseCountryFieldNumber = 3;
-  const ::std::string& release_country(int index) const;
-  ::std::string* mutable_release_country(int index);
-  void set_release_country(int index, const ::std::string& value);
-  void set_release_country(int index, const char* value);
-  void set_release_country(int index, const char* value, size_t size);
-  ::std::string* add_release_country();
-  void add_release_country(const ::std::string& value);
-  void add_release_country(const char* value);
-  void add_release_country(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& release_country() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_release_country();
-
-  // @@protoc_insertion_point(class_scope:pb.DownloadableFile)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> artifact_type_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> artifact_language_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> release_country_;
-  mutable int _cached_size_;
-  friend struct  protobuf_claim_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class GuncadFile : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.GuncadFile) */ {
- public:
-  GuncadFile();
-  virtual ~GuncadFile();
-
-  GuncadFile(const GuncadFile& from);
-
-  inline GuncadFile& operator=(const GuncadFile& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const GuncadFile& default_instance();
-
-  static inline const GuncadFile* internal_default_instance() {
-    return reinterpret_cast<const GuncadFile*>(
-               &_GuncadFile_default_instance_);
-  }
-
-  void Swap(GuncadFile* other);
-
-  // implements Message ----------------------------------------------
-
-  inline GuncadFile* New() const PROTOBUF_FINAL { return New(NULL); }
-
-  GuncadFile* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
-  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const GuncadFile& from);
-  void MergeFrom(const GuncadFile& from);
-  void Clear() PROTOBUF_FINAL;
-  bool IsInitialized() const PROTOBUF_FINAL;
-
-  size_t ByteSizeLong() const PROTOBUF_FINAL;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output)
-      const PROTOBUF_FINAL {
-    return InternalSerializeWithCachedSizesToArray(
-        ::google::protobuf::io::CodedOutputStream::IsDefaultSerializationDeterministic(), output);
-  }
-  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(GuncadFile* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // repeated string artifact_type = 1;
-  int artifact_type_size() const;
-  void clear_artifact_type();
-  static const int kArtifactTypeFieldNumber = 1;
-  const ::std::string& artifact_type(int index) const;
-  ::std::string* mutable_artifact_type(int index);
-  void set_artifact_type(int index, const ::std::string& value);
-  void set_artifact_type(int index, const char* value);
-  void set_artifact_type(int index, const char* value, size_t size);
-  ::std::string* add_artifact_type();
-  void add_artifact_type(const ::std::string& value);
-  void add_artifact_type(const char* value);
-  void add_artifact_type(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& artifact_type() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_artifact_type();
-
-  // repeated string artifact_language = 2;
-  int artifact_language_size() const;
-  void clear_artifact_language();
-  static const int kArtifactLanguageFieldNumber = 2;
-  const ::std::string& artifact_language(int index) const;
-  ::std::string* mutable_artifact_language(int index);
-  void set_artifact_language(int index, const ::std::string& value);
-  void set_artifact_language(int index, const char* value);
-  void set_artifact_language(int index, const char* value, size_t size);
-  ::std::string* add_artifact_language();
-  void add_artifact_language(const ::std::string& value);
-  void add_artifact_language(const char* value);
-  void add_artifact_language(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& artifact_language() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_artifact_language();
-
-  // repeated string release_country = 3;
-  int release_country_size() const;
-  void clear_release_country();
-  static const int kReleaseCountryFieldNumber = 3;
-  const ::std::string& release_country(int index) const;
-  ::std::string* mutable_release_country(int index);
-  void set_release_country(int index, const ::std::string& value);
-  void set_release_country(int index, const char* value);
-  void set_release_country(int index, const char* value, size_t size);
-  ::std::string* add_release_country();
-  void add_release_country(const ::std::string& value);
-  void add_release_country(const char* value);
-  void add_release_country(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& release_country() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_release_country();
 
   // repeated string guncad_category = 4;
   int guncad_category_size() const;
@@ -2882,13 +2696,26 @@ class GuncadFile : public ::google::protobuf::Message /* @@protoc_insertion_poin
   const ::google::protobuf::RepeatedPtrField< ::std::string>& fabrication_tools() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_fabrication_tools();
 
-  // @@protoc_insertion_point(class_scope:pb.GuncadFile)
+  // repeated string original_claim_id = 11;
+  int original_claim_id_size() const;
+  void clear_original_claim_id();
+  static const int kOriginalClaimIdFieldNumber = 11;
+  const ::std::string& original_claim_id(int index) const;
+  ::std::string* mutable_original_claim_id(int index);
+  void set_original_claim_id(int index, const ::std::string& value);
+  void set_original_claim_id(int index, const char* value);
+  void set_original_claim_id(int index, const char* value, size_t size);
+  ::std::string* add_original_claim_id();
+  void add_original_claim_id(const ::std::string& value);
+  void add_original_claim_id(const char* value);
+  void add_original_claim_id(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& original_claim_id() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_original_claim_id();
+
+  // @@protoc_insertion_point(class_scope:pb.Guncad)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> artifact_type_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> artifact_language_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> release_country_;
   ::google::protobuf::RepeatedPtrField< ::std::string> guncad_category_;
   ::google::protobuf::RepeatedPtrField< ::std::string> firearm_type_;
   ::google::protobuf::RepeatedPtrField< ::std::string> firearm_platform_;
@@ -2896,6 +2723,7 @@ class GuncadFile : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::RepeatedPtrField< ::std::string> firearm_caliber_;
   ::google::protobuf::RepeatedPtrField< ::std::string> fabrication_method_;
   ::google::protobuf::RepeatedPtrField< ::std::string> fabrication_tools_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> original_claim_id_;
   mutable int _cached_size_;
   friend struct  protobuf_claim_2eproto::TableStruct;
 };
@@ -5619,84 +5447,6 @@ Claim::locations() const {
   return locations_;
 }
 
-// .pb.DownloadableFile downloadable_file = 14;
-inline bool Claim::has_downloadable_file() const {
-  return this != internal_default_instance() && downloadable_file_ != NULL;
-}
-inline void Claim::clear_downloadable_file() {
-  if (GetArenaNoVirtual() == NULL && downloadable_file_ != NULL) delete downloadable_file_;
-  downloadable_file_ = NULL;
-}
-inline const ::pb::DownloadableFile& Claim::downloadable_file() const {
-  // @@protoc_insertion_point(field_get:pb.Claim.downloadable_file)
-  return downloadable_file_ != NULL ? *downloadable_file_
-                         : *::pb::DownloadableFile::internal_default_instance();
-}
-inline ::pb::DownloadableFile* Claim::mutable_downloadable_file() {
-  
-  if (downloadable_file_ == NULL) {
-    downloadable_file_ = new ::pb::DownloadableFile;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.Claim.downloadable_file)
-  return downloadable_file_;
-}
-inline ::pb::DownloadableFile* Claim::release_downloadable_file() {
-  // @@protoc_insertion_point(field_release:pb.Claim.downloadable_file)
-  
-  ::pb::DownloadableFile* temp = downloadable_file_;
-  downloadable_file_ = NULL;
-  return temp;
-}
-inline void Claim::set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file) {
-  delete downloadable_file_;
-  downloadable_file_ = downloadable_file;
-  if (downloadable_file) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.Claim.downloadable_file)
-}
-
-// .pb.GuncadFile guncad_file = 15;
-inline bool Claim::has_guncad_file() const {
-  return this != internal_default_instance() && guncad_file_ != NULL;
-}
-inline void Claim::clear_guncad_file() {
-  if (GetArenaNoVirtual() == NULL && guncad_file_ != NULL) delete guncad_file_;
-  guncad_file_ = NULL;
-}
-inline const ::pb::GuncadFile& Claim::guncad_file() const {
-  // @@protoc_insertion_point(field_get:pb.Claim.guncad_file)
-  return guncad_file_ != NULL ? *guncad_file_
-                         : *::pb::GuncadFile::internal_default_instance();
-}
-inline ::pb::GuncadFile* Claim::mutable_guncad_file() {
-  
-  if (guncad_file_ == NULL) {
-    guncad_file_ = new ::pb::GuncadFile;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.Claim.guncad_file)
-  return guncad_file_;
-}
-inline ::pb::GuncadFile* Claim::release_guncad_file() {
-  // @@protoc_insertion_point(field_release:pb.Claim.guncad_file)
-  
-  ::pb::GuncadFile* temp = guncad_file_;
-  guncad_file_ = NULL;
-  return temp;
-}
-inline void Claim::set_allocated_guncad_file(::pb::GuncadFile* guncad_file) {
-  delete guncad_file_;
-  guncad_file_ = guncad_file;
-  if (guncad_file) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.Claim.guncad_file)
-}
-
 inline bool Claim::has_type() const {
   return type_case() != TYPE_NOT_SET;
 }
@@ -6148,6 +5898,54 @@ inline void Stream::set_allocated_software(::pb::Software* software) {
     type_.software_ = software;
   }
   // @@protoc_insertion_point(field_set_allocated:pb.Stream.software)
+}
+
+// .pb.Guncad guncad = 14;
+inline bool Stream::has_guncad() const {
+  return type_case() == kGuncad;
+}
+inline void Stream::set_has_guncad() {
+  _oneof_case_[0] = kGuncad;
+}
+inline void Stream::clear_guncad() {
+  if (has_guncad()) {
+    delete type_.guncad_;
+    clear_has_type();
+  }
+}
+inline  const ::pb::Guncad& Stream::guncad() const {
+  // @@protoc_insertion_point(field_get:pb.Stream.guncad)
+  return has_guncad()
+      ? *type_.guncad_
+      : ::pb::Guncad::default_instance();
+}
+inline ::pb::Guncad* Stream::mutable_guncad() {
+  if (!has_guncad()) {
+    clear_type();
+    set_has_guncad();
+    type_.guncad_ = new ::pb::Guncad;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.Stream.guncad)
+  return type_.guncad_;
+}
+inline ::pb::Guncad* Stream::release_guncad() {
+  // @@protoc_insertion_point(field_release:pb.Stream.guncad)
+  if (has_guncad()) {
+    clear_has_type();
+    ::pb::Guncad* temp = type_.guncad_;
+    type_.guncad_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline void Stream::set_allocated_guncad(::pb::Guncad* guncad) {
+  clear_type();
+  if (guncad) {
+    set_has_guncad();
+    type_.guncad_ = guncad;
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.Stream.guncad)
 }
 
 inline bool Stream::has_type() const {
@@ -7052,725 +6850,446 @@ inline void Audio::set_duration(::google::protobuf::uint32 value) {
 
 // -------------------------------------------------------------------
 
-// DownloadableFile
-
-// repeated string artifact_type = 1;
-inline int DownloadableFile::artifact_type_size() const {
-  return artifact_type_.size();
-}
-inline void DownloadableFile::clear_artifact_type() {
-  artifact_type_.Clear();
-}
-inline const ::std::string& DownloadableFile::artifact_type(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DownloadableFile.artifact_type)
-  return artifact_type_.Get(index);
-}
-inline ::std::string* DownloadableFile::mutable_artifact_type(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DownloadableFile.artifact_type)
-  return artifact_type_.Mutable(index);
-}
-inline void DownloadableFile::set_artifact_type(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.DownloadableFile.artifact_type)
-  artifact_type_.Mutable(index)->assign(value);
-}
-inline void DownloadableFile::set_artifact_type(int index, const char* value) {
-  artifact_type_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.DownloadableFile.artifact_type)
-}
-inline void DownloadableFile::set_artifact_type(int index, const char* value, size_t size) {
-  artifact_type_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.DownloadableFile.artifact_type)
-}
-inline ::std::string* DownloadableFile::add_artifact_type() {
-  // @@protoc_insertion_point(field_add_mutable:pb.DownloadableFile.artifact_type)
-  return artifact_type_.Add();
-}
-inline void DownloadableFile::add_artifact_type(const ::std::string& value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.DownloadableFile.artifact_type)
-}
-inline void DownloadableFile::add_artifact_type(const char* value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.DownloadableFile.artifact_type)
-}
-inline void DownloadableFile::add_artifact_type(const char* value, size_t size) {
-  artifact_type_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.DownloadableFile.artifact_type)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-DownloadableFile::artifact_type() const {
-  // @@protoc_insertion_point(field_list:pb.DownloadableFile.artifact_type)
-  return artifact_type_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-DownloadableFile::mutable_artifact_type() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DownloadableFile.artifact_type)
-  return &artifact_type_;
-}
-
-// repeated string artifact_language = 2;
-inline int DownloadableFile::artifact_language_size() const {
-  return artifact_language_.size();
-}
-inline void DownloadableFile::clear_artifact_language() {
-  artifact_language_.Clear();
-}
-inline const ::std::string& DownloadableFile::artifact_language(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DownloadableFile.artifact_language)
-  return artifact_language_.Get(index);
-}
-inline ::std::string* DownloadableFile::mutable_artifact_language(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DownloadableFile.artifact_language)
-  return artifact_language_.Mutable(index);
-}
-inline void DownloadableFile::set_artifact_language(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.DownloadableFile.artifact_language)
-  artifact_language_.Mutable(index)->assign(value);
-}
-inline void DownloadableFile::set_artifact_language(int index, const char* value) {
-  artifact_language_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.DownloadableFile.artifact_language)
-}
-inline void DownloadableFile::set_artifact_language(int index, const char* value, size_t size) {
-  artifact_language_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.DownloadableFile.artifact_language)
-}
-inline ::std::string* DownloadableFile::add_artifact_language() {
-  // @@protoc_insertion_point(field_add_mutable:pb.DownloadableFile.artifact_language)
-  return artifact_language_.Add();
-}
-inline void DownloadableFile::add_artifact_language(const ::std::string& value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.DownloadableFile.artifact_language)
-}
-inline void DownloadableFile::add_artifact_language(const char* value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.DownloadableFile.artifact_language)
-}
-inline void DownloadableFile::add_artifact_language(const char* value, size_t size) {
-  artifact_language_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.DownloadableFile.artifact_language)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-DownloadableFile::artifact_language() const {
-  // @@protoc_insertion_point(field_list:pb.DownloadableFile.artifact_language)
-  return artifact_language_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-DownloadableFile::mutable_artifact_language() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DownloadableFile.artifact_language)
-  return &artifact_language_;
-}
-
-// repeated string release_country = 3;
-inline int DownloadableFile::release_country_size() const {
-  return release_country_.size();
-}
-inline void DownloadableFile::clear_release_country() {
-  release_country_.Clear();
-}
-inline const ::std::string& DownloadableFile::release_country(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DownloadableFile.release_country)
-  return release_country_.Get(index);
-}
-inline ::std::string* DownloadableFile::mutable_release_country(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DownloadableFile.release_country)
-  return release_country_.Mutable(index);
-}
-inline void DownloadableFile::set_release_country(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.DownloadableFile.release_country)
-  release_country_.Mutable(index)->assign(value);
-}
-inline void DownloadableFile::set_release_country(int index, const char* value) {
-  release_country_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.DownloadableFile.release_country)
-}
-inline void DownloadableFile::set_release_country(int index, const char* value, size_t size) {
-  release_country_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.DownloadableFile.release_country)
-}
-inline ::std::string* DownloadableFile::add_release_country() {
-  // @@protoc_insertion_point(field_add_mutable:pb.DownloadableFile.release_country)
-  return release_country_.Add();
-}
-inline void DownloadableFile::add_release_country(const ::std::string& value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.DownloadableFile.release_country)
-}
-inline void DownloadableFile::add_release_country(const char* value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.DownloadableFile.release_country)
-}
-inline void DownloadableFile::add_release_country(const char* value, size_t size) {
-  release_country_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.DownloadableFile.release_country)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-DownloadableFile::release_country() const {
-  // @@protoc_insertion_point(field_list:pb.DownloadableFile.release_country)
-  return release_country_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-DownloadableFile::mutable_release_country() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DownloadableFile.release_country)
-  return &release_country_;
-}
-
-// -------------------------------------------------------------------
-
-// GuncadFile
-
-// repeated string artifact_type = 1;
-inline int GuncadFile::artifact_type_size() const {
-  return artifact_type_.size();
-}
-inline void GuncadFile::clear_artifact_type() {
-  artifact_type_.Clear();
-}
-inline const ::std::string& GuncadFile::artifact_type(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.artifact_type)
-  return artifact_type_.Get(index);
-}
-inline ::std::string* GuncadFile::mutable_artifact_type(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.artifact_type)
-  return artifact_type_.Mutable(index);
-}
-inline void GuncadFile::set_artifact_type(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.artifact_type)
-  artifact_type_.Mutable(index)->assign(value);
-}
-inline void GuncadFile::set_artifact_type(int index, const char* value) {
-  artifact_type_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.artifact_type)
-}
-inline void GuncadFile::set_artifact_type(int index, const char* value, size_t size) {
-  artifact_type_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.artifact_type)
-}
-inline ::std::string* GuncadFile::add_artifact_type() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.artifact_type)
-  return artifact_type_.Add();
-}
-inline void GuncadFile::add_artifact_type(const ::std::string& value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.artifact_type)
-}
-inline void GuncadFile::add_artifact_type(const char* value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.artifact_type)
-}
-inline void GuncadFile::add_artifact_type(const char* value, size_t size) {
-  artifact_type_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.artifact_type)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::artifact_type() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.artifact_type)
-  return artifact_type_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_artifact_type() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.artifact_type)
-  return &artifact_type_;
-}
-
-// repeated string artifact_language = 2;
-inline int GuncadFile::artifact_language_size() const {
-  return artifact_language_.size();
-}
-inline void GuncadFile::clear_artifact_language() {
-  artifact_language_.Clear();
-}
-inline const ::std::string& GuncadFile::artifact_language(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.artifact_language)
-  return artifact_language_.Get(index);
-}
-inline ::std::string* GuncadFile::mutable_artifact_language(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.artifact_language)
-  return artifact_language_.Mutable(index);
-}
-inline void GuncadFile::set_artifact_language(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.artifact_language)
-  artifact_language_.Mutable(index)->assign(value);
-}
-inline void GuncadFile::set_artifact_language(int index, const char* value) {
-  artifact_language_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.artifact_language)
-}
-inline void GuncadFile::set_artifact_language(int index, const char* value, size_t size) {
-  artifact_language_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.artifact_language)
-}
-inline ::std::string* GuncadFile::add_artifact_language() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.artifact_language)
-  return artifact_language_.Add();
-}
-inline void GuncadFile::add_artifact_language(const ::std::string& value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.artifact_language)
-}
-inline void GuncadFile::add_artifact_language(const char* value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.artifact_language)
-}
-inline void GuncadFile::add_artifact_language(const char* value, size_t size) {
-  artifact_language_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.artifact_language)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::artifact_language() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.artifact_language)
-  return artifact_language_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_artifact_language() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.artifact_language)
-  return &artifact_language_;
-}
-
-// repeated string release_country = 3;
-inline int GuncadFile::release_country_size() const {
-  return release_country_.size();
-}
-inline void GuncadFile::clear_release_country() {
-  release_country_.Clear();
-}
-inline const ::std::string& GuncadFile::release_country(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.release_country)
-  return release_country_.Get(index);
-}
-inline ::std::string* GuncadFile::mutable_release_country(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.release_country)
-  return release_country_.Mutable(index);
-}
-inline void GuncadFile::set_release_country(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.release_country)
-  release_country_.Mutable(index)->assign(value);
-}
-inline void GuncadFile::set_release_country(int index, const char* value) {
-  release_country_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.release_country)
-}
-inline void GuncadFile::set_release_country(int index, const char* value, size_t size) {
-  release_country_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.release_country)
-}
-inline ::std::string* GuncadFile::add_release_country() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.release_country)
-  return release_country_.Add();
-}
-inline void GuncadFile::add_release_country(const ::std::string& value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.release_country)
-}
-inline void GuncadFile::add_release_country(const char* value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.release_country)
-}
-inline void GuncadFile::add_release_country(const char* value, size_t size) {
-  release_country_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.release_country)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::release_country() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.release_country)
-  return release_country_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_release_country() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.release_country)
-  return &release_country_;
-}
+// Guncad
 
 // repeated string guncad_category = 4;
-inline int GuncadFile::guncad_category_size() const {
+inline int Guncad::guncad_category_size() const {
   return guncad_category_.size();
 }
-inline void GuncadFile::clear_guncad_category() {
+inline void Guncad::clear_guncad_category() {
   guncad_category_.Clear();
 }
-inline const ::std::string& GuncadFile::guncad_category(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.guncad_category)
+inline const ::std::string& Guncad::guncad_category(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.guncad_category)
   return guncad_category_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_guncad_category(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.guncad_category)
+inline ::std::string* Guncad::mutable_guncad_category(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.guncad_category)
   return guncad_category_.Mutable(index);
 }
-inline void GuncadFile::set_guncad_category(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.guncad_category)
+inline void Guncad::set_guncad_category(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.guncad_category)
   guncad_category_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_guncad_category(int index, const char* value) {
+inline void Guncad::set_guncad_category(int index, const char* value) {
   guncad_category_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.guncad_category)
 }
-inline void GuncadFile::set_guncad_category(int index, const char* value, size_t size) {
+inline void Guncad::set_guncad_category(int index, const char* value, size_t size) {
   guncad_category_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.guncad_category)
 }
-inline ::std::string* GuncadFile::add_guncad_category() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.guncad_category)
+inline ::std::string* Guncad::add_guncad_category() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.guncad_category)
   return guncad_category_.Add();
 }
-inline void GuncadFile::add_guncad_category(const ::std::string& value) {
+inline void Guncad::add_guncad_category(const ::std::string& value) {
   guncad_category_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_add:pb.Guncad.guncad_category)
 }
-inline void GuncadFile::add_guncad_category(const char* value) {
+inline void Guncad::add_guncad_category(const char* value) {
   guncad_category_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.guncad_category)
 }
-inline void GuncadFile::add_guncad_category(const char* value, size_t size) {
+inline void Guncad::add_guncad_category(const char* value, size_t size) {
   guncad_category_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.guncad_category)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::guncad_category() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.guncad_category)
+Guncad::guncad_category() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.guncad_category)
   return guncad_category_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_guncad_category() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.guncad_category)
+Guncad::mutable_guncad_category() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.guncad_category)
   return &guncad_category_;
 }
 
 // repeated string firearm_type = 5;
-inline int GuncadFile::firearm_type_size() const {
+inline int Guncad::firearm_type_size() const {
   return firearm_type_.size();
 }
-inline void GuncadFile::clear_firearm_type() {
+inline void Guncad::clear_firearm_type() {
   firearm_type_.Clear();
 }
-inline const ::std::string& GuncadFile::firearm_type(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_type)
+inline const ::std::string& Guncad::firearm_type(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_type)
   return firearm_type_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_firearm_type(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_type)
+inline ::std::string* Guncad::mutable_firearm_type(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_type)
   return firearm_type_.Mutable(index);
 }
-inline void GuncadFile::set_firearm_type(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_type)
+inline void Guncad::set_firearm_type(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_type)
   firearm_type_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_firearm_type(int index, const char* value) {
+inline void Guncad::set_firearm_type(int index, const char* value) {
   firearm_type_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_type)
 }
-inline void GuncadFile::set_firearm_type(int index, const char* value, size_t size) {
+inline void Guncad::set_firearm_type(int index, const char* value, size_t size) {
   firearm_type_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_type)
 }
-inline ::std::string* GuncadFile::add_firearm_type() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_type)
+inline ::std::string* Guncad::add_firearm_type() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_type)
   return firearm_type_.Add();
 }
-inline void GuncadFile::add_firearm_type(const ::std::string& value) {
+inline void Guncad::add_firearm_type(const ::std::string& value) {
   firearm_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_type)
 }
-inline void GuncadFile::add_firearm_type(const char* value) {
+inline void Guncad::add_firearm_type(const char* value) {
   firearm_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_type)
 }
-inline void GuncadFile::add_firearm_type(const char* value, size_t size) {
+inline void Guncad::add_firearm_type(const char* value, size_t size) {
   firearm_type_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_type)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_type() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_type)
+Guncad::firearm_type() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_type)
   return firearm_type_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_type() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_type)
+Guncad::mutable_firearm_type() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_type)
   return &firearm_type_;
 }
 
 // repeated string firearm_platform = 6;
-inline int GuncadFile::firearm_platform_size() const {
+inline int Guncad::firearm_platform_size() const {
   return firearm_platform_.size();
 }
-inline void GuncadFile::clear_firearm_platform() {
+inline void Guncad::clear_firearm_platform() {
   firearm_platform_.Clear();
 }
-inline const ::std::string& GuncadFile::firearm_platform(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_platform)
+inline const ::std::string& Guncad::firearm_platform(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_platform)
   return firearm_platform_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_firearm_platform(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_platform)
+inline ::std::string* Guncad::mutable_firearm_platform(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_platform)
   return firearm_platform_.Mutable(index);
 }
-inline void GuncadFile::set_firearm_platform(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_platform)
+inline void Guncad::set_firearm_platform(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_platform)
   firearm_platform_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_firearm_platform(int index, const char* value) {
+inline void Guncad::set_firearm_platform(int index, const char* value) {
   firearm_platform_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_platform)
 }
-inline void GuncadFile::set_firearm_platform(int index, const char* value, size_t size) {
+inline void Guncad::set_firearm_platform(int index, const char* value, size_t size) {
   firearm_platform_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_platform)
 }
-inline ::std::string* GuncadFile::add_firearm_platform() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_platform)
+inline ::std::string* Guncad::add_firearm_platform() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_platform)
   return firearm_platform_.Add();
 }
-inline void GuncadFile::add_firearm_platform(const ::std::string& value) {
+inline void Guncad::add_firearm_platform(const ::std::string& value) {
   firearm_platform_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_platform)
 }
-inline void GuncadFile::add_firearm_platform(const char* value) {
+inline void Guncad::add_firearm_platform(const char* value) {
   firearm_platform_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_platform)
 }
-inline void GuncadFile::add_firearm_platform(const char* value, size_t size) {
+inline void Guncad::add_firearm_platform(const char* value, size_t size) {
   firearm_platform_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_platform)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_platform() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_platform)
+Guncad::firearm_platform() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_platform)
   return firearm_platform_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_platform() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_platform)
+Guncad::mutable_firearm_platform() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_platform)
   return &firearm_platform_;
 }
 
 // repeated string firearm_part = 7;
-inline int GuncadFile::firearm_part_size() const {
+inline int Guncad::firearm_part_size() const {
   return firearm_part_.size();
 }
-inline void GuncadFile::clear_firearm_part() {
+inline void Guncad::clear_firearm_part() {
   firearm_part_.Clear();
 }
-inline const ::std::string& GuncadFile::firearm_part(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_part)
+inline const ::std::string& Guncad::firearm_part(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_part)
   return firearm_part_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_firearm_part(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_part)
+inline ::std::string* Guncad::mutable_firearm_part(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_part)
   return firearm_part_.Mutable(index);
 }
-inline void GuncadFile::set_firearm_part(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_part)
+inline void Guncad::set_firearm_part(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_part)
   firearm_part_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_firearm_part(int index, const char* value) {
+inline void Guncad::set_firearm_part(int index, const char* value) {
   firearm_part_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_part)
 }
-inline void GuncadFile::set_firearm_part(int index, const char* value, size_t size) {
+inline void Guncad::set_firearm_part(int index, const char* value, size_t size) {
   firearm_part_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_part)
 }
-inline ::std::string* GuncadFile::add_firearm_part() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_part)
+inline ::std::string* Guncad::add_firearm_part() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_part)
   return firearm_part_.Add();
 }
-inline void GuncadFile::add_firearm_part(const ::std::string& value) {
+inline void Guncad::add_firearm_part(const ::std::string& value) {
   firearm_part_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_part)
 }
-inline void GuncadFile::add_firearm_part(const char* value) {
+inline void Guncad::add_firearm_part(const char* value) {
   firearm_part_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_part)
 }
-inline void GuncadFile::add_firearm_part(const char* value, size_t size) {
+inline void Guncad::add_firearm_part(const char* value, size_t size) {
   firearm_part_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_part)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_part() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_part)
+Guncad::firearm_part() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_part)
   return firearm_part_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_part() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_part)
+Guncad::mutable_firearm_part() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_part)
   return &firearm_part_;
 }
 
 // repeated string firearm_caliber = 8;
-inline int GuncadFile::firearm_caliber_size() const {
+inline int Guncad::firearm_caliber_size() const {
   return firearm_caliber_.size();
 }
-inline void GuncadFile::clear_firearm_caliber() {
+inline void Guncad::clear_firearm_caliber() {
   firearm_caliber_.Clear();
 }
-inline const ::std::string& GuncadFile::firearm_caliber(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_caliber)
+inline const ::std::string& Guncad::firearm_caliber(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_caliber)
   return firearm_caliber_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_firearm_caliber(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_caliber)
+inline ::std::string* Guncad::mutable_firearm_caliber(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_caliber)
   return firearm_caliber_.Mutable(index);
 }
-inline void GuncadFile::set_firearm_caliber(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_caliber)
+inline void Guncad::set_firearm_caliber(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_caliber)
   firearm_caliber_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_firearm_caliber(int index, const char* value) {
+inline void Guncad::set_firearm_caliber(int index, const char* value) {
   firearm_caliber_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_caliber)
 }
-inline void GuncadFile::set_firearm_caliber(int index, const char* value, size_t size) {
+inline void Guncad::set_firearm_caliber(int index, const char* value, size_t size) {
   firearm_caliber_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_caliber)
 }
-inline ::std::string* GuncadFile::add_firearm_caliber() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_caliber)
+inline ::std::string* Guncad::add_firearm_caliber() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_caliber)
   return firearm_caliber_.Add();
 }
-inline void GuncadFile::add_firearm_caliber(const ::std::string& value) {
+inline void Guncad::add_firearm_caliber(const ::std::string& value) {
   firearm_caliber_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_caliber)
 }
-inline void GuncadFile::add_firearm_caliber(const char* value) {
+inline void Guncad::add_firearm_caliber(const char* value) {
   firearm_caliber_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_caliber)
 }
-inline void GuncadFile::add_firearm_caliber(const char* value, size_t size) {
+inline void Guncad::add_firearm_caliber(const char* value, size_t size) {
   firearm_caliber_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_caliber)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_caliber() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_caliber)
+Guncad::firearm_caliber() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_caliber)
   return firearm_caliber_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_caliber() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_caliber)
+Guncad::mutable_firearm_caliber() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_caliber)
   return &firearm_caliber_;
 }
 
 // repeated string fabrication_method = 9;
-inline int GuncadFile::fabrication_method_size() const {
+inline int Guncad::fabrication_method_size() const {
   return fabrication_method_.size();
 }
-inline void GuncadFile::clear_fabrication_method() {
+inline void Guncad::clear_fabrication_method() {
   fabrication_method_.Clear();
 }
-inline const ::std::string& GuncadFile::fabrication_method(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.fabrication_method)
+inline const ::std::string& Guncad::fabrication_method(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.fabrication_method)
   return fabrication_method_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_fabrication_method(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.fabrication_method)
+inline ::std::string* Guncad::mutable_fabrication_method(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.fabrication_method)
   return fabrication_method_.Mutable(index);
 }
-inline void GuncadFile::set_fabrication_method(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.fabrication_method)
+inline void Guncad::set_fabrication_method(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.fabrication_method)
   fabrication_method_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_fabrication_method(int index, const char* value) {
+inline void Guncad::set_fabrication_method(int index, const char* value) {
   fabrication_method_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.fabrication_method)
 }
-inline void GuncadFile::set_fabrication_method(int index, const char* value, size_t size) {
+inline void Guncad::set_fabrication_method(int index, const char* value, size_t size) {
   fabrication_method_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.fabrication_method)
 }
-inline ::std::string* GuncadFile::add_fabrication_method() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.fabrication_method)
+inline ::std::string* Guncad::add_fabrication_method() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.fabrication_method)
   return fabrication_method_.Add();
 }
-inline void GuncadFile::add_fabrication_method(const ::std::string& value) {
+inline void Guncad::add_fabrication_method(const ::std::string& value) {
   fabrication_method_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_add:pb.Guncad.fabrication_method)
 }
-inline void GuncadFile::add_fabrication_method(const char* value) {
+inline void Guncad::add_fabrication_method(const char* value) {
   fabrication_method_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.fabrication_method)
 }
-inline void GuncadFile::add_fabrication_method(const char* value, size_t size) {
+inline void Guncad::add_fabrication_method(const char* value, size_t size) {
   fabrication_method_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.fabrication_method)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::fabrication_method() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.fabrication_method)
+Guncad::fabrication_method() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.fabrication_method)
   return fabrication_method_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_fabrication_method() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.fabrication_method)
+Guncad::mutable_fabrication_method() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.fabrication_method)
   return &fabrication_method_;
 }
 
 // repeated string fabrication_tools = 10;
-inline int GuncadFile::fabrication_tools_size() const {
+inline int Guncad::fabrication_tools_size() const {
   return fabrication_tools_.size();
 }
-inline void GuncadFile::clear_fabrication_tools() {
+inline void Guncad::clear_fabrication_tools() {
   fabrication_tools_.Clear();
 }
-inline const ::std::string& GuncadFile::fabrication_tools(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.fabrication_tools)
+inline const ::std::string& Guncad::fabrication_tools(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.fabrication_tools)
   return fabrication_tools_.Get(index);
 }
-inline ::std::string* GuncadFile::mutable_fabrication_tools(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.fabrication_tools)
+inline ::std::string* Guncad::mutable_fabrication_tools(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.fabrication_tools)
   return fabrication_tools_.Mutable(index);
 }
-inline void GuncadFile::set_fabrication_tools(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.fabrication_tools)
+inline void Guncad::set_fabrication_tools(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.fabrication_tools)
   fabrication_tools_.Mutable(index)->assign(value);
 }
-inline void GuncadFile::set_fabrication_tools(int index, const char* value) {
+inline void Guncad::set_fabrication_tools(int index, const char* value) {
   fabrication_tools_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.fabrication_tools)
 }
-inline void GuncadFile::set_fabrication_tools(int index, const char* value, size_t size) {
+inline void Guncad::set_fabrication_tools(int index, const char* value, size_t size) {
   fabrication_tools_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.fabrication_tools)
 }
-inline ::std::string* GuncadFile::add_fabrication_tools() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.fabrication_tools)
+inline ::std::string* Guncad::add_fabrication_tools() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.fabrication_tools)
   return fabrication_tools_.Add();
 }
-inline void GuncadFile::add_fabrication_tools(const ::std::string& value) {
+inline void Guncad::add_fabrication_tools(const ::std::string& value) {
   fabrication_tools_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_add:pb.Guncad.fabrication_tools)
 }
-inline void GuncadFile::add_fabrication_tools(const char* value) {
+inline void Guncad::add_fabrication_tools(const char* value) {
   fabrication_tools_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.fabrication_tools)
 }
-inline void GuncadFile::add_fabrication_tools(const char* value, size_t size) {
+inline void Guncad::add_fabrication_tools(const char* value, size_t size) {
   fabrication_tools_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.fabrication_tools)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::fabrication_tools() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.fabrication_tools)
+Guncad::fabrication_tools() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.fabrication_tools)
   return fabrication_tools_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_fabrication_tools() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.fabrication_tools)
+Guncad::mutable_fabrication_tools() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.fabrication_tools)
   return &fabrication_tools_;
+}
+
+// repeated string original_claim_id = 11;
+inline int Guncad::original_claim_id_size() const {
+  return original_claim_id_.size();
+}
+inline void Guncad::clear_original_claim_id() {
+  original_claim_id_.Clear();
+}
+inline const ::std::string& Guncad::original_claim_id(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.original_claim_id)
+  return original_claim_id_.Get(index);
+}
+inline ::std::string* Guncad::mutable_original_claim_id(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.original_claim_id)
+  return original_claim_id_.Mutable(index);
+}
+inline void Guncad::set_original_claim_id(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.original_claim_id)
+  original_claim_id_.Mutable(index)->assign(value);
+}
+inline void Guncad::set_original_claim_id(int index, const char* value) {
+  original_claim_id_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.original_claim_id)
+}
+inline void Guncad::set_original_claim_id(int index, const char* value, size_t size) {
+  original_claim_id_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.original_claim_id)
+}
+inline ::std::string* Guncad::add_original_claim_id() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.original_claim_id)
+  return original_claim_id_.Add();
+}
+inline void Guncad::add_original_claim_id(const ::std::string& value) {
+  original_claim_id_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pb.Guncad.original_claim_id)
+}
+inline void Guncad::add_original_claim_id(const char* value) {
+  original_claim_id_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.original_claim_id)
+}
+inline void Guncad::add_original_claim_id(const char* value, size_t size) {
+  original_claim_id_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.original_claim_id)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Guncad::original_claim_id() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.original_claim_id)
+  return original_claim_id_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Guncad::mutable_original_claim_id() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.original_claim_id)
+  return &original_claim_id_;
 }
 
 // -------------------------------------------------------------------
@@ -8078,8 +7597,6 @@ inline void Location::set_longitude(::google::protobuf::int32 value) {
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

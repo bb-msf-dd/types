@@ -31,6 +31,7 @@ class StreamDefaultTypeInternal : public ::google::protobuf::internal::Explicitl
   const ::pb::Video* video_;
   const ::pb::Audio* audio_;
   const ::pb::Software* software_;
+  const ::pb::Guncad* guncad_;
 } _Stream_default_instance_;
 class ChannelDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Channel> {
 } _Channel_default_instance_;
@@ -48,10 +49,8 @@ class VideoDefaultTypeInternal : public ::google::protobuf::internal::Explicitly
 } _Video_default_instance_;
 class AudioDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Audio> {
 } _Audio_default_instance_;
-class DownloadableFileDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<DownloadableFile> {
-} _DownloadableFile_default_instance_;
-class GuncadFileDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<GuncadFile> {
-} _GuncadFile_default_instance_;
+class GuncadDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Guncad> {
+} _Guncad_default_instance_;
 class SoftwareDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Software> {
 } _Software_default_instance_;
 class LanguageDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Language> {
@@ -64,7 +63,7 @@ namespace protobuf_claim_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[15];
+::google::protobuf::Metadata file_level_metadata[14];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[6];
 
 }  // namespace
@@ -84,8 +83,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Claim, tags_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Claim, languages_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Claim, locations_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Claim, downloadable_file_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Claim, guncad_file_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Claim, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, _internal_metadata_),
@@ -101,6 +98,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_Stream_default_instance_), video_),
   PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_Stream_default_instance_), audio_),
   PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_Stream_default_instance_), software_),
+  PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_Stream_default_instance_), guncad_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Channel, _internal_metadata_),
@@ -160,26 +158,17 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _oneof_case_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Audio, duration_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DownloadableFile, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DownloadableFile, artifact_type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DownloadableFile, artifact_language_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DownloadableFile, release_country_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, artifact_type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, artifact_language_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, release_country_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, guncad_category_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, firearm_type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, firearm_platform_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, firearm_part_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, firearm_caliber_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, fabrication_method_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GuncadFile, fabrication_tools_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, guncad_category_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, firearm_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, firearm_platform_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, firearm_part_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, firearm_caliber_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, fabrication_method_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, fabrication_tools_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Guncad, original_claim_id_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Software, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -206,20 +195,19 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 0, -1, sizeof(Claim)},
-  { 17, -1, sizeof(Stream)},
-  { 32, -1, sizeof(Channel)},
-  { 41, -1, sizeof(ClaimReference)},
-  { 46, -1, sizeof(ClaimList)},
-  { 52, -1, sizeof(Source)},
-  { 63, -1, sizeof(Fee)},
-  { 70, -1, sizeof(Image)},
-  { 76, -1, sizeof(Video)},
-  { 84, -1, sizeof(Audio)},
-  { 89, -1, sizeof(DownloadableFile)},
-  { 96, -1, sizeof(GuncadFile)},
-  { 110, -1, sizeof(Software)},
-  { 115, -1, sizeof(Language)},
-  { 122, -1, sizeof(Location)},
+  { 15, -1, sizeof(Stream)},
+  { 31, -1, sizeof(Channel)},
+  { 40, -1, sizeof(ClaimReference)},
+  { 45, -1, sizeof(ClaimList)},
+  { 51, -1, sizeof(Source)},
+  { 62, -1, sizeof(Fee)},
+  { 69, -1, sizeof(Image)},
+  { 75, -1, sizeof(Video)},
+  { 83, -1, sizeof(Audio)},
+  { 88, -1, sizeof(Guncad)},
+  { 100, -1, sizeof(Software)},
+  { 105, -1, sizeof(Language)},
+  { 112, -1, sizeof(Location)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -233,8 +221,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_Image_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Video_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Audio_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_DownloadableFile_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_GuncadFile_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Guncad_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Software_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Language_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Location_default_instance_),
@@ -258,7 +245,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 15);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 14);
 }
 
 }  // namespace
@@ -284,16 +271,14 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[8].reflection;
   _Audio_default_instance_.Shutdown();
   delete file_level_metadata[9].reflection;
-  _DownloadableFile_default_instance_.Shutdown();
+  _Guncad_default_instance_.Shutdown();
   delete file_level_metadata[10].reflection;
-  _GuncadFile_default_instance_.Shutdown();
-  delete file_level_metadata[11].reflection;
   _Software_default_instance_.Shutdown();
-  delete file_level_metadata[12].reflection;
+  delete file_level_metadata[11].reflection;
   _Language_default_instance_.Shutdown();
-  delete file_level_metadata[13].reflection;
+  delete file_level_metadata[12].reflection;
   _Location_default_instance_.Shutdown();
-  delete file_level_metadata[14].reflection;
+  delete file_level_metadata[13].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
@@ -310,8 +295,7 @@ void TableStruct::InitDefaultsImpl() {
   _Image_default_instance_.DefaultConstruct();
   _Video_default_instance_.DefaultConstruct();
   _Audio_default_instance_.DefaultConstruct();
-  _DownloadableFile_default_instance_.DefaultConstruct();
-  _GuncadFile_default_instance_.DefaultConstruct();
+  _Guncad_default_instance_.DefaultConstruct();
   _Software_default_instance_.DefaultConstruct();
   _Language_default_instance_.DefaultConstruct();
   _Location_default_instance_.DefaultConstruct();
@@ -325,10 +309,6 @@ void TableStruct::InitDefaultsImpl() {
       ::pb::ClaimReference::internal_default_instance());
   _Claim_default_instance_.get_mutable()->thumbnail_ = const_cast< ::pb::Source*>(
       ::pb::Source::internal_default_instance());
-  _Claim_default_instance_.get_mutable()->downloadable_file_ = const_cast< ::pb::DownloadableFile*>(
-      ::pb::DownloadableFile::internal_default_instance());
-  _Claim_default_instance_.get_mutable()->guncad_file_ = const_cast< ::pb::GuncadFile*>(
-      ::pb::GuncadFile::internal_default_instance());
   _Stream_default_instance_.get_mutable()->source_ = const_cast< ::pb::Source*>(
       ::pb::Source::internal_default_instance());
   _Stream_default_instance_.get_mutable()->fee_ = const_cast< ::pb::Fee*>(
@@ -341,6 +321,8 @@ void TableStruct::InitDefaultsImpl() {
       ::pb::Audio::internal_default_instance());
   _Stream_default_instance_.software_ = const_cast< ::pb::Software*>(
       ::pb::Software::internal_default_instance());
+  _Stream_default_instance_.guncad_ = const_cast< ::pb::Guncad*>(
+      ::pb::Guncad::internal_default_instance());
   _Channel_default_instance_.get_mutable()->cover_ = const_cast< ::pb::Source*>(
       ::pb::Source::internal_default_instance());
   _Channel_default_instance_.get_mutable()->featured_ = const_cast< ::pb::ClaimList*>(
@@ -356,285 +338,280 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\013claim.proto\022\002pb\"\201\003\n\005Claim\022\034\n\006stream\030\001 "
+      "\n\013claim.proto\022\002pb\"\253\002\n\005Claim\022\034\n\006stream\030\001 "
       "\001(\0132\n.pb.StreamH\000\022\036\n\007channel\030\002 \001(\0132\013.pb."
       "ChannelH\000\022#\n\ncollection\030\003 \001(\0132\r.pb.Claim"
       "ListH\000\022$\n\006repost\030\004 \001(\0132\022.pb.ClaimReferen"
       "ceH\000\022\r\n\005title\030\010 \001(\t\022\023\n\013description\030\t \001(\t"
       "\022\035\n\tthumbnail\030\n \001(\0132\n.pb.Source\022\014\n\004tags\030"
       "\013 \003(\t\022\037\n\tlanguages\030\014 \003(\0132\014.pb.Language\022\037"
-      "\n\tlocations\030\r \003(\0132\014.pb.Location\022/\n\021downl"
-      "oadable_file\030\016 \001(\0132\024.pb.DownloadableFile"
-      "\022#\n\013guncad_file\030\017 \001(\0132\016.pb.GuncadFileB\006\n"
-      "\004type\"\204\002\n\006Stream\022\032\n\006source\030\001 \001(\0132\n.pb.So"
-      "urce\022\016\n\006author\030\002 \001(\t\022\017\n\007license\030\003 \001(\t\022\023\n"
-      "\013license_url\030\004 \001(\t\022\024\n\014release_time\030\005 \001(\003"
-      "\022\024\n\003fee\030\006 \001(\0132\007.pb.Fee\022\032\n\005image\030\n \001(\0132\t."
-      "pb.ImageH\000\022\032\n\005video\030\013 \001(\0132\t.pb.VideoH\000\022\032"
-      "\n\005audio\030\014 \001(\0132\t.pb.AudioH\000\022 \n\010software\030\r"
-      " \001(\0132\014.pb.SoftwareH\000B\006\n\004type\"}\n\007Channel\022"
-      "\022\n\npublic_key\030\001 \001(\014\022\r\n\005email\030\002 \001(\t\022\023\n\013we"
-      "bsite_url\030\003 \001(\t\022\031\n\005cover\030\004 \001(\0132\n.pb.Sour"
-      "ce\022\037\n\010featured\030\005 \001(\0132\r.pb.ClaimList\"$\n\016C"
-      "laimReference\022\022\n\nclaim_hash\030\001 \001(\014\"\220\001\n\tCl"
-      "aimList\022)\n\tlist_type\030\001 \001(\0162\026.pb.ClaimLis"
-      "t.ListType\022,\n\020claim_references\030\002 \003(\0132\022.p"
-      "b.ClaimReference\"*\n\010ListType\022\016\n\nCOLLECTI"
-      "ON\020\000\022\016\n\nDERIVATION\020\002\"y\n\006Source\022\014\n\004hash\030\001"
-      " \001(\014\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\004\022\022\n\nmedi"
-      "a_type\030\004 \001(\t\022\013\n\003url\030\005 \001(\t\022\017\n\007sd_hash\030\006 \001"
-      "(\014\022\023\n\013bt_infohash\030\007 \001(\014\"\207\001\n\003Fee\022\"\n\010curre"
-      "ncy\030\001 \001(\0162\020.pb.Fee.Currency\022\017\n\007address\030\002"
-      " \001(\014\022\016\n\006amount\030\003 \001(\004\";\n\010Currency\022\024\n\020UNKN"
-      "OWN_CURRENCY\020\000\022\007\n\003LBC\020\001\022\007\n\003BTC\020\002\022\007\n\003USD\020"
-      "\003\"&\n\005Image\022\r\n\005width\030\001 \001(\r\022\016\n\006height\030\002 \001("
-      "\r\"R\n\005Video\022\r\n\005width\030\001 \001(\r\022\016\n\006height\030\002 \001("
-      "\r\022\020\n\010duration\030\003 \001(\r\022\030\n\005audio\030\017 \001(\0132\t.pb."
-      "Audio\"\031\n\005Audio\022\020\n\010duration\030\001 \001(\r\"]\n\020Down"
-      "loadableFile\022\025\n\rartifact_type\030\001 \003(\t\022\031\n\021a"
-      "rtifact_language\030\002 \003(\t\022\027\n\017release_countr"
-      "y\030\003 \003(\t\"\206\002\n\nGuncadFile\022\025\n\rartifact_type\030"
-      "\001 \003(\t\022\031\n\021artifact_language\030\002 \003(\t\022\027\n\017rele"
-      "ase_country\030\003 \003(\t\022\027\n\017guncad_category\030\004 \003"
-      "(\t\022\024\n\014firearm_type\030\005 \003(\t\022\030\n\020firearm_plat"
-      "form\030\006 \003(\t\022\024\n\014firearm_part\030\007 \003(\t\022\027\n\017fire"
-      "arm_caliber\030\010 \003(\t\022\032\n\022fabrication_method\030"
-      "\t \003(\t\022\031\n\021fabrication_tools\030\n \003(\t\"l\n\010Soft"
-      "ware\022\n\n\002os\030\001 \001(\t\"T\n\002OS\022\016\n\nUNKNOWN_OS\020\000\022\007"
-      "\n\003ANY\020\001\022\t\n\005LINUX\020\002\022\013\n\007WINDOWS\020\003\022\007\n\003MAC\020\004"
-      "\022\013\n\007ANDROID\020\005\022\007\n\003IOS\020\006\"\307\035\n\010Language\022\'\n\010l"
-      "anguage\030\001 \001(\0162\025.pb.Language.Language\022#\n\006"
-      "script\030\002 \001(\0162\023.pb.Language.Script\022$\n\006reg"
-      "ion\030\003 \001(\0162\024.pb.Location.Country\"\231\014\n\010Lang"
-      "uage\022\024\n\020UNKNOWN_LANGUAGE\020\000\022\006\n\002en\020\001\022\006\n\002aa"
-      "\020\002\022\006\n\002ab\020\003\022\006\n\002ae\020\004\022\006\n\002af\020\005\022\006\n\002ak\020\006\022\006\n\002am"
-      "\020\007\022\006\n\002an\020\010\022\006\n\002ar\020\t\022\006\n\002as\020\n\022\006\n\002av\020\013\022\006\n\002ay"
-      "\020\014\022\006\n\002az\020\r\022\006\n\002ba\020\016\022\006\n\002be\020\017\022\006\n\002bg\020\020\022\006\n\002bh"
-      "\020\021\022\006\n\002bi\020\022\022\006\n\002bm\020\023\022\006\n\002bn\020\024\022\006\n\002bo\020\025\022\006\n\002br"
-      "\020\026\022\006\n\002bs\020\027\022\006\n\002ca\020\030\022\006\n\002ce\020\031\022\006\n\002ch\020\032\022\006\n\002co"
-      "\020\033\022\006\n\002cr\020\034\022\006\n\002cs\020\035\022\006\n\002cu\020\036\022\006\n\002cv\020\037\022\006\n\002cy"
-      "\020 \022\006\n\002da\020!\022\006\n\002de\020\"\022\006\n\002dv\020#\022\006\n\002dz\020$\022\006\n\002ee"
-      "\020%\022\006\n\002el\020&\022\006\n\002eo\020\'\022\006\n\002es\020(\022\006\n\002et\020)\022\006\n\002eu"
-      "\020*\022\006\n\002fa\020+\022\006\n\002ff\020,\022\006\n\002fi\020-\022\006\n\002fj\020.\022\006\n\002fo"
-      "\020/\022\006\n\002fr\0200\022\006\n\002fy\0201\022\006\n\002ga\0202\022\006\n\002gd\0203\022\006\n\002gl"
-      "\0204\022\006\n\002gn\0205\022\006\n\002gu\0206\022\006\n\002gv\0207\022\006\n\002ha\0208\022\006\n\002he"
-      "\0209\022\006\n\002hi\020:\022\006\n\002ho\020;\022\006\n\002hr\020<\022\006\n\002ht\020=\022\006\n\002hu"
-      "\020>\022\006\n\002hy\020\?\022\006\n\002hz\020@\022\006\n\002ia\020A\022\006\n\002id\020B\022\006\n\002ie"
-      "\020C\022\006\n\002ig\020D\022\006\n\002ii\020E\022\006\n\002ik\020F\022\006\n\002io\020G\022\006\n\002is"
-      "\020H\022\006\n\002it\020I\022\006\n\002iu\020J\022\006\n\002ja\020K\022\006\n\002jv\020L\022\006\n\002ka"
-      "\020M\022\006\n\002kg\020N\022\006\n\002ki\020O\022\006\n\002kj\020P\022\006\n\002kk\020Q\022\006\n\002kl"
-      "\020R\022\006\n\002km\020S\022\006\n\002kn\020T\022\006\n\002ko\020U\022\006\n\002kr\020V\022\006\n\002ks"
-      "\020W\022\006\n\002ku\020X\022\006\n\002kv\020Y\022\006\n\002kw\020Z\022\006\n\002ky\020[\022\006\n\002la"
-      "\020\\\022\006\n\002lb\020]\022\006\n\002lg\020^\022\006\n\002li\020_\022\006\n\002ln\020`\022\006\n\002lo"
-      "\020a\022\006\n\002lt\020b\022\006\n\002lu\020c\022\006\n\002lv\020d\022\006\n\002mg\020e\022\006\n\002mh"
-      "\020f\022\006\n\002mi\020g\022\006\n\002mk\020h\022\006\n\002ml\020i\022\006\n\002mn\020j\022\006\n\002mr"
-      "\020k\022\006\n\002ms\020l\022\006\n\002mt\020m\022\006\n\002my\020n\022\006\n\002na\020o\022\006\n\002nb"
-      "\020p\022\006\n\002nd\020q\022\006\n\002ne\020r\022\006\n\002ng\020s\022\006\n\002nl\020t\022\006\n\002nn"
-      "\020u\022\006\n\002no\020v\022\006\n\002nr\020w\022\006\n\002nv\020x\022\006\n\002ny\020y\022\006\n\002oc"
-      "\020z\022\006\n\002oj\020{\022\006\n\002om\020|\022\006\n\002or\020}\022\006\n\002os\020~\022\006\n\002pa"
-      "\020\177\022\007\n\002pi\020\200\001\022\007\n\002pl\020\201\001\022\007\n\002ps\020\202\001\022\007\n\002pt\020\203\001\022\007"
-      "\n\002qu\020\204\001\022\007\n\002rm\020\205\001\022\007\n\002rn\020\206\001\022\007\n\002ro\020\207\001\022\007\n\002ru"
-      "\020\210\001\022\007\n\002rw\020\211\001\022\007\n\002sa\020\212\001\022\007\n\002sc\020\213\001\022\007\n\002sd\020\214\001\022"
-      "\007\n\002se\020\215\001\022\007\n\002sg\020\216\001\022\007\n\002si\020\217\001\022\007\n\002sk\020\220\001\022\007\n\002s"
-      "l\020\221\001\022\007\n\002sm\020\222\001\022\007\n\002sn\020\223\001\022\007\n\002so\020\224\001\022\007\n\002sq\020\225\001"
-      "\022\007\n\002sr\020\226\001\022\007\n\002ss\020\227\001\022\007\n\002st\020\230\001\022\007\n\002su\020\231\001\022\007\n\002"
-      "sv\020\232\001\022\007\n\002sw\020\233\001\022\007\n\002ta\020\234\001\022\007\n\002te\020\235\001\022\007\n\002tg\020\236"
-      "\001\022\007\n\002th\020\237\001\022\007\n\002ti\020\240\001\022\007\n\002tk\020\241\001\022\007\n\002tl\020\242\001\022\007\n"
-      "\002tn\020\243\001\022\007\n\002to\020\244\001\022\007\n\002tr\020\245\001\022\007\n\002ts\020\246\001\022\007\n\002tt\020"
-      "\247\001\022\007\n\002tw\020\250\001\022\007\n\002ty\020\251\001\022\007\n\002ug\020\252\001\022\007\n\002uk\020\253\001\022\007"
-      "\n\002ur\020\254\001\022\007\n\002uz\020\255\001\022\007\n\002ve\020\256\001\022\007\n\002vi\020\257\001\022\007\n\002vo"
-      "\020\260\001\022\007\n\002wa\020\261\001\022\007\n\002wo\020\262\001\022\007\n\002xh\020\263\001\022\007\n\002yi\020\264\001\022"
-      "\007\n\002yo\020\265\001\022\007\n\002za\020\266\001\022\007\n\002zh\020\267\001\022\007\n\002zu\020\270\001\"\252\020\n\006"
-      "Script\022\022\n\016UNKNOWN_SCRIPT\020\000\022\010\n\004Adlm\020\001\022\010\n\004"
-      "Afak\020\002\022\010\n\004Aghb\020\003\022\010\n\004Ahom\020\004\022\010\n\004Arab\020\005\022\010\n\004"
-      "Aran\020\006\022\010\n\004Armi\020\007\022\010\n\004Armn\020\010\022\010\n\004Avst\020\t\022\010\n\004"
-      "Bali\020\n\022\010\n\004Bamu\020\013\022\010\n\004Bass\020\014\022\010\n\004Batk\020\r\022\010\n\004"
-      "Beng\020\016\022\010\n\004Bhks\020\017\022\010\n\004Blis\020\020\022\010\n\004Bopo\020\021\022\010\n\004"
-      "Brah\020\022\022\010\n\004Brai\020\023\022\010\n\004Bugi\020\024\022\010\n\004Buhd\020\025\022\010\n\004"
-      "Cakm\020\026\022\010\n\004Cans\020\027\022\010\n\004Cari\020\030\022\010\n\004Cham\020\031\022\010\n\004"
-      "Cher\020\032\022\010\n\004Cirt\020\033\022\010\n\004Copt\020\034\022\010\n\004Cpmn\020\035\022\010\n\004"
-      "Cprt\020\036\022\010\n\004Cyrl\020\037\022\010\n\004Cyrs\020 \022\010\n\004Deva\020!\022\010\n\004"
-      "Dogr\020\"\022\010\n\004Dsrt\020#\022\010\n\004Dupl\020$\022\010\n\004Egyd\020%\022\010\n\004"
-      "Egyh\020&\022\010\n\004Egyp\020\'\022\010\n\004Elba\020(\022\010\n\004Elym\020)\022\010\n\004"
-      "Ethi\020*\022\010\n\004Geok\020+\022\010\n\004Geor\020,\022\010\n\004Glag\020-\022\010\n\004"
-      "Gong\020.\022\010\n\004Gonm\020/\022\010\n\004Goth\0200\022\010\n\004Gran\0201\022\010\n\004"
-      "Grek\0202\022\010\n\004Gujr\0203\022\010\n\004Guru\0204\022\010\n\004Hanb\0205\022\010\n\004"
-      "Hang\0206\022\010\n\004Hani\0207\022\010\n\004Hano\0208\022\010\n\004Hans\0209\022\010\n\004"
-      "Hant\020:\022\010\n\004Hatr\020;\022\010\n\004Hebr\020<\022\010\n\004Hira\020=\022\010\n\004"
-      "Hluw\020>\022\010\n\004Hmng\020\?\022\010\n\004Hmnp\020@\022\010\n\004Hrkt\020A\022\010\n\004"
-      "Hung\020B\022\010\n\004Inds\020C\022\010\n\004Ital\020D\022\010\n\004Jamo\020E\022\010\n\004"
-      "Java\020F\022\010\n\004Jpan\020G\022\010\n\004Jurc\020H\022\010\n\004Kali\020I\022\010\n\004"
-      "Kana\020J\022\010\n\004Khar\020K\022\010\n\004Khmr\020L\022\010\n\004Khoj\020M\022\010\n\004"
-      "Kitl\020N\022\010\n\004Kits\020O\022\010\n\004Knda\020P\022\010\n\004Kore\020Q\022\010\n\004"
-      "Kpel\020R\022\010\n\004Kthi\020S\022\010\n\004Lana\020T\022\010\n\004Laoo\020U\022\010\n\004"
-      "Latf\020V\022\010\n\004Latg\020W\022\010\n\004Latn\020X\022\010\n\004Leke\020Y\022\010\n\004"
-      "Lepc\020Z\022\010\n\004Limb\020[\022\010\n\004Lina\020\\\022\010\n\004Linb\020]\022\010\n\004"
-      "Lisu\020^\022\010\n\004Loma\020_\022\010\n\004Lyci\020`\022\010\n\004Lydi\020a\022\010\n\004"
-      "Mahj\020b\022\010\n\004Maka\020c\022\010\n\004Mand\020d\022\010\n\004Mani\020e\022\010\n\004"
-      "Marc\020f\022\010\n\004Maya\020g\022\010\n\004Medf\020h\022\010\n\004Mend\020i\022\010\n\004"
-      "Merc\020j\022\010\n\004Mero\020k\022\010\n\004Mlym\020l\022\010\n\004Modi\020m\022\010\n\004"
-      "Mong\020n\022\010\n\004Moon\020o\022\010\n\004Mroo\020p\022\010\n\004Mtei\020q\022\010\n\004"
-      "Mult\020r\022\010\n\004Mymr\020s\022\010\n\004Nand\020t\022\010\n\004Narb\020u\022\010\n\004"
-      "Nbat\020v\022\010\n\004Newa\020w\022\010\n\004Nkdb\020x\022\010\n\004Nkgb\020y\022\010\n\004"
-      "Nkoo\020z\022\010\n\004Nshu\020{\022\010\n\004Ogam\020|\022\010\n\004Olck\020}\022\010\n\004"
-      "Orkh\020~\022\010\n\004Orya\020\177\022\t\n\004Osge\020\200\001\022\t\n\004Osma\020\201\001\022\t"
-      "\n\004Palm\020\202\001\022\t\n\004Pauc\020\203\001\022\t\n\004Perm\020\204\001\022\t\n\004Phag\020"
-      "\205\001\022\t\n\004Phli\020\206\001\022\t\n\004Phlp\020\207\001\022\t\n\004Phlv\020\210\001\022\t\n\004P"
-      "hnx\020\211\001\022\t\n\004Plrd\020\212\001\022\t\n\004Piqd\020\213\001\022\t\n\004Prti\020\214\001\022"
-      "\t\n\004Qaaa\020\215\001\022\t\n\004Qabx\020\216\001\022\t\n\004Rjng\020\217\001\022\t\n\004Rohg"
-      "\020\220\001\022\t\n\004Roro\020\221\001\022\t\n\004Runr\020\222\001\022\t\n\004Samr\020\223\001\022\t\n\004"
-      "Sara\020\224\001\022\t\n\004Sarb\020\225\001\022\t\n\004Saur\020\226\001\022\t\n\004Sgnw\020\227\001"
-      "\022\t\n\004Shaw\020\230\001\022\t\n\004Shrd\020\231\001\022\t\n\004Shui\020\232\001\022\t\n\004Sid"
-      "d\020\233\001\022\t\n\004Sind\020\234\001\022\t\n\004Sinh\020\235\001\022\t\n\004Sogd\020\236\001\022\t\n"
-      "\004Sogo\020\237\001\022\t\n\004Sora\020\240\001\022\t\n\004Soyo\020\241\001\022\t\n\004Sund\020\242"
-      "\001\022\t\n\004Sylo\020\243\001\022\t\n\004Syrc\020\244\001\022\t\n\004Syre\020\245\001\022\t\n\004Sy"
-      "rj\020\246\001\022\t\n\004Syrn\020\247\001\022\t\n\004Tagb\020\250\001\022\t\n\004Takr\020\251\001\022\t"
-      "\n\004Tale\020\252\001\022\t\n\004Talu\020\253\001\022\t\n\004Taml\020\254\001\022\t\n\004Tang\020"
-      "\255\001\022\t\n\004Tavt\020\256\001\022\t\n\004Telu\020\257\001\022\t\n\004Teng\020\260\001\022\t\n\004T"
-      "fng\020\261\001\022\t\n\004Tglg\020\262\001\022\t\n\004Thaa\020\263\001\022\t\n\004Thai\020\264\001\022"
-      "\t\n\004Tibt\020\265\001\022\t\n\004Tirh\020\266\001\022\t\n\004Ugar\020\267\001\022\t\n\004Vaii"
-      "\020\270\001\022\t\n\004Visp\020\271\001\022\t\n\004Wara\020\272\001\022\t\n\004Wcho\020\273\001\022\t\n\004"
-      "Wole\020\274\001\022\t\n\004Xpeo\020\275\001\022\t\n\004Xsux\020\276\001\022\t\n\004Yiii\020\277\001"
-      "\022\t\n\004Zanb\020\300\001\022\t\n\004Zinh\020\301\001\022\t\n\004Zmth\020\302\001\022\t\n\004Zsy"
-      "e\020\303\001\022\t\n\004Zsym\020\304\001\022\t\n\004Zxxx\020\305\001\022\t\n\004Zyyy\020\306\001\022\t\n"
-      "\004Zzzz\020\307\001\"\354)\n\010Location\022%\n\007country\030\001 \001(\0162\024"
-      ".pb.Location.Country\022\r\n\005state\030\002 \001(\t\022\014\n\004c"
-      "ity\030\003 \001(\t\022\014\n\004code\030\004 \001(\t\022\020\n\010latitude\030\005 \001("
-      "\021\022\021\n\tlongitude\030\006 \001(\021\"\350(\n\007Country\022\023\n\017UNKN"
-      "OWN_COUNTRY\020\000\022\006\n\002AF\020\001\022\006\n\002AX\020\002\022\006\n\002AL\020\003\022\006\n"
-      "\002DZ\020\004\022\006\n\002AS\020\005\022\006\n\002AD\020\006\022\006\n\002AO\020\007\022\006\n\002AI\020\010\022\006\n"
-      "\002AQ\020\t\022\006\n\002AG\020\n\022\006\n\002AR\020\013\022\006\n\002AM\020\014\022\006\n\002AW\020\r\022\006\n"
-      "\002AU\020\016\022\006\n\002AT\020\017\022\006\n\002AZ\020\020\022\006\n\002BS\020\021\022\006\n\002BH\020\022\022\006\n"
-      "\002BD\020\023\022\006\n\002BB\020\024\022\006\n\002BY\020\025\022\006\n\002BE\020\026\022\006\n\002BZ\020\027\022\006\n"
-      "\002BJ\020\030\022\006\n\002BM\020\031\022\006\n\002BT\020\032\022\006\n\002BO\020\033\022\006\n\002BQ\020\034\022\006\n"
-      "\002BA\020\035\022\006\n\002BW\020\036\022\006\n\002BV\020\037\022\006\n\002BR\020 \022\006\n\002IO\020!\022\006\n"
-      "\002BN\020\"\022\006\n\002BG\020#\022\006\n\002BF\020$\022\006\n\002BI\020%\022\006\n\002KH\020&\022\006\n"
-      "\002CM\020\'\022\006\n\002CA\020(\022\006\n\002CV\020)\022\006\n\002KY\020*\022\006\n\002CF\020+\022\006\n"
-      "\002TD\020,\022\006\n\002CL\020-\022\006\n\002CN\020.\022\006\n\002CX\020/\022\006\n\002CC\0200\022\006\n"
-      "\002CO\0201\022\006\n\002KM\0202\022\006\n\002CG\0203\022\006\n\002CD\0204\022\006\n\002CK\0205\022\006\n"
-      "\002CR\0206\022\006\n\002CI\0207\022\006\n\002HR\0208\022\006\n\002CU\0209\022\006\n\002CW\020:\022\006\n"
-      "\002CY\020;\022\006\n\002CZ\020<\022\006\n\002DK\020=\022\006\n\002DJ\020>\022\006\n\002DM\020\?\022\006\n"
-      "\002DO\020@\022\006\n\002EC\020A\022\006\n\002EG\020B\022\006\n\002SV\020C\022\006\n\002GQ\020D\022\006\n"
-      "\002ER\020E\022\006\n\002EE\020F\022\006\n\002ET\020G\022\006\n\002FK\020H\022\006\n\002FO\020I\022\006\n"
-      "\002FJ\020J\022\006\n\002FI\020K\022\006\n\002FR\020L\022\006\n\002GF\020M\022\006\n\002PF\020N\022\006\n"
-      "\002TF\020O\022\006\n\002GA\020P\022\006\n\002GM\020Q\022\006\n\002GE\020R\022\006\n\002DE\020S\022\006\n"
-      "\002GH\020T\022\006\n\002GI\020U\022\006\n\002GR\020V\022\006\n\002GL\020W\022\006\n\002GD\020X\022\006\n"
-      "\002GP\020Y\022\006\n\002GU\020Z\022\006\n\002GT\020[\022\006\n\002GG\020\\\022\006\n\002GN\020]\022\006\n"
-      "\002GW\020^\022\006\n\002GY\020_\022\006\n\002HT\020`\022\006\n\002HM\020a\022\006\n\002VA\020b\022\006\n"
-      "\002HN\020c\022\006\n\002HK\020d\022\006\n\002HU\020e\022\006\n\002IS\020f\022\006\n\002IN\020g\022\006\n"
-      "\002ID\020h\022\006\n\002IR\020i\022\006\n\002IQ\020j\022\006\n\002IE\020k\022\006\n\002IM\020l\022\006\n"
-      "\002IL\020m\022\006\n\002IT\020n\022\006\n\002JM\020o\022\006\n\002JP\020p\022\006\n\002JE\020q\022\006\n"
-      "\002JO\020r\022\006\n\002KZ\020s\022\006\n\002KE\020t\022\006\n\002KI\020u\022\006\n\002KP\020v\022\006\n"
-      "\002KR\020w\022\006\n\002KW\020x\022\006\n\002KG\020y\022\006\n\002LA\020z\022\006\n\002LV\020{\022\006\n"
-      "\002LB\020|\022\006\n\002LS\020}\022\006\n\002LR\020~\022\006\n\002LY\020\177\022\007\n\002LI\020\200\001\022\007"
-      "\n\002LT\020\201\001\022\007\n\002LU\020\202\001\022\007\n\002MO\020\203\001\022\007\n\002MK\020\204\001\022\007\n\002MG"
-      "\020\205\001\022\007\n\002MW\020\206\001\022\007\n\002MY\020\207\001\022\007\n\002MV\020\210\001\022\007\n\002ML\020\211\001\022"
-      "\007\n\002MT\020\212\001\022\007\n\002MH\020\213\001\022\007\n\002MQ\020\214\001\022\007\n\002MR\020\215\001\022\007\n\002M"
-      "U\020\216\001\022\007\n\002YT\020\217\001\022\007\n\002MX\020\220\001\022\007\n\002FM\020\221\001\022\007\n\002MD\020\222\001"
-      "\022\007\n\002MC\020\223\001\022\007\n\002MN\020\224\001\022\007\n\002ME\020\225\001\022\007\n\002MS\020\226\001\022\007\n\002"
-      "MA\020\227\001\022\007\n\002MZ\020\230\001\022\007\n\002MM\020\231\001\022\007\n\002NA\020\232\001\022\007\n\002NR\020\233"
-      "\001\022\007\n\002NP\020\234\001\022\007\n\002NL\020\235\001\022\007\n\002NC\020\236\001\022\007\n\002NZ\020\237\001\022\007\n"
-      "\002NI\020\240\001\022\007\n\002NE\020\241\001\022\007\n\002NG\020\242\001\022\007\n\002NU\020\243\001\022\007\n\002NF\020"
-      "\244\001\022\007\n\002MP\020\245\001\022\007\n\002NO\020\246\001\022\007\n\002OM\020\247\001\022\007\n\002PK\020\250\001\022\007"
-      "\n\002PW\020\251\001\022\007\n\002PS\020\252\001\022\007\n\002PA\020\253\001\022\007\n\002PG\020\254\001\022\007\n\002PY"
-      "\020\255\001\022\007\n\002PE\020\256\001\022\007\n\002PH\020\257\001\022\007\n\002PN\020\260\001\022\007\n\002PL\020\261\001\022"
-      "\007\n\002PT\020\262\001\022\007\n\002PR\020\263\001\022\007\n\002QA\020\264\001\022\007\n\002RE\020\265\001\022\007\n\002R"
-      "O\020\266\001\022\007\n\002RU\020\267\001\022\007\n\002RW\020\270\001\022\007\n\002BL\020\271\001\022\007\n\002SH\020\272\001"
-      "\022\007\n\002KN\020\273\001\022\007\n\002LC\020\274\001\022\007\n\002MF\020\275\001\022\007\n\002PM\020\276\001\022\007\n\002"
-      "VC\020\277\001\022\007\n\002WS\020\300\001\022\007\n\002SM\020\301\001\022\007\n\002ST\020\302\001\022\007\n\002SA\020\303"
-      "\001\022\007\n\002SN\020\304\001\022\007\n\002RS\020\305\001\022\007\n\002SC\020\306\001\022\007\n\002SL\020\307\001\022\007\n"
-      "\002SG\020\310\001\022\007\n\002SX\020\311\001\022\007\n\002SK\020\312\001\022\007\n\002SI\020\313\001\022\007\n\002SB\020"
-      "\314\001\022\007\n\002SO\020\315\001\022\007\n\002ZA\020\316\001\022\007\n\002GS\020\317\001\022\007\n\002SS\020\320\001\022\007"
-      "\n\002ES\020\321\001\022\007\n\002LK\020\322\001\022\007\n\002SD\020\323\001\022\007\n\002SR\020\324\001\022\007\n\002SJ"
-      "\020\325\001\022\007\n\002SZ\020\326\001\022\007\n\002SE\020\327\001\022\007\n\002CH\020\330\001\022\007\n\002SY\020\331\001\022"
-      "\007\n\002TW\020\332\001\022\007\n\002TJ\020\333\001\022\007\n\002TZ\020\334\001\022\007\n\002TH\020\335\001\022\007\n\002T"
-      "L\020\336\001\022\007\n\002TG\020\337\001\022\007\n\002TK\020\340\001\022\007\n\002TO\020\341\001\022\007\n\002TT\020\342\001"
-      "\022\007\n\002TN\020\343\001\022\007\n\002TR\020\344\001\022\007\n\002TM\020\345\001\022\007\n\002TC\020\346\001\022\007\n\002"
-      "TV\020\347\001\022\007\n\002UG\020\350\001\022\007\n\002UA\020\351\001\022\007\n\002AE\020\352\001\022\007\n\002GB\020\353"
-      "\001\022\007\n\002US\020\354\001\022\007\n\002UM\020\355\001\022\007\n\002UY\020\356\001\022\007\n\002UZ\020\357\001\022\007\n"
-      "\002VU\020\360\001\022\007\n\002VE\020\361\001\022\007\n\002VN\020\362\001\022\007\n\002VG\020\363\001\022\007\n\002VI\020"
-      "\364\001\022\007\n\002WF\020\365\001\022\007\n\002EH\020\366\001\022\007\n\002YE\020\367\001\022\007\n\002ZM\020\370\001\022\007"
-      "\n\002ZW\020\371\001\022\t\n\004R001\020\372\001\022\t\n\004R002\020\373\001\022\t\n\004R015\020\374\001"
-      "\022\t\n\004R012\020\375\001\022\t\n\004R818\020\376\001\022\t\n\004R434\020\377\001\022\t\n\004R50"
-      "4\020\200\002\022\t\n\004R729\020\201\002\022\t\n\004R788\020\202\002\022\t\n\004R732\020\203\002\022\t\n"
-      "\004R202\020\204\002\022\t\n\004R014\020\205\002\022\t\n\004R086\020\206\002\022\t\n\004R108\020\207"
-      "\002\022\t\n\004R174\020\210\002\022\t\n\004R262\020\211\002\022\t\n\004R232\020\212\002\022\t\n\004R2"
-      "31\020\213\002\022\t\n\004R260\020\214\002\022\t\n\004R404\020\215\002\022\t\n\004R450\020\216\002\022\t"
-      "\n\004R454\020\217\002\022\t\n\004R480\020\220\002\022\t\n\004R175\020\221\002\022\t\n\004R508\020"
-      "\222\002\022\t\n\004R638\020\223\002\022\t\n\004R646\020\224\002\022\t\n\004R690\020\225\002\022\t\n\004R"
-      "706\020\226\002\022\t\n\004R728\020\227\002\022\t\n\004R800\020\230\002\022\t\n\004R834\020\231\002\022"
-      "\t\n\004R894\020\232\002\022\t\n\004R716\020\233\002\022\t\n\004R017\020\234\002\022\t\n\004R024"
-      "\020\235\002\022\t\n\004R120\020\236\002\022\t\n\004R140\020\237\002\022\t\n\004R148\020\240\002\022\t\n\004"
-      "R178\020\241\002\022\t\n\004R180\020\242\002\022\t\n\004R226\020\243\002\022\t\n\004R266\020\244\002"
-      "\022\t\n\004R678\020\245\002\022\t\n\004R018\020\246\002\022\t\n\004R072\020\247\002\022\t\n\004R74"
-      "8\020\250\002\022\t\n\004R426\020\251\002\022\t\n\004R516\020\252\002\022\t\n\004R710\020\253\002\022\t\n"
-      "\004R011\020\254\002\022\t\n\004R204\020\255\002\022\t\n\004R854\020\256\002\022\t\n\004R132\020\257"
-      "\002\022\t\n\004R384\020\260\002\022\t\n\004R270\020\261\002\022\t\n\004R288\020\262\002\022\t\n\004R3"
-      "24\020\263\002\022\t\n\004R624\020\264\002\022\t\n\004R430\020\265\002\022\t\n\004R466\020\266\002\022\t"
-      "\n\004R478\020\267\002\022\t\n\004R562\020\270\002\022\t\n\004R566\020\271\002\022\t\n\004R654\020"
-      "\272\002\022\t\n\004R686\020\273\002\022\t\n\004R694\020\274\002\022\t\n\004R768\020\275\002\022\t\n\004R"
-      "019\020\276\002\022\t\n\004R419\020\277\002\022\t\n\004R029\020\300\002\022\t\n\004R660\020\301\002\022"
-      "\t\n\004R028\020\302\002\022\t\n\004R533\020\303\002\022\t\n\004R044\020\304\002\022\t\n\004R052"
-      "\020\305\002\022\t\n\004R535\020\306\002\022\t\n\004R092\020\307\002\022\t\n\004R136\020\310\002\022\t\n\004"
-      "R192\020\311\002\022\t\n\004R531\020\312\002\022\t\n\004R212\020\313\002\022\t\n\004R214\020\314\002"
-      "\022\t\n\004R308\020\315\002\022\t\n\004R312\020\316\002\022\t\n\004R332\020\317\002\022\t\n\004R38"
-      "8\020\320\002\022\t\n\004R474\020\321\002\022\t\n\004R500\020\322\002\022\t\n\004R630\020\323\002\022\t\n"
-      "\004R652\020\324\002\022\t\n\004R659\020\325\002\022\t\n\004R662\020\326\002\022\t\n\004R663\020\327"
-      "\002\022\t\n\004R670\020\330\002\022\t\n\004R534\020\331\002\022\t\n\004R780\020\332\002\022\t\n\004R7"
-      "96\020\333\002\022\t\n\004R850\020\334\002\022\t\n\004R013\020\335\002\022\t\n\004R084\020\336\002\022\t"
-      "\n\004R188\020\337\002\022\t\n\004R222\020\340\002\022\t\n\004R320\020\341\002\022\t\n\004R340\020"
-      "\342\002\022\t\n\004R484\020\343\002\022\t\n\004R558\020\344\002\022\t\n\004R591\020\345\002\022\t\n\004R"
-      "005\020\346\002\022\t\n\004R032\020\347\002\022\t\n\004R068\020\350\002\022\t\n\004R074\020\351\002\022"
-      "\t\n\004R076\020\352\002\022\t\n\004R152\020\353\002\022\t\n\004R170\020\354\002\022\t\n\004R218"
-      "\020\355\002\022\t\n\004R238\020\356\002\022\t\n\004R254\020\357\002\022\t\n\004R328\020\360\002\022\t\n\004"
-      "R600\020\361\002\022\t\n\004R604\020\362\002\022\t\n\004R239\020\363\002\022\t\n\004R740\020\364\002"
-      "\022\t\n\004R858\020\365\002\022\t\n\004R862\020\366\002\022\t\n\004R021\020\367\002\022\t\n\004R06"
-      "0\020\370\002\022\t\n\004R124\020\371\002\022\t\n\004R304\020\372\002\022\t\n\004R666\020\373\002\022\t\n"
-      "\004R840\020\374\002\022\t\n\004R010\020\375\002\022\t\n\004R142\020\376\002\022\t\n\004R143\020\377"
-      "\002\022\t\n\004R398\020\200\003\022\t\n\004R417\020\201\003\022\t\n\004R762\020\202\003\022\t\n\004R7"
-      "95\020\203\003\022\t\n\004R860\020\204\003\022\t\n\004R030\020\205\003\022\t\n\004R156\020\206\003\022\t"
-      "\n\004R344\020\207\003\022\t\n\004R446\020\210\003\022\t\n\004R408\020\211\003\022\t\n\004R392\020"
-      "\212\003\022\t\n\004R496\020\213\003\022\t\n\004R410\020\214\003\022\t\n\004R035\020\215\003\022\t\n\004R"
-      "096\020\216\003\022\t\n\004R116\020\217\003\022\t\n\004R360\020\220\003\022\t\n\004R418\020\221\003\022"
-      "\t\n\004R458\020\222\003\022\t\n\004R104\020\223\003\022\t\n\004R608\020\224\003\022\t\n\004R702"
-      "\020\225\003\022\t\n\004R764\020\226\003\022\t\n\004R626\020\227\003\022\t\n\004R704\020\230\003\022\t\n\004"
-      "R034\020\231\003\022\t\n\004R004\020\232\003\022\t\n\004R050\020\233\003\022\t\n\004R064\020\234\003"
-      "\022\t\n\004R356\020\235\003\022\t\n\004R364\020\236\003\022\t\n\004R462\020\237\003\022\t\n\004R52"
-      "4\020\240\003\022\t\n\004R586\020\241\003\022\t\n\004R144\020\242\003\022\t\n\004R145\020\243\003\022\t\n"
-      "\004R051\020\244\003\022\t\n\004R031\020\245\003\022\t\n\004R048\020\246\003\022\t\n\004R196\020\247"
-      "\003\022\t\n\004R268\020\250\003\022\t\n\004R368\020\251\003\022\t\n\004R376\020\252\003\022\t\n\004R4"
-      "00\020\253\003\022\t\n\004R414\020\254\003\022\t\n\004R422\020\255\003\022\t\n\004R512\020\256\003\022\t"
-      "\n\004R634\020\257\003\022\t\n\004R682\020\260\003\022\t\n\004R275\020\261\003\022\t\n\004R760\020"
-      "\262\003\022\t\n\004R792\020\263\003\022\t\n\004R784\020\264\003\022\t\n\004R887\020\265\003\022\t\n\004R"
-      "150\020\266\003\022\t\n\004R151\020\267\003\022\t\n\004R112\020\270\003\022\t\n\004R100\020\271\003\022"
-      "\t\n\004R203\020\272\003\022\t\n\004R348\020\273\003\022\t\n\004R616\020\274\003\022\t\n\004R498"
-      "\020\275\003\022\t\n\004R642\020\276\003\022\t\n\004R643\020\277\003\022\t\n\004R703\020\300\003\022\t\n\004"
-      "R804\020\301\003\022\t\n\004R154\020\302\003\022\t\n\004R248\020\303\003\022\t\n\004R830\020\304\003"
-      "\022\t\n\004R831\020\305\003\022\t\n\004R832\020\306\003\022\t\n\004R680\020\307\003\022\t\n\004R20"
-      "8\020\310\003\022\t\n\004R233\020\311\003\022\t\n\004R234\020\312\003\022\t\n\004R246\020\313\003\022\t\n"
-      "\004R352\020\314\003\022\t\n\004R372\020\315\003\022\t\n\004R833\020\316\003\022\t\n\004R428\020\317"
-      "\003\022\t\n\004R440\020\320\003\022\t\n\004R578\020\321\003\022\t\n\004R744\020\322\003\022\t\n\004R7"
-      "52\020\323\003\022\t\n\004R826\020\324\003\022\t\n\004R039\020\325\003\022\t\n\004R008\020\326\003\022\t"
-      "\n\004R020\020\327\003\022\t\n\004R070\020\330\003\022\t\n\004R191\020\331\003\022\t\n\004R292\020"
-      "\332\003\022\t\n\004R300\020\333\003\022\t\n\004R336\020\334\003\022\t\n\004R380\020\335\003\022\t\n\004R"
-      "470\020\336\003\022\t\n\004R499\020\337\003\022\t\n\004R807\020\340\003\022\t\n\004R620\020\341\003\022"
-      "\t\n\004R674\020\342\003\022\t\n\004R688\020\343\003\022\t\n\004R705\020\344\003\022\t\n\004R724"
-      "\020\345\003\022\t\n\004R155\020\346\003\022\t\n\004R040\020\347\003\022\t\n\004R056\020\350\003\022\t\n\004"
-      "R250\020\351\003\022\t\n\004R276\020\352\003\022\t\n\004R438\020\353\003\022\t\n\004R442\020\354\003"
-      "\022\t\n\004R492\020\355\003\022\t\n\004R528\020\356\003\022\t\n\004R756\020\357\003\022\t\n\004R00"
-      "9\020\360\003\022\t\n\004R053\020\361\003\022\t\n\004R036\020\362\003\022\t\n\004R162\020\363\003\022\t\n"
-      "\004R166\020\364\003\022\t\n\004R334\020\365\003\022\t\n\004R554\020\366\003\022\t\n\004R574\020\367"
-      "\003\022\t\n\004R054\020\370\003\022\t\n\004R242\020\371\003\022\t\n\004R540\020\372\003\022\t\n\004R5"
-      "98\020\373\003\022\t\n\004R090\020\374\003\022\t\n\004R548\020\375\003\022\t\n\004R057\020\376\003\022\t"
-      "\n\004R316\020\377\003\022\t\n\004R296\020\200\004\022\t\n\004R584\020\201\004\022\t\n\004R583\020"
-      "\202\004\022\t\n\004R520\020\203\004\022\t\n\004R580\020\204\004\022\t\n\004R585\020\205\004\022\t\n\004R"
-      "581\020\206\004\022\t\n\004R061\020\207\004\022\t\n\004R016\020\210\004\022\t\n\004R184\020\211\004\022"
-      "\t\n\004R258\020\212\004\022\t\n\004R570\020\213\004\022\t\n\004R612\020\214\004\022\t\n\004R882"
-      "\020\215\004\022\t\n\004R772\020\216\004\022\t\n\004R776\020\217\004\022\t\n\004R798\020\220\004\022\t\n\004"
-      "R876\020\221\004B\004Z\002./b\006proto3"
+      "\n\tlocations\030\r \003(\0132\014.pb.LocationB\006\n\004type\""
+      "\242\002\n\006Stream\022\032\n\006source\030\001 \001(\0132\n.pb.Source\022\016"
+      "\n\006author\030\002 \001(\t\022\017\n\007license\030\003 \001(\t\022\023\n\013licen"
+      "se_url\030\004 \001(\t\022\024\n\014release_time\030\005 \001(\003\022\024\n\003fe"
+      "e\030\006 \001(\0132\007.pb.Fee\022\032\n\005image\030\n \001(\0132\t.pb.Ima"
+      "geH\000\022\032\n\005video\030\013 \001(\0132\t.pb.VideoH\000\022\032\n\005audi"
+      "o\030\014 \001(\0132\t.pb.AudioH\000\022 \n\010software\030\r \001(\0132\014"
+      ".pb.SoftwareH\000\022\034\n\006guncad\030\016 \001(\0132\n.pb.Gunc"
+      "adH\000B\006\n\004type\"}\n\007Channel\022\022\n\npublic_key\030\001 "
+      "\001(\014\022\r\n\005email\030\002 \001(\t\022\023\n\013website_url\030\003 \001(\t\022"
+      "\031\n\005cover\030\004 \001(\0132\n.pb.Source\022\037\n\010featured\030\005"
+      " \001(\0132\r.pb.ClaimList\"$\n\016ClaimReference\022\022\n"
+      "\nclaim_hash\030\001 \001(\014\"\220\001\n\tClaimList\022)\n\tlist_"
+      "type\030\001 \001(\0162\026.pb.ClaimList.ListType\022,\n\020cl"
+      "aim_references\030\002 \003(\0132\022.pb.ClaimReference"
+      "\"*\n\010ListType\022\016\n\nCOLLECTION\020\000\022\016\n\nDERIVATI"
+      "ON\020\002\"y\n\006Source\022\014\n\004hash\030\001 \001(\014\022\014\n\004name\030\002 \001"
+      "(\t\022\014\n\004size\030\003 \001(\004\022\022\n\nmedia_type\030\004 \001(\t\022\013\n\003"
+      "url\030\005 \001(\t\022\017\n\007sd_hash\030\006 \001(\014\022\023\n\013bt_infohas"
+      "h\030\007 \001(\014\"\207\001\n\003Fee\022\"\n\010currency\030\001 \001(\0162\020.pb.F"
+      "ee.Currency\022\017\n\007address\030\002 \001(\014\022\016\n\006amount\030\003"
+      " \001(\004\";\n\010Currency\022\024\n\020UNKNOWN_CURRENCY\020\000\022\007"
+      "\n\003LBC\020\001\022\007\n\003BTC\020\002\022\007\n\003USD\020\003\"&\n\005Image\022\r\n\005wi"
+      "dth\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"R\n\005Video\022\r\n\005wi"
+      "dth\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\022\020\n\010duration\030\003 "
+      "\001(\r\022\030\n\005audio\030\017 \001(\0132\t.pb.Audio\"\031\n\005Audio\022\020"
+      "\n\010duration\030\001 \001(\r\"\322\001\n\006Guncad\022\027\n\017guncad_ca"
+      "tegory\030\004 \003(\t\022\024\n\014firearm_type\030\005 \003(\t\022\030\n\020fi"
+      "rearm_platform\030\006 \003(\t\022\024\n\014firearm_part\030\007 \003"
+      "(\t\022\027\n\017firearm_caliber\030\010 \003(\t\022\032\n\022fabricati"
+      "on_method\030\t \003(\t\022\031\n\021fabrication_tools\030\n \003"
+      "(\t\022\031\n\021original_claim_id\030\013 \003(\t\"l\n\010Softwar"
+      "e\022\n\n\002os\030\001 \001(\t\"T\n\002OS\022\016\n\nUNKNOWN_OS\020\000\022\007\n\003A"
+      "NY\020\001\022\t\n\005LINUX\020\002\022\013\n\007WINDOWS\020\003\022\007\n\003MAC\020\004\022\013\n"
+      "\007ANDROID\020\005\022\007\n\003IOS\020\006\"\307\035\n\010Language\022\'\n\010lang"
+      "uage\030\001 \001(\0162\025.pb.Language.Language\022#\n\006scr"
+      "ipt\030\002 \001(\0162\023.pb.Language.Script\022$\n\006region"
+      "\030\003 \001(\0162\024.pb.Location.Country\"\231\014\n\010Languag"
+      "e\022\024\n\020UNKNOWN_LANGUAGE\020\000\022\006\n\002en\020\001\022\006\n\002aa\020\002\022"
+      "\006\n\002ab\020\003\022\006\n\002ae\020\004\022\006\n\002af\020\005\022\006\n\002ak\020\006\022\006\n\002am\020\007\022"
+      "\006\n\002an\020\010\022\006\n\002ar\020\t\022\006\n\002as\020\n\022\006\n\002av\020\013\022\006\n\002ay\020\014\022"
+      "\006\n\002az\020\r\022\006\n\002ba\020\016\022\006\n\002be\020\017\022\006\n\002bg\020\020\022\006\n\002bh\020\021\022"
+      "\006\n\002bi\020\022\022\006\n\002bm\020\023\022\006\n\002bn\020\024\022\006\n\002bo\020\025\022\006\n\002br\020\026\022"
+      "\006\n\002bs\020\027\022\006\n\002ca\020\030\022\006\n\002ce\020\031\022\006\n\002ch\020\032\022\006\n\002co\020\033\022"
+      "\006\n\002cr\020\034\022\006\n\002cs\020\035\022\006\n\002cu\020\036\022\006\n\002cv\020\037\022\006\n\002cy\020 \022"
+      "\006\n\002da\020!\022\006\n\002de\020\"\022\006\n\002dv\020#\022\006\n\002dz\020$\022\006\n\002ee\020%\022"
+      "\006\n\002el\020&\022\006\n\002eo\020\'\022\006\n\002es\020(\022\006\n\002et\020)\022\006\n\002eu\020*\022"
+      "\006\n\002fa\020+\022\006\n\002ff\020,\022\006\n\002fi\020-\022\006\n\002fj\020.\022\006\n\002fo\020/\022"
+      "\006\n\002fr\0200\022\006\n\002fy\0201\022\006\n\002ga\0202\022\006\n\002gd\0203\022\006\n\002gl\0204\022"
+      "\006\n\002gn\0205\022\006\n\002gu\0206\022\006\n\002gv\0207\022\006\n\002ha\0208\022\006\n\002he\0209\022"
+      "\006\n\002hi\020:\022\006\n\002ho\020;\022\006\n\002hr\020<\022\006\n\002ht\020=\022\006\n\002hu\020>\022"
+      "\006\n\002hy\020\?\022\006\n\002hz\020@\022\006\n\002ia\020A\022\006\n\002id\020B\022\006\n\002ie\020C\022"
+      "\006\n\002ig\020D\022\006\n\002ii\020E\022\006\n\002ik\020F\022\006\n\002io\020G\022\006\n\002is\020H\022"
+      "\006\n\002it\020I\022\006\n\002iu\020J\022\006\n\002ja\020K\022\006\n\002jv\020L\022\006\n\002ka\020M\022"
+      "\006\n\002kg\020N\022\006\n\002ki\020O\022\006\n\002kj\020P\022\006\n\002kk\020Q\022\006\n\002kl\020R\022"
+      "\006\n\002km\020S\022\006\n\002kn\020T\022\006\n\002ko\020U\022\006\n\002kr\020V\022\006\n\002ks\020W\022"
+      "\006\n\002ku\020X\022\006\n\002kv\020Y\022\006\n\002kw\020Z\022\006\n\002ky\020[\022\006\n\002la\020\\\022"
+      "\006\n\002lb\020]\022\006\n\002lg\020^\022\006\n\002li\020_\022\006\n\002ln\020`\022\006\n\002lo\020a\022"
+      "\006\n\002lt\020b\022\006\n\002lu\020c\022\006\n\002lv\020d\022\006\n\002mg\020e\022\006\n\002mh\020f\022"
+      "\006\n\002mi\020g\022\006\n\002mk\020h\022\006\n\002ml\020i\022\006\n\002mn\020j\022\006\n\002mr\020k\022"
+      "\006\n\002ms\020l\022\006\n\002mt\020m\022\006\n\002my\020n\022\006\n\002na\020o\022\006\n\002nb\020p\022"
+      "\006\n\002nd\020q\022\006\n\002ne\020r\022\006\n\002ng\020s\022\006\n\002nl\020t\022\006\n\002nn\020u\022"
+      "\006\n\002no\020v\022\006\n\002nr\020w\022\006\n\002nv\020x\022\006\n\002ny\020y\022\006\n\002oc\020z\022"
+      "\006\n\002oj\020{\022\006\n\002om\020|\022\006\n\002or\020}\022\006\n\002os\020~\022\006\n\002pa\020\177\022"
+      "\007\n\002pi\020\200\001\022\007\n\002pl\020\201\001\022\007\n\002ps\020\202\001\022\007\n\002pt\020\203\001\022\007\n\002q"
+      "u\020\204\001\022\007\n\002rm\020\205\001\022\007\n\002rn\020\206\001\022\007\n\002ro\020\207\001\022\007\n\002ru\020\210\001"
+      "\022\007\n\002rw\020\211\001\022\007\n\002sa\020\212\001\022\007\n\002sc\020\213\001\022\007\n\002sd\020\214\001\022\007\n\002"
+      "se\020\215\001\022\007\n\002sg\020\216\001\022\007\n\002si\020\217\001\022\007\n\002sk\020\220\001\022\007\n\002sl\020\221"
+      "\001\022\007\n\002sm\020\222\001\022\007\n\002sn\020\223\001\022\007\n\002so\020\224\001\022\007\n\002sq\020\225\001\022\007\n"
+      "\002sr\020\226\001\022\007\n\002ss\020\227\001\022\007\n\002st\020\230\001\022\007\n\002su\020\231\001\022\007\n\002sv\020"
+      "\232\001\022\007\n\002sw\020\233\001\022\007\n\002ta\020\234\001\022\007\n\002te\020\235\001\022\007\n\002tg\020\236\001\022\007"
+      "\n\002th\020\237\001\022\007\n\002ti\020\240\001\022\007\n\002tk\020\241\001\022\007\n\002tl\020\242\001\022\007\n\002tn"
+      "\020\243\001\022\007\n\002to\020\244\001\022\007\n\002tr\020\245\001\022\007\n\002ts\020\246\001\022\007\n\002tt\020\247\001\022"
+      "\007\n\002tw\020\250\001\022\007\n\002ty\020\251\001\022\007\n\002ug\020\252\001\022\007\n\002uk\020\253\001\022\007\n\002u"
+      "r\020\254\001\022\007\n\002uz\020\255\001\022\007\n\002ve\020\256\001\022\007\n\002vi\020\257\001\022\007\n\002vo\020\260\001"
+      "\022\007\n\002wa\020\261\001\022\007\n\002wo\020\262\001\022\007\n\002xh\020\263\001\022\007\n\002yi\020\264\001\022\007\n\002"
+      "yo\020\265\001\022\007\n\002za\020\266\001\022\007\n\002zh\020\267\001\022\007\n\002zu\020\270\001\"\252\020\n\006Scr"
+      "ipt\022\022\n\016UNKNOWN_SCRIPT\020\000\022\010\n\004Adlm\020\001\022\010\n\004Afa"
+      "k\020\002\022\010\n\004Aghb\020\003\022\010\n\004Ahom\020\004\022\010\n\004Arab\020\005\022\010\n\004Ara"
+      "n\020\006\022\010\n\004Armi\020\007\022\010\n\004Armn\020\010\022\010\n\004Avst\020\t\022\010\n\004Bal"
+      "i\020\n\022\010\n\004Bamu\020\013\022\010\n\004Bass\020\014\022\010\n\004Batk\020\r\022\010\n\004Ben"
+      "g\020\016\022\010\n\004Bhks\020\017\022\010\n\004Blis\020\020\022\010\n\004Bopo\020\021\022\010\n\004Bra"
+      "h\020\022\022\010\n\004Brai\020\023\022\010\n\004Bugi\020\024\022\010\n\004Buhd\020\025\022\010\n\004Cak"
+      "m\020\026\022\010\n\004Cans\020\027\022\010\n\004Cari\020\030\022\010\n\004Cham\020\031\022\010\n\004Che"
+      "r\020\032\022\010\n\004Cirt\020\033\022\010\n\004Copt\020\034\022\010\n\004Cpmn\020\035\022\010\n\004Cpr"
+      "t\020\036\022\010\n\004Cyrl\020\037\022\010\n\004Cyrs\020 \022\010\n\004Deva\020!\022\010\n\004Dog"
+      "r\020\"\022\010\n\004Dsrt\020#\022\010\n\004Dupl\020$\022\010\n\004Egyd\020%\022\010\n\004Egy"
+      "h\020&\022\010\n\004Egyp\020\'\022\010\n\004Elba\020(\022\010\n\004Elym\020)\022\010\n\004Eth"
+      "i\020*\022\010\n\004Geok\020+\022\010\n\004Geor\020,\022\010\n\004Glag\020-\022\010\n\004Gon"
+      "g\020.\022\010\n\004Gonm\020/\022\010\n\004Goth\0200\022\010\n\004Gran\0201\022\010\n\004Gre"
+      "k\0202\022\010\n\004Gujr\0203\022\010\n\004Guru\0204\022\010\n\004Hanb\0205\022\010\n\004Han"
+      "g\0206\022\010\n\004Hani\0207\022\010\n\004Hano\0208\022\010\n\004Hans\0209\022\010\n\004Han"
+      "t\020:\022\010\n\004Hatr\020;\022\010\n\004Hebr\020<\022\010\n\004Hira\020=\022\010\n\004Hlu"
+      "w\020>\022\010\n\004Hmng\020\?\022\010\n\004Hmnp\020@\022\010\n\004Hrkt\020A\022\010\n\004Hun"
+      "g\020B\022\010\n\004Inds\020C\022\010\n\004Ital\020D\022\010\n\004Jamo\020E\022\010\n\004Jav"
+      "a\020F\022\010\n\004Jpan\020G\022\010\n\004Jurc\020H\022\010\n\004Kali\020I\022\010\n\004Kan"
+      "a\020J\022\010\n\004Khar\020K\022\010\n\004Khmr\020L\022\010\n\004Khoj\020M\022\010\n\004Kit"
+      "l\020N\022\010\n\004Kits\020O\022\010\n\004Knda\020P\022\010\n\004Kore\020Q\022\010\n\004Kpe"
+      "l\020R\022\010\n\004Kthi\020S\022\010\n\004Lana\020T\022\010\n\004Laoo\020U\022\010\n\004Lat"
+      "f\020V\022\010\n\004Latg\020W\022\010\n\004Latn\020X\022\010\n\004Leke\020Y\022\010\n\004Lep"
+      "c\020Z\022\010\n\004Limb\020[\022\010\n\004Lina\020\\\022\010\n\004Linb\020]\022\010\n\004Lis"
+      "u\020^\022\010\n\004Loma\020_\022\010\n\004Lyci\020`\022\010\n\004Lydi\020a\022\010\n\004Mah"
+      "j\020b\022\010\n\004Maka\020c\022\010\n\004Mand\020d\022\010\n\004Mani\020e\022\010\n\004Mar"
+      "c\020f\022\010\n\004Maya\020g\022\010\n\004Medf\020h\022\010\n\004Mend\020i\022\010\n\004Mer"
+      "c\020j\022\010\n\004Mero\020k\022\010\n\004Mlym\020l\022\010\n\004Modi\020m\022\010\n\004Mon"
+      "g\020n\022\010\n\004Moon\020o\022\010\n\004Mroo\020p\022\010\n\004Mtei\020q\022\010\n\004Mul"
+      "t\020r\022\010\n\004Mymr\020s\022\010\n\004Nand\020t\022\010\n\004Narb\020u\022\010\n\004Nba"
+      "t\020v\022\010\n\004Newa\020w\022\010\n\004Nkdb\020x\022\010\n\004Nkgb\020y\022\010\n\004Nko"
+      "o\020z\022\010\n\004Nshu\020{\022\010\n\004Ogam\020|\022\010\n\004Olck\020}\022\010\n\004Ork"
+      "h\020~\022\010\n\004Orya\020\177\022\t\n\004Osge\020\200\001\022\t\n\004Osma\020\201\001\022\t\n\004P"
+      "alm\020\202\001\022\t\n\004Pauc\020\203\001\022\t\n\004Perm\020\204\001\022\t\n\004Phag\020\205\001\022"
+      "\t\n\004Phli\020\206\001\022\t\n\004Phlp\020\207\001\022\t\n\004Phlv\020\210\001\022\t\n\004Phnx"
+      "\020\211\001\022\t\n\004Plrd\020\212\001\022\t\n\004Piqd\020\213\001\022\t\n\004Prti\020\214\001\022\t\n\004"
+      "Qaaa\020\215\001\022\t\n\004Qabx\020\216\001\022\t\n\004Rjng\020\217\001\022\t\n\004Rohg\020\220\001"
+      "\022\t\n\004Roro\020\221\001\022\t\n\004Runr\020\222\001\022\t\n\004Samr\020\223\001\022\t\n\004Sar"
+      "a\020\224\001\022\t\n\004Sarb\020\225\001\022\t\n\004Saur\020\226\001\022\t\n\004Sgnw\020\227\001\022\t\n"
+      "\004Shaw\020\230\001\022\t\n\004Shrd\020\231\001\022\t\n\004Shui\020\232\001\022\t\n\004Sidd\020\233"
+      "\001\022\t\n\004Sind\020\234\001\022\t\n\004Sinh\020\235\001\022\t\n\004Sogd\020\236\001\022\t\n\004So"
+      "go\020\237\001\022\t\n\004Sora\020\240\001\022\t\n\004Soyo\020\241\001\022\t\n\004Sund\020\242\001\022\t"
+      "\n\004Sylo\020\243\001\022\t\n\004Syrc\020\244\001\022\t\n\004Syre\020\245\001\022\t\n\004Syrj\020"
+      "\246\001\022\t\n\004Syrn\020\247\001\022\t\n\004Tagb\020\250\001\022\t\n\004Takr\020\251\001\022\t\n\004T"
+      "ale\020\252\001\022\t\n\004Talu\020\253\001\022\t\n\004Taml\020\254\001\022\t\n\004Tang\020\255\001\022"
+      "\t\n\004Tavt\020\256\001\022\t\n\004Telu\020\257\001\022\t\n\004Teng\020\260\001\022\t\n\004Tfng"
+      "\020\261\001\022\t\n\004Tglg\020\262\001\022\t\n\004Thaa\020\263\001\022\t\n\004Thai\020\264\001\022\t\n\004"
+      "Tibt\020\265\001\022\t\n\004Tirh\020\266\001\022\t\n\004Ugar\020\267\001\022\t\n\004Vaii\020\270\001"
+      "\022\t\n\004Visp\020\271\001\022\t\n\004Wara\020\272\001\022\t\n\004Wcho\020\273\001\022\t\n\004Wol"
+      "e\020\274\001\022\t\n\004Xpeo\020\275\001\022\t\n\004Xsux\020\276\001\022\t\n\004Yiii\020\277\001\022\t\n"
+      "\004Zanb\020\300\001\022\t\n\004Zinh\020\301\001\022\t\n\004Zmth\020\302\001\022\t\n\004Zsye\020\303"
+      "\001\022\t\n\004Zsym\020\304\001\022\t\n\004Zxxx\020\305\001\022\t\n\004Zyyy\020\306\001\022\t\n\004Zz"
+      "zz\020\307\001\"\354)\n\010Location\022%\n\007country\030\001 \001(\0162\024.pb"
+      ".Location.Country\022\r\n\005state\030\002 \001(\t\022\014\n\004city"
+      "\030\003 \001(\t\022\014\n\004code\030\004 \001(\t\022\020\n\010latitude\030\005 \001(\021\022\021"
+      "\n\tlongitude\030\006 \001(\021\"\350(\n\007Country\022\023\n\017UNKNOWN"
+      "_COUNTRY\020\000\022\006\n\002AF\020\001\022\006\n\002AX\020\002\022\006\n\002AL\020\003\022\006\n\002DZ"
+      "\020\004\022\006\n\002AS\020\005\022\006\n\002AD\020\006\022\006\n\002AO\020\007\022\006\n\002AI\020\010\022\006\n\002AQ"
+      "\020\t\022\006\n\002AG\020\n\022\006\n\002AR\020\013\022\006\n\002AM\020\014\022\006\n\002AW\020\r\022\006\n\002AU"
+      "\020\016\022\006\n\002AT\020\017\022\006\n\002AZ\020\020\022\006\n\002BS\020\021\022\006\n\002BH\020\022\022\006\n\002BD"
+      "\020\023\022\006\n\002BB\020\024\022\006\n\002BY\020\025\022\006\n\002BE\020\026\022\006\n\002BZ\020\027\022\006\n\002BJ"
+      "\020\030\022\006\n\002BM\020\031\022\006\n\002BT\020\032\022\006\n\002BO\020\033\022\006\n\002BQ\020\034\022\006\n\002BA"
+      "\020\035\022\006\n\002BW\020\036\022\006\n\002BV\020\037\022\006\n\002BR\020 \022\006\n\002IO\020!\022\006\n\002BN"
+      "\020\"\022\006\n\002BG\020#\022\006\n\002BF\020$\022\006\n\002BI\020%\022\006\n\002KH\020&\022\006\n\002CM"
+      "\020\'\022\006\n\002CA\020(\022\006\n\002CV\020)\022\006\n\002KY\020*\022\006\n\002CF\020+\022\006\n\002TD"
+      "\020,\022\006\n\002CL\020-\022\006\n\002CN\020.\022\006\n\002CX\020/\022\006\n\002CC\0200\022\006\n\002CO"
+      "\0201\022\006\n\002KM\0202\022\006\n\002CG\0203\022\006\n\002CD\0204\022\006\n\002CK\0205\022\006\n\002CR"
+      "\0206\022\006\n\002CI\0207\022\006\n\002HR\0208\022\006\n\002CU\0209\022\006\n\002CW\020:\022\006\n\002CY"
+      "\020;\022\006\n\002CZ\020<\022\006\n\002DK\020=\022\006\n\002DJ\020>\022\006\n\002DM\020\?\022\006\n\002DO"
+      "\020@\022\006\n\002EC\020A\022\006\n\002EG\020B\022\006\n\002SV\020C\022\006\n\002GQ\020D\022\006\n\002ER"
+      "\020E\022\006\n\002EE\020F\022\006\n\002ET\020G\022\006\n\002FK\020H\022\006\n\002FO\020I\022\006\n\002FJ"
+      "\020J\022\006\n\002FI\020K\022\006\n\002FR\020L\022\006\n\002GF\020M\022\006\n\002PF\020N\022\006\n\002TF"
+      "\020O\022\006\n\002GA\020P\022\006\n\002GM\020Q\022\006\n\002GE\020R\022\006\n\002DE\020S\022\006\n\002GH"
+      "\020T\022\006\n\002GI\020U\022\006\n\002GR\020V\022\006\n\002GL\020W\022\006\n\002GD\020X\022\006\n\002GP"
+      "\020Y\022\006\n\002GU\020Z\022\006\n\002GT\020[\022\006\n\002GG\020\\\022\006\n\002GN\020]\022\006\n\002GW"
+      "\020^\022\006\n\002GY\020_\022\006\n\002HT\020`\022\006\n\002HM\020a\022\006\n\002VA\020b\022\006\n\002HN"
+      "\020c\022\006\n\002HK\020d\022\006\n\002HU\020e\022\006\n\002IS\020f\022\006\n\002IN\020g\022\006\n\002ID"
+      "\020h\022\006\n\002IR\020i\022\006\n\002IQ\020j\022\006\n\002IE\020k\022\006\n\002IM\020l\022\006\n\002IL"
+      "\020m\022\006\n\002IT\020n\022\006\n\002JM\020o\022\006\n\002JP\020p\022\006\n\002JE\020q\022\006\n\002JO"
+      "\020r\022\006\n\002KZ\020s\022\006\n\002KE\020t\022\006\n\002KI\020u\022\006\n\002KP\020v\022\006\n\002KR"
+      "\020w\022\006\n\002KW\020x\022\006\n\002KG\020y\022\006\n\002LA\020z\022\006\n\002LV\020{\022\006\n\002LB"
+      "\020|\022\006\n\002LS\020}\022\006\n\002LR\020~\022\006\n\002LY\020\177\022\007\n\002LI\020\200\001\022\007\n\002L"
+      "T\020\201\001\022\007\n\002LU\020\202\001\022\007\n\002MO\020\203\001\022\007\n\002MK\020\204\001\022\007\n\002MG\020\205\001"
+      "\022\007\n\002MW\020\206\001\022\007\n\002MY\020\207\001\022\007\n\002MV\020\210\001\022\007\n\002ML\020\211\001\022\007\n\002"
+      "MT\020\212\001\022\007\n\002MH\020\213\001\022\007\n\002MQ\020\214\001\022\007\n\002MR\020\215\001\022\007\n\002MU\020\216"
+      "\001\022\007\n\002YT\020\217\001\022\007\n\002MX\020\220\001\022\007\n\002FM\020\221\001\022\007\n\002MD\020\222\001\022\007\n"
+      "\002MC\020\223\001\022\007\n\002MN\020\224\001\022\007\n\002ME\020\225\001\022\007\n\002MS\020\226\001\022\007\n\002MA\020"
+      "\227\001\022\007\n\002MZ\020\230\001\022\007\n\002MM\020\231\001\022\007\n\002NA\020\232\001\022\007\n\002NR\020\233\001\022\007"
+      "\n\002NP\020\234\001\022\007\n\002NL\020\235\001\022\007\n\002NC\020\236\001\022\007\n\002NZ\020\237\001\022\007\n\002NI"
+      "\020\240\001\022\007\n\002NE\020\241\001\022\007\n\002NG\020\242\001\022\007\n\002NU\020\243\001\022\007\n\002NF\020\244\001\022"
+      "\007\n\002MP\020\245\001\022\007\n\002NO\020\246\001\022\007\n\002OM\020\247\001\022\007\n\002PK\020\250\001\022\007\n\002P"
+      "W\020\251\001\022\007\n\002PS\020\252\001\022\007\n\002PA\020\253\001\022\007\n\002PG\020\254\001\022\007\n\002PY\020\255\001"
+      "\022\007\n\002PE\020\256\001\022\007\n\002PH\020\257\001\022\007\n\002PN\020\260\001\022\007\n\002PL\020\261\001\022\007\n\002"
+      "PT\020\262\001\022\007\n\002PR\020\263\001\022\007\n\002QA\020\264\001\022\007\n\002RE\020\265\001\022\007\n\002RO\020\266"
+      "\001\022\007\n\002RU\020\267\001\022\007\n\002RW\020\270\001\022\007\n\002BL\020\271\001\022\007\n\002SH\020\272\001\022\007\n"
+      "\002KN\020\273\001\022\007\n\002LC\020\274\001\022\007\n\002MF\020\275\001\022\007\n\002PM\020\276\001\022\007\n\002VC\020"
+      "\277\001\022\007\n\002WS\020\300\001\022\007\n\002SM\020\301\001\022\007\n\002ST\020\302\001\022\007\n\002SA\020\303\001\022\007"
+      "\n\002SN\020\304\001\022\007\n\002RS\020\305\001\022\007\n\002SC\020\306\001\022\007\n\002SL\020\307\001\022\007\n\002SG"
+      "\020\310\001\022\007\n\002SX\020\311\001\022\007\n\002SK\020\312\001\022\007\n\002SI\020\313\001\022\007\n\002SB\020\314\001\022"
+      "\007\n\002SO\020\315\001\022\007\n\002ZA\020\316\001\022\007\n\002GS\020\317\001\022\007\n\002SS\020\320\001\022\007\n\002E"
+      "S\020\321\001\022\007\n\002LK\020\322\001\022\007\n\002SD\020\323\001\022\007\n\002SR\020\324\001\022\007\n\002SJ\020\325\001"
+      "\022\007\n\002SZ\020\326\001\022\007\n\002SE\020\327\001\022\007\n\002CH\020\330\001\022\007\n\002SY\020\331\001\022\007\n\002"
+      "TW\020\332\001\022\007\n\002TJ\020\333\001\022\007\n\002TZ\020\334\001\022\007\n\002TH\020\335\001\022\007\n\002TL\020\336"
+      "\001\022\007\n\002TG\020\337\001\022\007\n\002TK\020\340\001\022\007\n\002TO\020\341\001\022\007\n\002TT\020\342\001\022\007\n"
+      "\002TN\020\343\001\022\007\n\002TR\020\344\001\022\007\n\002TM\020\345\001\022\007\n\002TC\020\346\001\022\007\n\002TV\020"
+      "\347\001\022\007\n\002UG\020\350\001\022\007\n\002UA\020\351\001\022\007\n\002AE\020\352\001\022\007\n\002GB\020\353\001\022\007"
+      "\n\002US\020\354\001\022\007\n\002UM\020\355\001\022\007\n\002UY\020\356\001\022\007\n\002UZ\020\357\001\022\007\n\002VU"
+      "\020\360\001\022\007\n\002VE\020\361\001\022\007\n\002VN\020\362\001\022\007\n\002VG\020\363\001\022\007\n\002VI\020\364\001\022"
+      "\007\n\002WF\020\365\001\022\007\n\002EH\020\366\001\022\007\n\002YE\020\367\001\022\007\n\002ZM\020\370\001\022\007\n\002Z"
+      "W\020\371\001\022\t\n\004R001\020\372\001\022\t\n\004R002\020\373\001\022\t\n\004R015\020\374\001\022\t\n"
+      "\004R012\020\375\001\022\t\n\004R818\020\376\001\022\t\n\004R434\020\377\001\022\t\n\004R504\020\200"
+      "\002\022\t\n\004R729\020\201\002\022\t\n\004R788\020\202\002\022\t\n\004R732\020\203\002\022\t\n\004R2"
+      "02\020\204\002\022\t\n\004R014\020\205\002\022\t\n\004R086\020\206\002\022\t\n\004R108\020\207\002\022\t"
+      "\n\004R174\020\210\002\022\t\n\004R262\020\211\002\022\t\n\004R232\020\212\002\022\t\n\004R231\020"
+      "\213\002\022\t\n\004R260\020\214\002\022\t\n\004R404\020\215\002\022\t\n\004R450\020\216\002\022\t\n\004R"
+      "454\020\217\002\022\t\n\004R480\020\220\002\022\t\n\004R175\020\221\002\022\t\n\004R508\020\222\002\022"
+      "\t\n\004R638\020\223\002\022\t\n\004R646\020\224\002\022\t\n\004R690\020\225\002\022\t\n\004R706"
+      "\020\226\002\022\t\n\004R728\020\227\002\022\t\n\004R800\020\230\002\022\t\n\004R834\020\231\002\022\t\n\004"
+      "R894\020\232\002\022\t\n\004R716\020\233\002\022\t\n\004R017\020\234\002\022\t\n\004R024\020\235\002"
+      "\022\t\n\004R120\020\236\002\022\t\n\004R140\020\237\002\022\t\n\004R148\020\240\002\022\t\n\004R17"
+      "8\020\241\002\022\t\n\004R180\020\242\002\022\t\n\004R226\020\243\002\022\t\n\004R266\020\244\002\022\t\n"
+      "\004R678\020\245\002\022\t\n\004R018\020\246\002\022\t\n\004R072\020\247\002\022\t\n\004R748\020\250"
+      "\002\022\t\n\004R426\020\251\002\022\t\n\004R516\020\252\002\022\t\n\004R710\020\253\002\022\t\n\004R0"
+      "11\020\254\002\022\t\n\004R204\020\255\002\022\t\n\004R854\020\256\002\022\t\n\004R132\020\257\002\022\t"
+      "\n\004R384\020\260\002\022\t\n\004R270\020\261\002\022\t\n\004R288\020\262\002\022\t\n\004R324\020"
+      "\263\002\022\t\n\004R624\020\264\002\022\t\n\004R430\020\265\002\022\t\n\004R466\020\266\002\022\t\n\004R"
+      "478\020\267\002\022\t\n\004R562\020\270\002\022\t\n\004R566\020\271\002\022\t\n\004R654\020\272\002\022"
+      "\t\n\004R686\020\273\002\022\t\n\004R694\020\274\002\022\t\n\004R768\020\275\002\022\t\n\004R019"
+      "\020\276\002\022\t\n\004R419\020\277\002\022\t\n\004R029\020\300\002\022\t\n\004R660\020\301\002\022\t\n\004"
+      "R028\020\302\002\022\t\n\004R533\020\303\002\022\t\n\004R044\020\304\002\022\t\n\004R052\020\305\002"
+      "\022\t\n\004R535\020\306\002\022\t\n\004R092\020\307\002\022\t\n\004R136\020\310\002\022\t\n\004R19"
+      "2\020\311\002\022\t\n\004R531\020\312\002\022\t\n\004R212\020\313\002\022\t\n\004R214\020\314\002\022\t\n"
+      "\004R308\020\315\002\022\t\n\004R312\020\316\002\022\t\n\004R332\020\317\002\022\t\n\004R388\020\320"
+      "\002\022\t\n\004R474\020\321\002\022\t\n\004R500\020\322\002\022\t\n\004R630\020\323\002\022\t\n\004R6"
+      "52\020\324\002\022\t\n\004R659\020\325\002\022\t\n\004R662\020\326\002\022\t\n\004R663\020\327\002\022\t"
+      "\n\004R670\020\330\002\022\t\n\004R534\020\331\002\022\t\n\004R780\020\332\002\022\t\n\004R796\020"
+      "\333\002\022\t\n\004R850\020\334\002\022\t\n\004R013\020\335\002\022\t\n\004R084\020\336\002\022\t\n\004R"
+      "188\020\337\002\022\t\n\004R222\020\340\002\022\t\n\004R320\020\341\002\022\t\n\004R340\020\342\002\022"
+      "\t\n\004R484\020\343\002\022\t\n\004R558\020\344\002\022\t\n\004R591\020\345\002\022\t\n\004R005"
+      "\020\346\002\022\t\n\004R032\020\347\002\022\t\n\004R068\020\350\002\022\t\n\004R074\020\351\002\022\t\n\004"
+      "R076\020\352\002\022\t\n\004R152\020\353\002\022\t\n\004R170\020\354\002\022\t\n\004R218\020\355\002"
+      "\022\t\n\004R238\020\356\002\022\t\n\004R254\020\357\002\022\t\n\004R328\020\360\002\022\t\n\004R60"
+      "0\020\361\002\022\t\n\004R604\020\362\002\022\t\n\004R239\020\363\002\022\t\n\004R740\020\364\002\022\t\n"
+      "\004R858\020\365\002\022\t\n\004R862\020\366\002\022\t\n\004R021\020\367\002\022\t\n\004R060\020\370"
+      "\002\022\t\n\004R124\020\371\002\022\t\n\004R304\020\372\002\022\t\n\004R666\020\373\002\022\t\n\004R8"
+      "40\020\374\002\022\t\n\004R010\020\375\002\022\t\n\004R142\020\376\002\022\t\n\004R143\020\377\002\022\t"
+      "\n\004R398\020\200\003\022\t\n\004R417\020\201\003\022\t\n\004R762\020\202\003\022\t\n\004R795\020"
+      "\203\003\022\t\n\004R860\020\204\003\022\t\n\004R030\020\205\003\022\t\n\004R156\020\206\003\022\t\n\004R"
+      "344\020\207\003\022\t\n\004R446\020\210\003\022\t\n\004R408\020\211\003\022\t\n\004R392\020\212\003\022"
+      "\t\n\004R496\020\213\003\022\t\n\004R410\020\214\003\022\t\n\004R035\020\215\003\022\t\n\004R096"
+      "\020\216\003\022\t\n\004R116\020\217\003\022\t\n\004R360\020\220\003\022\t\n\004R418\020\221\003\022\t\n\004"
+      "R458\020\222\003\022\t\n\004R104\020\223\003\022\t\n\004R608\020\224\003\022\t\n\004R702\020\225\003"
+      "\022\t\n\004R764\020\226\003\022\t\n\004R626\020\227\003\022\t\n\004R704\020\230\003\022\t\n\004R03"
+      "4\020\231\003\022\t\n\004R004\020\232\003\022\t\n\004R050\020\233\003\022\t\n\004R064\020\234\003\022\t\n"
+      "\004R356\020\235\003\022\t\n\004R364\020\236\003\022\t\n\004R462\020\237\003\022\t\n\004R524\020\240"
+      "\003\022\t\n\004R586\020\241\003\022\t\n\004R144\020\242\003\022\t\n\004R145\020\243\003\022\t\n\004R0"
+      "51\020\244\003\022\t\n\004R031\020\245\003\022\t\n\004R048\020\246\003\022\t\n\004R196\020\247\003\022\t"
+      "\n\004R268\020\250\003\022\t\n\004R368\020\251\003\022\t\n\004R376\020\252\003\022\t\n\004R400\020"
+      "\253\003\022\t\n\004R414\020\254\003\022\t\n\004R422\020\255\003\022\t\n\004R512\020\256\003\022\t\n\004R"
+      "634\020\257\003\022\t\n\004R682\020\260\003\022\t\n\004R275\020\261\003\022\t\n\004R760\020\262\003\022"
+      "\t\n\004R792\020\263\003\022\t\n\004R784\020\264\003\022\t\n\004R887\020\265\003\022\t\n\004R150"
+      "\020\266\003\022\t\n\004R151\020\267\003\022\t\n\004R112\020\270\003\022\t\n\004R100\020\271\003\022\t\n\004"
+      "R203\020\272\003\022\t\n\004R348\020\273\003\022\t\n\004R616\020\274\003\022\t\n\004R498\020\275\003"
+      "\022\t\n\004R642\020\276\003\022\t\n\004R643\020\277\003\022\t\n\004R703\020\300\003\022\t\n\004R80"
+      "4\020\301\003\022\t\n\004R154\020\302\003\022\t\n\004R248\020\303\003\022\t\n\004R830\020\304\003\022\t\n"
+      "\004R831\020\305\003\022\t\n\004R832\020\306\003\022\t\n\004R680\020\307\003\022\t\n\004R208\020\310"
+      "\003\022\t\n\004R233\020\311\003\022\t\n\004R234\020\312\003\022\t\n\004R246\020\313\003\022\t\n\004R3"
+      "52\020\314\003\022\t\n\004R372\020\315\003\022\t\n\004R833\020\316\003\022\t\n\004R428\020\317\003\022\t"
+      "\n\004R440\020\320\003\022\t\n\004R578\020\321\003\022\t\n\004R744\020\322\003\022\t\n\004R752\020"
+      "\323\003\022\t\n\004R826\020\324\003\022\t\n\004R039\020\325\003\022\t\n\004R008\020\326\003\022\t\n\004R"
+      "020\020\327\003\022\t\n\004R070\020\330\003\022\t\n\004R191\020\331\003\022\t\n\004R292\020\332\003\022"
+      "\t\n\004R300\020\333\003\022\t\n\004R336\020\334\003\022\t\n\004R380\020\335\003\022\t\n\004R470"
+      "\020\336\003\022\t\n\004R499\020\337\003\022\t\n\004R807\020\340\003\022\t\n\004R620\020\341\003\022\t\n\004"
+      "R674\020\342\003\022\t\n\004R688\020\343\003\022\t\n\004R705\020\344\003\022\t\n\004R724\020\345\003"
+      "\022\t\n\004R155\020\346\003\022\t\n\004R040\020\347\003\022\t\n\004R056\020\350\003\022\t\n\004R25"
+      "0\020\351\003\022\t\n\004R276\020\352\003\022\t\n\004R438\020\353\003\022\t\n\004R442\020\354\003\022\t\n"
+      "\004R492\020\355\003\022\t\n\004R528\020\356\003\022\t\n\004R756\020\357\003\022\t\n\004R009\020\360"
+      "\003\022\t\n\004R053\020\361\003\022\t\n\004R036\020\362\003\022\t\n\004R162\020\363\003\022\t\n\004R1"
+      "66\020\364\003\022\t\n\004R334\020\365\003\022\t\n\004R554\020\366\003\022\t\n\004R574\020\367\003\022\t"
+      "\n\004R054\020\370\003\022\t\n\004R242\020\371\003\022\t\n\004R540\020\372\003\022\t\n\004R598\020"
+      "\373\003\022\t\n\004R090\020\374\003\022\t\n\004R548\020\375\003\022\t\n\004R057\020\376\003\022\t\n\004R"
+      "316\020\377\003\022\t\n\004R296\020\200\004\022\t\n\004R584\020\201\004\022\t\n\004R583\020\202\004\022"
+      "\t\n\004R520\020\203\004\022\t\n\004R580\020\204\004\022\t\n\004R585\020\205\004\022\t\n\004R581"
+      "\020\206\004\022\t\n\004R061\020\207\004\022\t\n\004R016\020\210\004\022\t\n\004R184\020\211\004\022\t\n\004"
+      "R258\020\212\004\022\t\n\004R570\020\213\004\022\t\n\004R612\020\214\004\022\t\n\004R882\020\215\004"
+      "\022\t\n\004R772\020\216\004\022\t\n\004R776\020\217\004\022\t\n\004R798\020\220\004\022\t\n\004R87"
+      "6\020\221\004B\004Z\002./b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 11021);
+      descriptor, 10818);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "claim.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -2625,8 +2602,6 @@ const int Claim::kThumbnailFieldNumber;
 const int Claim::kTagsFieldNumber;
 const int Claim::kLanguagesFieldNumber;
 const int Claim::kLocationsFieldNumber;
-const int Claim::kDownloadableFileFieldNumber;
-const int Claim::kGuncadFileFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Claim::Claim()
@@ -2658,16 +2633,6 @@ Claim::Claim(const Claim& from)
   } else {
     thumbnail_ = NULL;
   }
-  if (from.has_downloadable_file()) {
-    downloadable_file_ = new ::pb::DownloadableFile(*from.downloadable_file_);
-  } else {
-    downloadable_file_ = NULL;
-  }
-  if (from.has_guncad_file()) {
-    guncad_file_ = new ::pb::GuncadFile(*from.guncad_file_);
-  } else {
-    guncad_file_ = NULL;
-  }
   clear_has_type();
   switch (from.type_case()) {
     case kStream: {
@@ -2696,8 +2661,7 @@ Claim::Claim(const Claim& from)
 void Claim::SharedCtor() {
   title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&thumbnail_, 0, reinterpret_cast<char*>(&guncad_file_) -
-    reinterpret_cast<char*>(&thumbnail_) + sizeof(guncad_file_));
+  thumbnail_ = NULL;
   clear_has_type();
   _cached_size_ = 0;
 }
@@ -2712,12 +2676,6 @@ void Claim::SharedDtor() {
   description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) {
     delete thumbnail_;
-  }
-  if (this != internal_default_instance()) {
-    delete downloadable_file_;
-  }
-  if (this != internal_default_instance()) {
-    delete guncad_file_;
   }
   if (has_type()) {
     clear_type();
@@ -2785,14 +2743,6 @@ void Claim::Clear() {
     delete thumbnail_;
   }
   thumbnail_ = NULL;
-  if (GetArenaNoVirtual() == NULL && downloadable_file_ != NULL) {
-    delete downloadable_file_;
-  }
-  downloadable_file_ = NULL;
-  if (GetArenaNoVirtual() == NULL && guncad_file_ != NULL) {
-    delete guncad_file_;
-  }
-  guncad_file_ = NULL;
   clear_type();
 }
 
@@ -2933,28 +2883,6 @@ bool Claim::MergePartialFromCodedStream(
         break;
       }
 
-      // .pb.DownloadableFile downloadable_file = 14;
-      case 14: {
-        if (tag == 114u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_downloadable_file()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .pb.GuncadFile guncad_file = 15;
-      case 15: {
-        if (tag == 122u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_guncad_file()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -3051,18 +2979,6 @@ void Claim::SerializeWithCachedSizes(
       13, this->locations(i), output);
   }
 
-  // .pb.DownloadableFile downloadable_file = 14;
-  if (this->has_downloadable_file()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      14, *this->downloadable_file_, output);
-  }
-
-  // .pb.GuncadFile guncad_file = 15;
-  if (this->has_guncad_file()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      15, *this->guncad_file_, output);
-  }
-
   // @@protoc_insertion_point(serialize_end:pb.Claim)
 }
 
@@ -3151,20 +3067,6 @@ void Claim::SerializeWithCachedSizes(
         13, this->locations(i), false, target);
   }
 
-  // .pb.DownloadableFile downloadable_file = 14;
-  if (this->has_downloadable_file()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        14, *this->downloadable_file_, false, target);
-  }
-
-  // .pb.GuncadFile guncad_file = 15;
-  if (this->has_guncad_file()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        15, *this->guncad_file_, false, target);
-  }
-
   // @@protoc_insertion_point(serialize_to_array_end:pb.Claim)
   return target;
 }
@@ -3222,20 +3124,6 @@ size_t Claim::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         *this->thumbnail_);
-  }
-
-  // .pb.DownloadableFile downloadable_file = 14;
-  if (this->has_downloadable_file()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->downloadable_file_);
-  }
-
-  // .pb.GuncadFile guncad_file = 15;
-  if (this->has_guncad_file()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->guncad_file_);
   }
 
   switch (type_case()) {
@@ -3311,12 +3199,6 @@ void Claim::MergeFrom(const Claim& from) {
   if (from.has_thumbnail()) {
     mutable_thumbnail()->::pb::Source::MergeFrom(from.thumbnail());
   }
-  if (from.has_downloadable_file()) {
-    mutable_downloadable_file()->::pb::DownloadableFile::MergeFrom(from.downloadable_file());
-  }
-  if (from.has_guncad_file()) {
-    mutable_guncad_file()->::pb::GuncadFile::MergeFrom(from.guncad_file());
-  }
   switch (from.type_case()) {
     case kStream: {
       mutable_stream()->::pb::Stream::MergeFrom(from.stream());
@@ -3369,8 +3251,6 @@ void Claim::InternalSwap(Claim* other) {
   title_.Swap(&other->title_);
   description_.Swap(&other->description_);
   std::swap(thumbnail_, other->thumbnail_);
-  std::swap(downloadable_file_, other->downloadable_file_);
-  std::swap(guncad_file_, other->guncad_file_);
   std::swap(type_, other->type_);
   std::swap(_oneof_case_[0], other->_oneof_case_[0]);
   std::swap(_cached_size_, other->_cached_size_);
@@ -3834,84 +3714,6 @@ Claim::locations() const {
   return locations_;
 }
 
-// .pb.DownloadableFile downloadable_file = 14;
-bool Claim::has_downloadable_file() const {
-  return this != internal_default_instance() && downloadable_file_ != NULL;
-}
-void Claim::clear_downloadable_file() {
-  if (GetArenaNoVirtual() == NULL && downloadable_file_ != NULL) delete downloadable_file_;
-  downloadable_file_ = NULL;
-}
-const ::pb::DownloadableFile& Claim::downloadable_file() const {
-  // @@protoc_insertion_point(field_get:pb.Claim.downloadable_file)
-  return downloadable_file_ != NULL ? *downloadable_file_
-                         : *::pb::DownloadableFile::internal_default_instance();
-}
-::pb::DownloadableFile* Claim::mutable_downloadable_file() {
-  
-  if (downloadable_file_ == NULL) {
-    downloadable_file_ = new ::pb::DownloadableFile;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.Claim.downloadable_file)
-  return downloadable_file_;
-}
-::pb::DownloadableFile* Claim::release_downloadable_file() {
-  // @@protoc_insertion_point(field_release:pb.Claim.downloadable_file)
-  
-  ::pb::DownloadableFile* temp = downloadable_file_;
-  downloadable_file_ = NULL;
-  return temp;
-}
-void Claim::set_allocated_downloadable_file(::pb::DownloadableFile* downloadable_file) {
-  delete downloadable_file_;
-  downloadable_file_ = downloadable_file;
-  if (downloadable_file) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.Claim.downloadable_file)
-}
-
-// .pb.GuncadFile guncad_file = 15;
-bool Claim::has_guncad_file() const {
-  return this != internal_default_instance() && guncad_file_ != NULL;
-}
-void Claim::clear_guncad_file() {
-  if (GetArenaNoVirtual() == NULL && guncad_file_ != NULL) delete guncad_file_;
-  guncad_file_ = NULL;
-}
-const ::pb::GuncadFile& Claim::guncad_file() const {
-  // @@protoc_insertion_point(field_get:pb.Claim.guncad_file)
-  return guncad_file_ != NULL ? *guncad_file_
-                         : *::pb::GuncadFile::internal_default_instance();
-}
-::pb::GuncadFile* Claim::mutable_guncad_file() {
-  
-  if (guncad_file_ == NULL) {
-    guncad_file_ = new ::pb::GuncadFile;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.Claim.guncad_file)
-  return guncad_file_;
-}
-::pb::GuncadFile* Claim::release_guncad_file() {
-  // @@protoc_insertion_point(field_release:pb.Claim.guncad_file)
-  
-  ::pb::GuncadFile* temp = guncad_file_;
-  guncad_file_ = NULL;
-  return temp;
-}
-void Claim::set_allocated_guncad_file(::pb::GuncadFile* guncad_file) {
-  delete guncad_file_;
-  guncad_file_ = guncad_file;
-  if (guncad_file) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.Claim.guncad_file)
-}
-
 bool Claim::has_type() const {
   return type_case() != TYPE_NOT_SET;
 }
@@ -3936,6 +3738,7 @@ const int Stream::kImageFieldNumber;
 const int Stream::kVideoFieldNumber;
 const int Stream::kAudioFieldNumber;
 const int Stream::kSoftwareFieldNumber;
+const int Stream::kGuncadFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stream::Stream()
@@ -3990,6 +3793,10 @@ Stream::Stream(const Stream& from)
     }
     case kSoftware: {
       mutable_software()->::pb::Software::MergeFrom(from.software());
+      break;
+    }
+    case kGuncad: {
+      mutable_guncad()->::pb::Guncad::MergeFrom(from.guncad());
       break;
     }
     case TYPE_NOT_SET: {
@@ -4069,6 +3876,10 @@ void Stream::clear_type() {
     }
     case kSoftware: {
       delete type_.software_;
+      break;
+    }
+    case kGuncad: {
+      delete type_.guncad_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -4230,6 +4041,17 @@ bool Stream::MergePartialFromCodedStream(
         break;
       }
 
+      // .pb.Guncad guncad = 14;
+      case 14: {
+        if (tag == 114u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_guncad()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -4325,6 +4147,12 @@ void Stream::SerializeWithCachedSizes(
       13, *type_.software_, output);
   }
 
+  // .pb.Guncad guncad = 14;
+  if (has_guncad()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      14, *type_.guncad_, output);
+  }
+
   // @@protoc_insertion_point(serialize_end:pb.Stream)
 }
 
@@ -4412,6 +4240,13 @@ void Stream::SerializeWithCachedSizes(
         13, *type_.software_, false, target);
   }
 
+  // .pb.Guncad guncad = 14;
+  if (has_guncad()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        14, *type_.guncad_, false, target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:pb.Stream)
   return target;
 }
@@ -4491,6 +4326,13 @@ size_t Stream::ByteSizeLong() const {
           *type_.software_);
       break;
     }
+    // .pb.Guncad guncad = 14;
+    case kGuncad: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *type_.guncad_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -4557,6 +4399,10 @@ void Stream::MergeFrom(const Stream& from) {
     }
     case kSoftware: {
       mutable_software()->::pb::Software::MergeFrom(from.software());
+      break;
+    }
+    case kGuncad: {
+      mutable_guncad()->::pb::Guncad::MergeFrom(from.guncad());
       break;
     }
     case TYPE_NOT_SET: {
@@ -5045,6 +4891,54 @@ void Stream::set_allocated_software(::pb::Software* software) {
     type_.software_ = software;
   }
   // @@protoc_insertion_point(field_set_allocated:pb.Stream.software)
+}
+
+// .pb.Guncad guncad = 14;
+bool Stream::has_guncad() const {
+  return type_case() == kGuncad;
+}
+void Stream::set_has_guncad() {
+  _oneof_case_[0] = kGuncad;
+}
+void Stream::clear_guncad() {
+  if (has_guncad()) {
+    delete type_.guncad_;
+    clear_has_type();
+  }
+}
+ const ::pb::Guncad& Stream::guncad() const {
+  // @@protoc_insertion_point(field_get:pb.Stream.guncad)
+  return has_guncad()
+      ? *type_.guncad_
+      : ::pb::Guncad::default_instance();
+}
+::pb::Guncad* Stream::mutable_guncad() {
+  if (!has_guncad()) {
+    clear_type();
+    set_has_guncad();
+    type_.guncad_ = new ::pb::Guncad;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.Stream.guncad)
+  return type_.guncad_;
+}
+::pb::Guncad* Stream::release_guncad() {
+  // @@protoc_insertion_point(field_release:pb.Stream.guncad)
+  if (has_guncad()) {
+    clear_has_type();
+    ::pb::Guncad* temp = type_.guncad_;
+    type_.guncad_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Stream::set_allocated_guncad(::pb::Guncad* guncad) {
+  clear_type();
+  if (guncad) {
+    set_has_guncad();
+    type_.guncad_ = guncad;
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.Stream.guncad)
 }
 
 bool Stream::has_type() const {
@@ -8420,517 +8314,27 @@ void Audio::set_duration(::google::protobuf::uint32 value) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DownloadableFile::kArtifactTypeFieldNumber;
-const int DownloadableFile::kArtifactLanguageFieldNumber;
-const int DownloadableFile::kReleaseCountryFieldNumber;
+const int Guncad::kGuncadCategoryFieldNumber;
+const int Guncad::kFirearmTypeFieldNumber;
+const int Guncad::kFirearmPlatformFieldNumber;
+const int Guncad::kFirearmPartFieldNumber;
+const int Guncad::kFirearmCaliberFieldNumber;
+const int Guncad::kFabricationMethodFieldNumber;
+const int Guncad::kFabricationToolsFieldNumber;
+const int Guncad::kOriginalClaimIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-DownloadableFile::DownloadableFile()
+Guncad::Guncad()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
     protobuf_claim_2eproto::InitDefaults();
   }
   SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.DownloadableFile)
+  // @@protoc_insertion_point(constructor:pb.Guncad)
 }
-DownloadableFile::DownloadableFile(const DownloadableFile& from)
+Guncad::Guncad(const Guncad& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      artifact_type_(from.artifact_type_),
-      artifact_language_(from.artifact_language_),
-      release_country_(from.release_country_),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:pb.DownloadableFile)
-}
-
-void DownloadableFile::SharedCtor() {
-  _cached_size_ = 0;
-}
-
-DownloadableFile::~DownloadableFile() {
-  // @@protoc_insertion_point(destructor:pb.DownloadableFile)
-  SharedDtor();
-}
-
-void DownloadableFile::SharedDtor() {
-}
-
-void DownloadableFile::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* DownloadableFile::descriptor() {
-  protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[10].descriptor;
-}
-
-const DownloadableFile& DownloadableFile::default_instance() {
-  protobuf_claim_2eproto::InitDefaults();
-  return *internal_default_instance();
-}
-
-DownloadableFile* DownloadableFile::New(::google::protobuf::Arena* arena) const {
-  DownloadableFile* n = new DownloadableFile;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void DownloadableFile::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.DownloadableFile)
-  artifact_type_.Clear();
-  artifact_language_.Clear();
-  release_country_.Clear();
-}
-
-bool DownloadableFile::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.DownloadableFile)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string artifact_type = 1;
-      case 1: {
-        if (tag == 10u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_artifact_type()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->artifact_type(this->artifact_type_size() - 1).data(),
-            this->artifact_type(this->artifact_type_size() - 1).length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.DownloadableFile.artifact_type"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string artifact_language = 2;
-      case 2: {
-        if (tag == 18u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_artifact_language()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->artifact_language(this->artifact_language_size() - 1).data(),
-            this->artifact_language(this->artifact_language_size() - 1).length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.DownloadableFile.artifact_language"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string release_country = 3;
-      case 3: {
-        if (tag == 26u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_release_country()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->release_country(this->release_country_size() - 1).data(),
-            this->release_country(this->release_country_size() - 1).length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.DownloadableFile.release_country"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:pb.DownloadableFile)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:pb.DownloadableFile)
-  return false;
-#undef DO_
-}
-
-void DownloadableFile::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.DownloadableFile)
-  // repeated string artifact_type = 1;
-  for (int i = 0; i < this->artifact_type_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_type(i).data(), this->artifact_type(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.DownloadableFile.artifact_type");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->artifact_type(i), output);
-  }
-
-  // repeated string artifact_language = 2;
-  for (int i = 0; i < this->artifact_language_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_language(i).data(), this->artifact_language(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.DownloadableFile.artifact_language");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->artifact_language(i), output);
-  }
-
-  // repeated string release_country = 3;
-  for (int i = 0; i < this->release_country_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->release_country(i).data(), this->release_country(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.DownloadableFile.release_country");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->release_country(i), output);
-  }
-
-  // @@protoc_insertion_point(serialize_end:pb.DownloadableFile)
-}
-
-::google::protobuf::uint8* DownloadableFile::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:pb.DownloadableFile)
-  // repeated string artifact_type = 1;
-  for (int i = 0; i < this->artifact_type_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_type(i).data(), this->artifact_type(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.DownloadableFile.artifact_type");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->artifact_type(i), target);
-  }
-
-  // repeated string artifact_language = 2;
-  for (int i = 0; i < this->artifact_language_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_language(i).data(), this->artifact_language(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.DownloadableFile.artifact_language");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(2, this->artifact_language(i), target);
-  }
-
-  // repeated string release_country = 3;
-  for (int i = 0; i < this->release_country_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->release_country(i).data(), this->release_country(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.DownloadableFile.release_country");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->release_country(i), target);
-  }
-
-  // @@protoc_insertion_point(serialize_to_array_end:pb.DownloadableFile)
-  return target;
-}
-
-size_t DownloadableFile::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.DownloadableFile)
-  size_t total_size = 0;
-
-  // repeated string artifact_type = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->artifact_type_size());
-  for (int i = 0; i < this->artifact_type_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->artifact_type(i));
-  }
-
-  // repeated string artifact_language = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->artifact_language_size());
-  for (int i = 0; i < this->artifact_language_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->artifact_language(i));
-  }
-
-  // repeated string release_country = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->release_country_size());
-  for (int i = 0; i < this->release_country_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->release_country(i));
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void DownloadableFile::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.DownloadableFile)
-  GOOGLE_DCHECK_NE(&from, this);
-  const DownloadableFile* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const DownloadableFile>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.DownloadableFile)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.DownloadableFile)
-    MergeFrom(*source);
-  }
-}
-
-void DownloadableFile::MergeFrom(const DownloadableFile& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.DownloadableFile)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  artifact_type_.MergeFrom(from.artifact_type_);
-  artifact_language_.MergeFrom(from.artifact_language_);
-  release_country_.MergeFrom(from.release_country_);
-}
-
-void DownloadableFile::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.DownloadableFile)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void DownloadableFile::CopyFrom(const DownloadableFile& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.DownloadableFile)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool DownloadableFile::IsInitialized() const {
-  return true;
-}
-
-void DownloadableFile::Swap(DownloadableFile* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void DownloadableFile::InternalSwap(DownloadableFile* other) {
-  artifact_type_.UnsafeArenaSwap(&other->artifact_type_);
-  artifact_language_.UnsafeArenaSwap(&other->artifact_language_);
-  release_country_.UnsafeArenaSwap(&other->release_country_);
-  std::swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata DownloadableFile::GetMetadata() const {
-  protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[10];
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// DownloadableFile
-
-// repeated string artifact_type = 1;
-int DownloadableFile::artifact_type_size() const {
-  return artifact_type_.size();
-}
-void DownloadableFile::clear_artifact_type() {
-  artifact_type_.Clear();
-}
-const ::std::string& DownloadableFile::artifact_type(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DownloadableFile.artifact_type)
-  return artifact_type_.Get(index);
-}
-::std::string* DownloadableFile::mutable_artifact_type(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DownloadableFile.artifact_type)
-  return artifact_type_.Mutable(index);
-}
-void DownloadableFile::set_artifact_type(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.DownloadableFile.artifact_type)
-  artifact_type_.Mutable(index)->assign(value);
-}
-void DownloadableFile::set_artifact_type(int index, const char* value) {
-  artifact_type_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.DownloadableFile.artifact_type)
-}
-void DownloadableFile::set_artifact_type(int index, const char* value, size_t size) {
-  artifact_type_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.DownloadableFile.artifact_type)
-}
-::std::string* DownloadableFile::add_artifact_type() {
-  // @@protoc_insertion_point(field_add_mutable:pb.DownloadableFile.artifact_type)
-  return artifact_type_.Add();
-}
-void DownloadableFile::add_artifact_type(const ::std::string& value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.DownloadableFile.artifact_type)
-}
-void DownloadableFile::add_artifact_type(const char* value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.DownloadableFile.artifact_type)
-}
-void DownloadableFile::add_artifact_type(const char* value, size_t size) {
-  artifact_type_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.DownloadableFile.artifact_type)
-}
-const ::google::protobuf::RepeatedPtrField< ::std::string>&
-DownloadableFile::artifact_type() const {
-  // @@protoc_insertion_point(field_list:pb.DownloadableFile.artifact_type)
-  return artifact_type_;
-}
-::google::protobuf::RepeatedPtrField< ::std::string>*
-DownloadableFile::mutable_artifact_type() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DownloadableFile.artifact_type)
-  return &artifact_type_;
-}
-
-// repeated string artifact_language = 2;
-int DownloadableFile::artifact_language_size() const {
-  return artifact_language_.size();
-}
-void DownloadableFile::clear_artifact_language() {
-  artifact_language_.Clear();
-}
-const ::std::string& DownloadableFile::artifact_language(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DownloadableFile.artifact_language)
-  return artifact_language_.Get(index);
-}
-::std::string* DownloadableFile::mutable_artifact_language(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DownloadableFile.artifact_language)
-  return artifact_language_.Mutable(index);
-}
-void DownloadableFile::set_artifact_language(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.DownloadableFile.artifact_language)
-  artifact_language_.Mutable(index)->assign(value);
-}
-void DownloadableFile::set_artifact_language(int index, const char* value) {
-  artifact_language_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.DownloadableFile.artifact_language)
-}
-void DownloadableFile::set_artifact_language(int index, const char* value, size_t size) {
-  artifact_language_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.DownloadableFile.artifact_language)
-}
-::std::string* DownloadableFile::add_artifact_language() {
-  // @@protoc_insertion_point(field_add_mutable:pb.DownloadableFile.artifact_language)
-  return artifact_language_.Add();
-}
-void DownloadableFile::add_artifact_language(const ::std::string& value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.DownloadableFile.artifact_language)
-}
-void DownloadableFile::add_artifact_language(const char* value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.DownloadableFile.artifact_language)
-}
-void DownloadableFile::add_artifact_language(const char* value, size_t size) {
-  artifact_language_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.DownloadableFile.artifact_language)
-}
-const ::google::protobuf::RepeatedPtrField< ::std::string>&
-DownloadableFile::artifact_language() const {
-  // @@protoc_insertion_point(field_list:pb.DownloadableFile.artifact_language)
-  return artifact_language_;
-}
-::google::protobuf::RepeatedPtrField< ::std::string>*
-DownloadableFile::mutable_artifact_language() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DownloadableFile.artifact_language)
-  return &artifact_language_;
-}
-
-// repeated string release_country = 3;
-int DownloadableFile::release_country_size() const {
-  return release_country_.size();
-}
-void DownloadableFile::clear_release_country() {
-  release_country_.Clear();
-}
-const ::std::string& DownloadableFile::release_country(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DownloadableFile.release_country)
-  return release_country_.Get(index);
-}
-::std::string* DownloadableFile::mutable_release_country(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DownloadableFile.release_country)
-  return release_country_.Mutable(index);
-}
-void DownloadableFile::set_release_country(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.DownloadableFile.release_country)
-  release_country_.Mutable(index)->assign(value);
-}
-void DownloadableFile::set_release_country(int index, const char* value) {
-  release_country_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.DownloadableFile.release_country)
-}
-void DownloadableFile::set_release_country(int index, const char* value, size_t size) {
-  release_country_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.DownloadableFile.release_country)
-}
-::std::string* DownloadableFile::add_release_country() {
-  // @@protoc_insertion_point(field_add_mutable:pb.DownloadableFile.release_country)
-  return release_country_.Add();
-}
-void DownloadableFile::add_release_country(const ::std::string& value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.DownloadableFile.release_country)
-}
-void DownloadableFile::add_release_country(const char* value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.DownloadableFile.release_country)
-}
-void DownloadableFile::add_release_country(const char* value, size_t size) {
-  release_country_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.DownloadableFile.release_country)
-}
-const ::google::protobuf::RepeatedPtrField< ::std::string>&
-DownloadableFile::release_country() const {
-  // @@protoc_insertion_point(field_list:pb.DownloadableFile.release_country)
-  return release_country_;
-}
-::google::protobuf::RepeatedPtrField< ::std::string>*
-DownloadableFile::mutable_release_country() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DownloadableFile.release_country)
-  return &release_country_;
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GuncadFile::kArtifactTypeFieldNumber;
-const int GuncadFile::kArtifactLanguageFieldNumber;
-const int GuncadFile::kReleaseCountryFieldNumber;
-const int GuncadFile::kGuncadCategoryFieldNumber;
-const int GuncadFile::kFirearmTypeFieldNumber;
-const int GuncadFile::kFirearmPlatformFieldNumber;
-const int GuncadFile::kFirearmPartFieldNumber;
-const int GuncadFile::kFirearmCaliberFieldNumber;
-const int GuncadFile::kFabricationMethodFieldNumber;
-const int GuncadFile::kFabricationToolsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-GuncadFile::GuncadFile()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    protobuf_claim_2eproto::InitDefaults();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.GuncadFile)
-}
-GuncadFile::GuncadFile(const GuncadFile& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      artifact_type_(from.artifact_type_),
-      artifact_language_(from.artifact_language_),
-      release_country_(from.release_country_),
       guncad_category_(from.guncad_category_),
       firearm_type_(from.firearm_type_),
       firearm_platform_(from.firearm_platform_),
@@ -8938,51 +8342,49 @@ GuncadFile::GuncadFile(const GuncadFile& from)
       firearm_caliber_(from.firearm_caliber_),
       fabrication_method_(from.fabrication_method_),
       fabrication_tools_(from.fabrication_tools_),
+      original_claim_id_(from.original_claim_id_),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:pb.GuncadFile)
+  // @@protoc_insertion_point(copy_constructor:pb.Guncad)
 }
 
-void GuncadFile::SharedCtor() {
+void Guncad::SharedCtor() {
   _cached_size_ = 0;
 }
 
-GuncadFile::~GuncadFile() {
-  // @@protoc_insertion_point(destructor:pb.GuncadFile)
+Guncad::~Guncad() {
+  // @@protoc_insertion_point(destructor:pb.Guncad)
   SharedDtor();
 }
 
-void GuncadFile::SharedDtor() {
+void Guncad::SharedDtor() {
 }
 
-void GuncadFile::SetCachedSize(int size) const {
+void Guncad::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* GuncadFile::descriptor() {
+const ::google::protobuf::Descriptor* Guncad::descriptor() {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[11].descriptor;
+  return protobuf_claim_2eproto::file_level_metadata[10].descriptor;
 }
 
-const GuncadFile& GuncadFile::default_instance() {
+const Guncad& Guncad::default_instance() {
   protobuf_claim_2eproto::InitDefaults();
   return *internal_default_instance();
 }
 
-GuncadFile* GuncadFile::New(::google::protobuf::Arena* arena) const {
-  GuncadFile* n = new GuncadFile;
+Guncad* Guncad::New(::google::protobuf::Arena* arena) const {
+  Guncad* n = new Guncad;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void GuncadFile::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.GuncadFile)
-  artifact_type_.Clear();
-  artifact_language_.Clear();
-  release_country_.Clear();
+void Guncad::Clear() {
+// @@protoc_insertion_point(message_clear_start:pb.Guncad)
   guncad_category_.Clear();
   firearm_type_.Clear();
   firearm_platform_.Clear();
@@ -8990,66 +8392,19 @@ void GuncadFile::Clear() {
   firearm_caliber_.Clear();
   fabrication_method_.Clear();
   fabrication_tools_.Clear();
+  original_claim_id_.Clear();
 }
 
-bool GuncadFile::MergePartialFromCodedStream(
+bool Guncad::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.GuncadFile)
+  // @@protoc_insertion_point(parse_start:pb.Guncad)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string artifact_type = 1;
-      case 1: {
-        if (tag == 10u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_artifact_type()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->artifact_type(this->artifact_type_size() - 1).data(),
-            this->artifact_type(this->artifact_type_size() - 1).length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.artifact_type"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string artifact_language = 2;
-      case 2: {
-        if (tag == 18u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_artifact_language()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->artifact_language(this->artifact_language_size() - 1).data(),
-            this->artifact_language(this->artifact_language_size() - 1).length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.artifact_language"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string release_country = 3;
-      case 3: {
-        if (tag == 26u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_release_country()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->release_country(this->release_country_size() - 1).data(),
-            this->release_country(this->release_country_size() - 1).length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.release_country"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       // repeated string guncad_category = 4;
       case 4: {
         if (tag == 34u) {
@@ -9059,7 +8414,7 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->guncad_category(this->guncad_category_size() - 1).data(),
             this->guncad_category(this->guncad_category_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.guncad_category"));
+            "pb.Guncad.guncad_category"));
         } else {
           goto handle_unusual;
         }
@@ -9075,7 +8430,7 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->firearm_type(this->firearm_type_size() - 1).data(),
             this->firearm_type(this->firearm_type_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.firearm_type"));
+            "pb.Guncad.firearm_type"));
         } else {
           goto handle_unusual;
         }
@@ -9091,7 +8446,7 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->firearm_platform(this->firearm_platform_size() - 1).data(),
             this->firearm_platform(this->firearm_platform_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.firearm_platform"));
+            "pb.Guncad.firearm_platform"));
         } else {
           goto handle_unusual;
         }
@@ -9107,7 +8462,7 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->firearm_part(this->firearm_part_size() - 1).data(),
             this->firearm_part(this->firearm_part_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.firearm_part"));
+            "pb.Guncad.firearm_part"));
         } else {
           goto handle_unusual;
         }
@@ -9123,7 +8478,7 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->firearm_caliber(this->firearm_caliber_size() - 1).data(),
             this->firearm_caliber(this->firearm_caliber_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.firearm_caliber"));
+            "pb.Guncad.firearm_caliber"));
         } else {
           goto handle_unusual;
         }
@@ -9139,7 +8494,7 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->fabrication_method(this->fabrication_method_size() - 1).data(),
             this->fabrication_method(this->fabrication_method_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.fabrication_method"));
+            "pb.Guncad.fabrication_method"));
         } else {
           goto handle_unusual;
         }
@@ -9155,7 +8510,23 @@ bool GuncadFile::MergePartialFromCodedStream(
             this->fabrication_tools(this->fabrication_tools_size() - 1).data(),
             this->fabrication_tools(this->fabrication_tools_size() - 1).length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "pb.GuncadFile.fabrication_tools"));
+            "pb.Guncad.fabrication_tools"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string original_claim_id = 11;
+      case 11: {
+        if (tag == 90u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_original_claim_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->original_claim_id(this->original_claim_id_size() - 1).data(),
+            this->original_claim_id(this->original_claim_id_size() - 1).length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "pb.Guncad.original_claim_id"));
         } else {
           goto handle_unusual;
         }
@@ -9175,53 +8546,23 @@ bool GuncadFile::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:pb.GuncadFile)
+  // @@protoc_insertion_point(parse_success:pb.Guncad)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:pb.GuncadFile)
+  // @@protoc_insertion_point(parse_failure:pb.Guncad)
   return false;
 #undef DO_
 }
 
-void GuncadFile::SerializeWithCachedSizes(
+void Guncad::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.GuncadFile)
-  // repeated string artifact_type = 1;
-  for (int i = 0; i < this->artifact_type_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_type(i).data(), this->artifact_type(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.artifact_type");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->artifact_type(i), output);
-  }
-
-  // repeated string artifact_language = 2;
-  for (int i = 0; i < this->artifact_language_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_language(i).data(), this->artifact_language(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.artifact_language");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->artifact_language(i), output);
-  }
-
-  // repeated string release_country = 3;
-  for (int i = 0; i < this->release_country_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->release_country(i).data(), this->release_country(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.release_country");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->release_country(i), output);
-  }
-
+  // @@protoc_insertion_point(serialize_start:pb.Guncad)
   // repeated string guncad_category = 4;
   for (int i = 0; i < this->guncad_category_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->guncad_category(i).data(), this->guncad_category(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.guncad_category");
+      "pb.Guncad.guncad_category");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       4, this->guncad_category(i), output);
   }
@@ -9231,7 +8572,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_type(i).data(), this->firearm_type(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_type");
+      "pb.Guncad.firearm_type");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       5, this->firearm_type(i), output);
   }
@@ -9241,7 +8582,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_platform(i).data(), this->firearm_platform(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_platform");
+      "pb.Guncad.firearm_platform");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       6, this->firearm_platform(i), output);
   }
@@ -9251,7 +8592,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_part(i).data(), this->firearm_part(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_part");
+      "pb.Guncad.firearm_part");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       7, this->firearm_part(i), output);
   }
@@ -9261,7 +8602,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_caliber(i).data(), this->firearm_caliber(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_caliber");
+      "pb.Guncad.firearm_caliber");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       8, this->firearm_caliber(i), output);
   }
@@ -9271,7 +8612,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->fabrication_method(i).data(), this->fabrication_method(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.fabrication_method");
+      "pb.Guncad.fabrication_method");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       9, this->fabrication_method(i), output);
   }
@@ -9281,54 +8622,34 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->fabrication_tools(i).data(), this->fabrication_tools(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.fabrication_tools");
+      "pb.Guncad.fabrication_tools");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       10, this->fabrication_tools(i), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:pb.GuncadFile)
+  // repeated string original_claim_id = 11;
+  for (int i = 0; i < this->original_claim_id_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->original_claim_id(i).data(), this->original_claim_id(i).length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "pb.Guncad.original_claim_id");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      11, this->original_claim_id(i), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:pb.Guncad)
 }
 
-::google::protobuf::uint8* GuncadFile::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Guncad::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic;  // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:pb.GuncadFile)
-  // repeated string artifact_type = 1;
-  for (int i = 0; i < this->artifact_type_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_type(i).data(), this->artifact_type(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.artifact_type");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->artifact_type(i), target);
-  }
-
-  // repeated string artifact_language = 2;
-  for (int i = 0; i < this->artifact_language_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->artifact_language(i).data(), this->artifact_language(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.artifact_language");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(2, this->artifact_language(i), target);
-  }
-
-  // repeated string release_country = 3;
-  for (int i = 0; i < this->release_country_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->release_country(i).data(), this->release_country(i).length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.release_country");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->release_country(i), target);
-  }
-
+  // @@protoc_insertion_point(serialize_to_array_start:pb.Guncad)
   // repeated string guncad_category = 4;
   for (int i = 0; i < this->guncad_category_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->guncad_category(i).data(), this->guncad_category(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.guncad_category");
+      "pb.Guncad.guncad_category");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(4, this->guncad_category(i), target);
   }
@@ -9338,7 +8659,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_type(i).data(), this->firearm_type(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_type");
+      "pb.Guncad.firearm_type");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(5, this->firearm_type(i), target);
   }
@@ -9348,7 +8669,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_platform(i).data(), this->firearm_platform(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_platform");
+      "pb.Guncad.firearm_platform");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(6, this->firearm_platform(i), target);
   }
@@ -9358,7 +8679,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_part(i).data(), this->firearm_part(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_part");
+      "pb.Guncad.firearm_part");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(7, this->firearm_part(i), target);
   }
@@ -9368,7 +8689,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->firearm_caliber(i).data(), this->firearm_caliber(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.firearm_caliber");
+      "pb.Guncad.firearm_caliber");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(8, this->firearm_caliber(i), target);
   }
@@ -9378,7 +8699,7 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->fabrication_method(i).data(), this->fabrication_method(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.fabrication_method");
+      "pb.Guncad.fabrication_method");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(9, this->fabrication_method(i), target);
   }
@@ -9388,42 +8709,28 @@ void GuncadFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->fabrication_tools(i).data(), this->fabrication_tools(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "pb.GuncadFile.fabrication_tools");
+      "pb.Guncad.fabrication_tools");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(10, this->fabrication_tools(i), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:pb.GuncadFile)
+  // repeated string original_claim_id = 11;
+  for (int i = 0; i < this->original_claim_id_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->original_claim_id(i).data(), this->original_claim_id(i).length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "pb.Guncad.original_claim_id");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(11, this->original_claim_id(i), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:pb.Guncad)
   return target;
 }
 
-size_t GuncadFile::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.GuncadFile)
+size_t Guncad::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pb.Guncad)
   size_t total_size = 0;
-
-  // repeated string artifact_type = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->artifact_type_size());
-  for (int i = 0; i < this->artifact_type_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->artifact_type(i));
-  }
-
-  // repeated string artifact_language = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->artifact_language_size());
-  for (int i = 0; i < this->artifact_language_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->artifact_language(i));
-  }
-
-  // repeated string release_country = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->release_country_size());
-  for (int i = 0; i < this->release_country_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->release_country(i));
-  }
 
   // repeated string guncad_category = 4;
   total_size += 1 *
@@ -9481,6 +8788,14 @@ size_t GuncadFile::ByteSizeLong() const {
       this->fabrication_tools(i));
   }
 
+  // repeated string original_claim_id = 11;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->original_claim_id_size());
+  for (int i = 0; i < this->original_claim_id_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->original_claim_id(i));
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -9488,28 +8803,25 @@ size_t GuncadFile::ByteSizeLong() const {
   return total_size;
 }
 
-void GuncadFile::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.GuncadFile)
+void Guncad::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.Guncad)
   GOOGLE_DCHECK_NE(&from, this);
-  const GuncadFile* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const GuncadFile>(
+  const Guncad* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Guncad>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.GuncadFile)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Guncad)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.GuncadFile)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Guncad)
     MergeFrom(*source);
   }
 }
 
-void GuncadFile::MergeFrom(const GuncadFile& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.GuncadFile)
+void Guncad::MergeFrom(const Guncad& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pb.Guncad)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  artifact_type_.MergeFrom(from.artifact_type_);
-  artifact_language_.MergeFrom(from.artifact_language_);
-  release_country_.MergeFrom(from.release_country_);
   guncad_category_.MergeFrom(from.guncad_category_);
   firearm_type_.MergeFrom(from.firearm_type_);
   firearm_platform_.MergeFrom(from.firearm_platform_);
@@ -9517,34 +8829,32 @@ void GuncadFile::MergeFrom(const GuncadFile& from) {
   firearm_caliber_.MergeFrom(from.firearm_caliber_);
   fabrication_method_.MergeFrom(from.fabrication_method_);
   fabrication_tools_.MergeFrom(from.fabrication_tools_);
+  original_claim_id_.MergeFrom(from.original_claim_id_);
 }
 
-void GuncadFile::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.GuncadFile)
+void Guncad::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.Guncad)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GuncadFile::CopyFrom(const GuncadFile& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.GuncadFile)
+void Guncad::CopyFrom(const Guncad& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pb.Guncad)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GuncadFile::IsInitialized() const {
+bool Guncad::IsInitialized() const {
   return true;
 }
 
-void GuncadFile::Swap(GuncadFile* other) {
+void Guncad::Swap(Guncad* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void GuncadFile::InternalSwap(GuncadFile* other) {
-  artifact_type_.UnsafeArenaSwap(&other->artifact_type_);
-  artifact_language_.UnsafeArenaSwap(&other->artifact_language_);
-  release_country_.UnsafeArenaSwap(&other->release_country_);
+void Guncad::InternalSwap(Guncad* other) {
   guncad_category_.UnsafeArenaSwap(&other->guncad_category_);
   firearm_type_.UnsafeArenaSwap(&other->firearm_type_);
   firearm_platform_.UnsafeArenaSwap(&other->firearm_platform_);
@@ -9552,565 +8862,456 @@ void GuncadFile::InternalSwap(GuncadFile* other) {
   firearm_caliber_.UnsafeArenaSwap(&other->firearm_caliber_);
   fabrication_method_.UnsafeArenaSwap(&other->fabrication_method_);
   fabrication_tools_.UnsafeArenaSwap(&other->fabrication_tools_);
+  original_claim_id_.UnsafeArenaSwap(&other->original_claim_id_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata GuncadFile::GetMetadata() const {
+::google::protobuf::Metadata Guncad::GetMetadata() const {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[11];
+  return protobuf_claim_2eproto::file_level_metadata[10];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// GuncadFile
-
-// repeated string artifact_type = 1;
-int GuncadFile::artifact_type_size() const {
-  return artifact_type_.size();
-}
-void GuncadFile::clear_artifact_type() {
-  artifact_type_.Clear();
-}
-const ::std::string& GuncadFile::artifact_type(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.artifact_type)
-  return artifact_type_.Get(index);
-}
-::std::string* GuncadFile::mutable_artifact_type(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.artifact_type)
-  return artifact_type_.Mutable(index);
-}
-void GuncadFile::set_artifact_type(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.artifact_type)
-  artifact_type_.Mutable(index)->assign(value);
-}
-void GuncadFile::set_artifact_type(int index, const char* value) {
-  artifact_type_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.artifact_type)
-}
-void GuncadFile::set_artifact_type(int index, const char* value, size_t size) {
-  artifact_type_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.artifact_type)
-}
-::std::string* GuncadFile::add_artifact_type() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.artifact_type)
-  return artifact_type_.Add();
-}
-void GuncadFile::add_artifact_type(const ::std::string& value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.artifact_type)
-}
-void GuncadFile::add_artifact_type(const char* value) {
-  artifact_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.artifact_type)
-}
-void GuncadFile::add_artifact_type(const char* value, size_t size) {
-  artifact_type_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.artifact_type)
-}
-const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::artifact_type() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.artifact_type)
-  return artifact_type_;
-}
-::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_artifact_type() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.artifact_type)
-  return &artifact_type_;
-}
-
-// repeated string artifact_language = 2;
-int GuncadFile::artifact_language_size() const {
-  return artifact_language_.size();
-}
-void GuncadFile::clear_artifact_language() {
-  artifact_language_.Clear();
-}
-const ::std::string& GuncadFile::artifact_language(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.artifact_language)
-  return artifact_language_.Get(index);
-}
-::std::string* GuncadFile::mutable_artifact_language(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.artifact_language)
-  return artifact_language_.Mutable(index);
-}
-void GuncadFile::set_artifact_language(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.artifact_language)
-  artifact_language_.Mutable(index)->assign(value);
-}
-void GuncadFile::set_artifact_language(int index, const char* value) {
-  artifact_language_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.artifact_language)
-}
-void GuncadFile::set_artifact_language(int index, const char* value, size_t size) {
-  artifact_language_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.artifact_language)
-}
-::std::string* GuncadFile::add_artifact_language() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.artifact_language)
-  return artifact_language_.Add();
-}
-void GuncadFile::add_artifact_language(const ::std::string& value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.artifact_language)
-}
-void GuncadFile::add_artifact_language(const char* value) {
-  artifact_language_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.artifact_language)
-}
-void GuncadFile::add_artifact_language(const char* value, size_t size) {
-  artifact_language_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.artifact_language)
-}
-const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::artifact_language() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.artifact_language)
-  return artifact_language_;
-}
-::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_artifact_language() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.artifact_language)
-  return &artifact_language_;
-}
-
-// repeated string release_country = 3;
-int GuncadFile::release_country_size() const {
-  return release_country_.size();
-}
-void GuncadFile::clear_release_country() {
-  release_country_.Clear();
-}
-const ::std::string& GuncadFile::release_country(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.release_country)
-  return release_country_.Get(index);
-}
-::std::string* GuncadFile::mutable_release_country(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.release_country)
-  return release_country_.Mutable(index);
-}
-void GuncadFile::set_release_country(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.release_country)
-  release_country_.Mutable(index)->assign(value);
-}
-void GuncadFile::set_release_country(int index, const char* value) {
-  release_country_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.release_country)
-}
-void GuncadFile::set_release_country(int index, const char* value, size_t size) {
-  release_country_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.release_country)
-}
-::std::string* GuncadFile::add_release_country() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.release_country)
-  return release_country_.Add();
-}
-void GuncadFile::add_release_country(const ::std::string& value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.release_country)
-}
-void GuncadFile::add_release_country(const char* value) {
-  release_country_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.release_country)
-}
-void GuncadFile::add_release_country(const char* value, size_t size) {
-  release_country_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.release_country)
-}
-const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::release_country() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.release_country)
-  return release_country_;
-}
-::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_release_country() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.release_country)
-  return &release_country_;
-}
+// Guncad
 
 // repeated string guncad_category = 4;
-int GuncadFile::guncad_category_size() const {
+int Guncad::guncad_category_size() const {
   return guncad_category_.size();
 }
-void GuncadFile::clear_guncad_category() {
+void Guncad::clear_guncad_category() {
   guncad_category_.Clear();
 }
-const ::std::string& GuncadFile::guncad_category(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.guncad_category)
+const ::std::string& Guncad::guncad_category(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.guncad_category)
   return guncad_category_.Get(index);
 }
-::std::string* GuncadFile::mutable_guncad_category(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.guncad_category)
+::std::string* Guncad::mutable_guncad_category(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.guncad_category)
   return guncad_category_.Mutable(index);
 }
-void GuncadFile::set_guncad_category(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.guncad_category)
+void Guncad::set_guncad_category(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.guncad_category)
   guncad_category_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_guncad_category(int index, const char* value) {
+void Guncad::set_guncad_category(int index, const char* value) {
   guncad_category_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.guncad_category)
 }
-void GuncadFile::set_guncad_category(int index, const char* value, size_t size) {
+void Guncad::set_guncad_category(int index, const char* value, size_t size) {
   guncad_category_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.guncad_category)
 }
-::std::string* GuncadFile::add_guncad_category() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.guncad_category)
+::std::string* Guncad::add_guncad_category() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.guncad_category)
   return guncad_category_.Add();
 }
-void GuncadFile::add_guncad_category(const ::std::string& value) {
+void Guncad::add_guncad_category(const ::std::string& value) {
   guncad_category_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_add:pb.Guncad.guncad_category)
 }
-void GuncadFile::add_guncad_category(const char* value) {
+void Guncad::add_guncad_category(const char* value) {
   guncad_category_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.guncad_category)
 }
-void GuncadFile::add_guncad_category(const char* value, size_t size) {
+void Guncad::add_guncad_category(const char* value, size_t size) {
   guncad_category_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.guncad_category)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.guncad_category)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::guncad_category() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.guncad_category)
+Guncad::guncad_category() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.guncad_category)
   return guncad_category_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_guncad_category() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.guncad_category)
+Guncad::mutable_guncad_category() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.guncad_category)
   return &guncad_category_;
 }
 
 // repeated string firearm_type = 5;
-int GuncadFile::firearm_type_size() const {
+int Guncad::firearm_type_size() const {
   return firearm_type_.size();
 }
-void GuncadFile::clear_firearm_type() {
+void Guncad::clear_firearm_type() {
   firearm_type_.Clear();
 }
-const ::std::string& GuncadFile::firearm_type(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_type)
+const ::std::string& Guncad::firearm_type(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_type)
   return firearm_type_.Get(index);
 }
-::std::string* GuncadFile::mutable_firearm_type(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_type)
+::std::string* Guncad::mutable_firearm_type(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_type)
   return firearm_type_.Mutable(index);
 }
-void GuncadFile::set_firearm_type(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_type)
+void Guncad::set_firearm_type(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_type)
   firearm_type_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_firearm_type(int index, const char* value) {
+void Guncad::set_firearm_type(int index, const char* value) {
   firearm_type_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_type)
 }
-void GuncadFile::set_firearm_type(int index, const char* value, size_t size) {
+void Guncad::set_firearm_type(int index, const char* value, size_t size) {
   firearm_type_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_type)
 }
-::std::string* GuncadFile::add_firearm_type() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_type)
+::std::string* Guncad::add_firearm_type() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_type)
   return firearm_type_.Add();
 }
-void GuncadFile::add_firearm_type(const ::std::string& value) {
+void Guncad::add_firearm_type(const ::std::string& value) {
   firearm_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_type)
 }
-void GuncadFile::add_firearm_type(const char* value) {
+void Guncad::add_firearm_type(const char* value) {
   firearm_type_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_type)
 }
-void GuncadFile::add_firearm_type(const char* value, size_t size) {
+void Guncad::add_firearm_type(const char* value, size_t size) {
   firearm_type_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_type)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_type)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_type() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_type)
+Guncad::firearm_type() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_type)
   return firearm_type_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_type() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_type)
+Guncad::mutable_firearm_type() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_type)
   return &firearm_type_;
 }
 
 // repeated string firearm_platform = 6;
-int GuncadFile::firearm_platform_size() const {
+int Guncad::firearm_platform_size() const {
   return firearm_platform_.size();
 }
-void GuncadFile::clear_firearm_platform() {
+void Guncad::clear_firearm_platform() {
   firearm_platform_.Clear();
 }
-const ::std::string& GuncadFile::firearm_platform(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_platform)
+const ::std::string& Guncad::firearm_platform(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_platform)
   return firearm_platform_.Get(index);
 }
-::std::string* GuncadFile::mutable_firearm_platform(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_platform)
+::std::string* Guncad::mutable_firearm_platform(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_platform)
   return firearm_platform_.Mutable(index);
 }
-void GuncadFile::set_firearm_platform(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_platform)
+void Guncad::set_firearm_platform(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_platform)
   firearm_platform_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_firearm_platform(int index, const char* value) {
+void Guncad::set_firearm_platform(int index, const char* value) {
   firearm_platform_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_platform)
 }
-void GuncadFile::set_firearm_platform(int index, const char* value, size_t size) {
+void Guncad::set_firearm_platform(int index, const char* value, size_t size) {
   firearm_platform_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_platform)
 }
-::std::string* GuncadFile::add_firearm_platform() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_platform)
+::std::string* Guncad::add_firearm_platform() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_platform)
   return firearm_platform_.Add();
 }
-void GuncadFile::add_firearm_platform(const ::std::string& value) {
+void Guncad::add_firearm_platform(const ::std::string& value) {
   firearm_platform_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_platform)
 }
-void GuncadFile::add_firearm_platform(const char* value) {
+void Guncad::add_firearm_platform(const char* value) {
   firearm_platform_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_platform)
 }
-void GuncadFile::add_firearm_platform(const char* value, size_t size) {
+void Guncad::add_firearm_platform(const char* value, size_t size) {
   firearm_platform_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_platform)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_platform)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_platform() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_platform)
+Guncad::firearm_platform() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_platform)
   return firearm_platform_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_platform() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_platform)
+Guncad::mutable_firearm_platform() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_platform)
   return &firearm_platform_;
 }
 
 // repeated string firearm_part = 7;
-int GuncadFile::firearm_part_size() const {
+int Guncad::firearm_part_size() const {
   return firearm_part_.size();
 }
-void GuncadFile::clear_firearm_part() {
+void Guncad::clear_firearm_part() {
   firearm_part_.Clear();
 }
-const ::std::string& GuncadFile::firearm_part(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_part)
+const ::std::string& Guncad::firearm_part(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_part)
   return firearm_part_.Get(index);
 }
-::std::string* GuncadFile::mutable_firearm_part(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_part)
+::std::string* Guncad::mutable_firearm_part(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_part)
   return firearm_part_.Mutable(index);
 }
-void GuncadFile::set_firearm_part(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_part)
+void Guncad::set_firearm_part(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_part)
   firearm_part_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_firearm_part(int index, const char* value) {
+void Guncad::set_firearm_part(int index, const char* value) {
   firearm_part_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_part)
 }
-void GuncadFile::set_firearm_part(int index, const char* value, size_t size) {
+void Guncad::set_firearm_part(int index, const char* value, size_t size) {
   firearm_part_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_part)
 }
-::std::string* GuncadFile::add_firearm_part() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_part)
+::std::string* Guncad::add_firearm_part() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_part)
   return firearm_part_.Add();
 }
-void GuncadFile::add_firearm_part(const ::std::string& value) {
+void Guncad::add_firearm_part(const ::std::string& value) {
   firearm_part_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_part)
 }
-void GuncadFile::add_firearm_part(const char* value) {
+void Guncad::add_firearm_part(const char* value) {
   firearm_part_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_part)
 }
-void GuncadFile::add_firearm_part(const char* value, size_t size) {
+void Guncad::add_firearm_part(const char* value, size_t size) {
   firearm_part_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_part)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_part)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_part() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_part)
+Guncad::firearm_part() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_part)
   return firearm_part_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_part() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_part)
+Guncad::mutable_firearm_part() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_part)
   return &firearm_part_;
 }
 
 // repeated string firearm_caliber = 8;
-int GuncadFile::firearm_caliber_size() const {
+int Guncad::firearm_caliber_size() const {
   return firearm_caliber_.size();
 }
-void GuncadFile::clear_firearm_caliber() {
+void Guncad::clear_firearm_caliber() {
   firearm_caliber_.Clear();
 }
-const ::std::string& GuncadFile::firearm_caliber(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.firearm_caliber)
+const ::std::string& Guncad::firearm_caliber(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.firearm_caliber)
   return firearm_caliber_.Get(index);
 }
-::std::string* GuncadFile::mutable_firearm_caliber(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.firearm_caliber)
+::std::string* Guncad::mutable_firearm_caliber(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.firearm_caliber)
   return firearm_caliber_.Mutable(index);
 }
-void GuncadFile::set_firearm_caliber(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.firearm_caliber)
+void Guncad::set_firearm_caliber(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.firearm_caliber)
   firearm_caliber_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_firearm_caliber(int index, const char* value) {
+void Guncad::set_firearm_caliber(int index, const char* value) {
   firearm_caliber_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.firearm_caliber)
 }
-void GuncadFile::set_firearm_caliber(int index, const char* value, size_t size) {
+void Guncad::set_firearm_caliber(int index, const char* value, size_t size) {
   firearm_caliber_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.firearm_caliber)
 }
-::std::string* GuncadFile::add_firearm_caliber() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.firearm_caliber)
+::std::string* Guncad::add_firearm_caliber() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.firearm_caliber)
   return firearm_caliber_.Add();
 }
-void GuncadFile::add_firearm_caliber(const ::std::string& value) {
+void Guncad::add_firearm_caliber(const ::std::string& value) {
   firearm_caliber_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_add:pb.Guncad.firearm_caliber)
 }
-void GuncadFile::add_firearm_caliber(const char* value) {
+void Guncad::add_firearm_caliber(const char* value) {
   firearm_caliber_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.firearm_caliber)
 }
-void GuncadFile::add_firearm_caliber(const char* value, size_t size) {
+void Guncad::add_firearm_caliber(const char* value, size_t size) {
   firearm_caliber_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.firearm_caliber)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.firearm_caliber)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::firearm_caliber() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.firearm_caliber)
+Guncad::firearm_caliber() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.firearm_caliber)
   return firearm_caliber_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_firearm_caliber() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.firearm_caliber)
+Guncad::mutable_firearm_caliber() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.firearm_caliber)
   return &firearm_caliber_;
 }
 
 // repeated string fabrication_method = 9;
-int GuncadFile::fabrication_method_size() const {
+int Guncad::fabrication_method_size() const {
   return fabrication_method_.size();
 }
-void GuncadFile::clear_fabrication_method() {
+void Guncad::clear_fabrication_method() {
   fabrication_method_.Clear();
 }
-const ::std::string& GuncadFile::fabrication_method(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.fabrication_method)
+const ::std::string& Guncad::fabrication_method(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.fabrication_method)
   return fabrication_method_.Get(index);
 }
-::std::string* GuncadFile::mutable_fabrication_method(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.fabrication_method)
+::std::string* Guncad::mutable_fabrication_method(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.fabrication_method)
   return fabrication_method_.Mutable(index);
 }
-void GuncadFile::set_fabrication_method(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.fabrication_method)
+void Guncad::set_fabrication_method(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.fabrication_method)
   fabrication_method_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_fabrication_method(int index, const char* value) {
+void Guncad::set_fabrication_method(int index, const char* value) {
   fabrication_method_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.fabrication_method)
 }
-void GuncadFile::set_fabrication_method(int index, const char* value, size_t size) {
+void Guncad::set_fabrication_method(int index, const char* value, size_t size) {
   fabrication_method_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.fabrication_method)
 }
-::std::string* GuncadFile::add_fabrication_method() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.fabrication_method)
+::std::string* Guncad::add_fabrication_method() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.fabrication_method)
   return fabrication_method_.Add();
 }
-void GuncadFile::add_fabrication_method(const ::std::string& value) {
+void Guncad::add_fabrication_method(const ::std::string& value) {
   fabrication_method_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_add:pb.Guncad.fabrication_method)
 }
-void GuncadFile::add_fabrication_method(const char* value) {
+void Guncad::add_fabrication_method(const char* value) {
   fabrication_method_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.fabrication_method)
 }
-void GuncadFile::add_fabrication_method(const char* value, size_t size) {
+void Guncad::add_fabrication_method(const char* value, size_t size) {
   fabrication_method_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.fabrication_method)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.fabrication_method)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::fabrication_method() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.fabrication_method)
+Guncad::fabrication_method() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.fabrication_method)
   return fabrication_method_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_fabrication_method() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.fabrication_method)
+Guncad::mutable_fabrication_method() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.fabrication_method)
   return &fabrication_method_;
 }
 
 // repeated string fabrication_tools = 10;
-int GuncadFile::fabrication_tools_size() const {
+int Guncad::fabrication_tools_size() const {
   return fabrication_tools_.size();
 }
-void GuncadFile::clear_fabrication_tools() {
+void Guncad::clear_fabrication_tools() {
   fabrication_tools_.Clear();
 }
-const ::std::string& GuncadFile::fabrication_tools(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GuncadFile.fabrication_tools)
+const ::std::string& Guncad::fabrication_tools(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.fabrication_tools)
   return fabrication_tools_.Get(index);
 }
-::std::string* GuncadFile::mutable_fabrication_tools(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GuncadFile.fabrication_tools)
+::std::string* Guncad::mutable_fabrication_tools(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.fabrication_tools)
   return fabrication_tools_.Mutable(index);
 }
-void GuncadFile::set_fabrication_tools(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GuncadFile.fabrication_tools)
+void Guncad::set_fabrication_tools(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.fabrication_tools)
   fabrication_tools_.Mutable(index)->assign(value);
 }
-void GuncadFile::set_fabrication_tools(int index, const char* value) {
+void Guncad::set_fabrication_tools(int index, const char* value) {
   fabrication_tools_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.fabrication_tools)
 }
-void GuncadFile::set_fabrication_tools(int index, const char* value, size_t size) {
+void Guncad::set_fabrication_tools(int index, const char* value, size_t size) {
   fabrication_tools_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.fabrication_tools)
 }
-::std::string* GuncadFile::add_fabrication_tools() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GuncadFile.fabrication_tools)
+::std::string* Guncad::add_fabrication_tools() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.fabrication_tools)
   return fabrication_tools_.Add();
 }
-void GuncadFile::add_fabrication_tools(const ::std::string& value) {
+void Guncad::add_fabrication_tools(const ::std::string& value) {
   fabrication_tools_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_add:pb.Guncad.fabrication_tools)
 }
-void GuncadFile::add_fabrication_tools(const char* value) {
+void Guncad::add_fabrication_tools(const char* value) {
   fabrication_tools_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.fabrication_tools)
 }
-void GuncadFile::add_fabrication_tools(const char* value, size_t size) {
+void Guncad::add_fabrication_tools(const char* value, size_t size) {
   fabrication_tools_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GuncadFile.fabrication_tools)
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.fabrication_tools)
 }
 const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GuncadFile::fabrication_tools() const {
-  // @@protoc_insertion_point(field_list:pb.GuncadFile.fabrication_tools)
+Guncad::fabrication_tools() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.fabrication_tools)
   return fabrication_tools_;
 }
 ::google::protobuf::RepeatedPtrField< ::std::string>*
-GuncadFile::mutable_fabrication_tools() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GuncadFile.fabrication_tools)
+Guncad::mutable_fabrication_tools() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.fabrication_tools)
   return &fabrication_tools_;
+}
+
+// repeated string original_claim_id = 11;
+int Guncad::original_claim_id_size() const {
+  return original_claim_id_.size();
+}
+void Guncad::clear_original_claim_id() {
+  original_claim_id_.Clear();
+}
+const ::std::string& Guncad::original_claim_id(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Guncad.original_claim_id)
+  return original_claim_id_.Get(index);
+}
+::std::string* Guncad::mutable_original_claim_id(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Guncad.original_claim_id)
+  return original_claim_id_.Mutable(index);
+}
+void Guncad::set_original_claim_id(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Guncad.original_claim_id)
+  original_claim_id_.Mutable(index)->assign(value);
+}
+void Guncad::set_original_claim_id(int index, const char* value) {
+  original_claim_id_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.Guncad.original_claim_id)
+}
+void Guncad::set_original_claim_id(int index, const char* value, size_t size) {
+  original_claim_id_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.Guncad.original_claim_id)
+}
+::std::string* Guncad::add_original_claim_id() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Guncad.original_claim_id)
+  return original_claim_id_.Add();
+}
+void Guncad::add_original_claim_id(const ::std::string& value) {
+  original_claim_id_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pb.Guncad.original_claim_id)
+}
+void Guncad::add_original_claim_id(const char* value) {
+  original_claim_id_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pb.Guncad.original_claim_id)
+}
+void Guncad::add_original_claim_id(const char* value, size_t size) {
+  original_claim_id_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pb.Guncad.original_claim_id)
+}
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Guncad::original_claim_id() const {
+  // @@protoc_insertion_point(field_list:pb.Guncad.original_claim_id)
+  return original_claim_id_;
+}
+::google::protobuf::RepeatedPtrField< ::std::string>*
+Guncad::mutable_original_claim_id() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Guncad.original_claim_id)
+  return &original_claim_id_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -10162,7 +9363,7 @@ void Software::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* Software::descriptor() {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[12].descriptor;
+  return protobuf_claim_2eproto::file_level_metadata[11].descriptor;
 }
 
 const Software& Software::default_instance() {
@@ -10336,7 +9537,7 @@ void Software::InternalSwap(Software* other) {
 
 ::google::protobuf::Metadata Software::GetMetadata() const {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[12];
+  return protobuf_claim_2eproto::file_level_metadata[11];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -10444,7 +9645,7 @@ void Language::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* Language::descriptor() {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[13].descriptor;
+  return protobuf_claim_2eproto::file_level_metadata[12].descriptor;
 }
 
 const Language& Language::default_instance() {
@@ -10679,7 +9880,7 @@ void Language::InternalSwap(Language* other) {
 
 ::google::protobuf::Metadata Language::GetMetadata() const {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[13];
+  return protobuf_claim_2eproto::file_level_metadata[12];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -10798,7 +9999,7 @@ void Location::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* Location::descriptor() {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[14].descriptor;
+  return protobuf_claim_2eproto::file_level_metadata[13].descriptor;
 }
 
 const Location& Location::default_instance() {
@@ -11176,7 +10377,7 @@ void Location::InternalSwap(Location* other) {
 
 ::google::protobuf::Metadata Location::GetMetadata() const {
   protobuf_claim_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_claim_2eproto::file_level_metadata[14];
+  return protobuf_claim_2eproto::file_level_metadata[13];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS

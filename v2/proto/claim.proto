@@ -16,8 +16,6 @@ message Claim {
     repeated string tags = 11;
     repeated Language languages = 12;
     repeated Location locations = 13;
-    DownloadableFile downloadable_file = 14;
-    GuncadFile guncad_file = 15;
 }
 
 message Stream {
@@ -32,6 +30,7 @@ message Stream {
         Video video = 11;
         Audio audio = 12;
         Software software = 13;
+        Guncad guncad = 14;
     }
 }
 
@@ -95,17 +94,7 @@ message Audio {
     uint32 duration = 1;
 }
 
-message DownloadableFile {
-  repeated string artifact_type = 1;
-  repeated string artifact_language = 2;
-  repeated string release_country = 3;
-}
-
-message GuncadFile {
-  repeated string artifact_type = 1;
-  repeated string artifact_language = 2;
-  repeated string release_country = 3;
-
+message Guncad {
   repeated string guncad_category = 4;
   repeated string firearm_type = 5;
   repeated string firearm_platform = 6;
@@ -113,6 +102,7 @@ message GuncadFile {
   repeated string firearm_caliber = 8;
   repeated string fabrication_method = 9;
   repeated string fabrication_tools = 10;
+  repeated string original_claim_id = 11;
 }
 
 message Software {
